@@ -9,7 +9,7 @@
 <link rel="icon" href="images/logo/logo.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
 tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','system-ui','-apple-system','sans-serif']},colors:{brand:{navy:'#1B3A5C',blue:'#2E7AB8',sky:'#6DB3E8',orange:'#E8812F',green:'#3A8B3E',dark:'#0a1628',deeper:'#060e1a'}}}}}
@@ -21,18 +21,19 @@ tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','system-ui','-apple-sy
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
-body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#0a1628;color:#fff;overflow-x:hidden}
-::-webkit-scrollbar{width:5px}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#0a1628;color:#fff;overflow-x:hidden;font-size:16px}
+::-webkit-scrollbar{width:6px}
 ::-webkit-scrollbar-track{background:#0a1628}
 ::-webkit-scrollbar-thumb{background:rgba(46,122,184,0.4);border-radius:3px}
 ::-webkit-scrollbar-thumb:hover{background:rgba(46,122,184,0.7)}
 .img-cover{width:100%;height:100%;object-fit:cover;display:block}
-#scroll-progress{position:fixed;top:0;left:0;height:2px;z-index:10001;transition:width .05s linear;background:linear-gradient(90deg,#E8812F,#2E7AB8,#6DB3E8)}
-#app-loader{position:fixed;inset:0;z-index:99999;background:#0a1628;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:20px;transition:opacity 1s cubic-bezier(.23,1,.32,1),visibility 1s}
+.img-contain{width:100%;height:100%;object-fit:contain;display:block}
+#scroll-progress{position:fixed;top:0;left:0;height:3px;z-index:10001;transition:width .05s linear;background:linear-gradient(90deg,#E8812F,#2E7AB8,#6DB3E8)}
+#app-loader{position:fixed;inset:0;z-index:99999;background:#0a1628;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:24px;transition:opacity 1s cubic-bezier(.23,1,.32,1),visibility 1s}
 #app-loader.hidden{opacity:0;visibility:hidden;pointer-events:none}
-#app-loader img{width:64px;height:64px;border-radius:16px;animation:ldp 2s ease-in-out infinite}
+#app-loader img{width:72px;height:72px;border-radius:18px;animation:ldp 2s ease-in-out infinite}
 @keyframes ldp{0%,100%{opacity:.3;transform:scale(.9)}50%{opacity:1;transform:scale(1.05)}}
-#app-loader .bar{width:120px;height:2px;background:rgba(255,255,255,.06);border-radius:1px;overflow:hidden}
+#app-loader .bar{width:140px;height:2px;background:rgba(255,255,255,.06);border-radius:1px;overflow:hidden}
 #app-loader .bar-fill{height:100%;width:0%;background:linear-gradient(90deg,#E8812F,#2E7AB8);animation:ldb 1.5s ease-in-out forwards}
 @keyframes ldb{to{width:100%}}
 .line-clamp-2{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
@@ -44,17 +45,15 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#0a1628;c
 <div id="app-loader">
   <img src="images/logo/logo.png" alt="">
   <div class="bar"><div class="bar-fill"></div></div>
-  <span style="color:rgba(255,255,255,.25);font-size:10px;letter-spacing:.25em;text-transform:uppercase;margin-top:4px">Torgas Blue Energy</span>
+  <span style="color:rgba(255,255,255,.3);font-size:12px;letter-spacing:.2em;text-transform:uppercase">Torgas Blue Energy</span>
 </div>
 <div id="root"></div>
 
 <script type="text/babel" data-type="module">
-const{useState,useEffect,useRef,useCallback}=React;
+const{useState,useEffect,useRef}=React;
 const{motion,useInView,AnimatePresence}=window["framer-motion"]||{};
 
-/* ══════════════════════════════════════════════════════
-   DATA — All project & people data embedded
-   ══════════════════════════════════════════════════════ */
+/* ══════════════ DATA ══════════════ */
 const PROJECTS=[
   {id:"biosentor",title:"Biosentor",subtitle:"Autonomous Ocean Monitoring Vessel",category:"Ocean Systems",
    description:"An unmanned surface vessel equipped with integrated biosensors for real-time marine ecosystem monitoring. Designed from hull lines to sensor array, Biosentor navigates coastal waters autonomously — collecting water quality, temperature, pH, and biological data without human risk.",
@@ -67,34 +66,42 @@ const PROJECTS=[
    images:["images/projects/carbon-storage-1.jpg","images/projects/carbon-storage-2.jpg","images/projects/carbon-storage-3.jpg"],
    tags:["Blue Carbon","Mangrove Ecology","Climate Science","GIS Mapping"],status:"Active Research"},
   {id:"mikroorganisme",title:"Marine Microorganisms",subtitle:"Coastal Sediment Biodiversity Study",category:"Ocean Systems",
-   description:"Deep microscopic analysis of microzoobenthos communities in coastal sediment across Western Pangandaran. Sampling at multiple depth gradients (10m, 20m, 50m) to map biodiversity patterns, species distribution, and ecosystem health indicators that inform coastal management policy.",
+   description:"Deep microscopic analysis of microzoobenthos communities in coastal sediment across Western Pangandaran. Sampling at multiple depth gradients to map biodiversity patterns, species distribution, and ecosystem health indicators that inform coastal management policy.",
    impact:"Building Indonesia's first comprehensive coastal sediment biodiversity database for policy-making.",
    images:["images/projects/sediment-1.jpg","images/projects/sediment-2.jpg"],
    tags:["Marine Biology","Biodiversity","Microscopy","Sediment Analysis"],status:"Active Research"},
   {id:"torgas-biogas",title:"Portable Torgas",subtitle:"Seaweed-to-Biogas Energy System",category:"Energy Innovation",
-   description:"A portable, autonomous biogas production system that converts seaweed — one of Indonesia's most abundant marine resources — into clean methane energy. Combining anaerobic digestion reactors with intelligent pressure and temperature monitoring, Portable Torgas delivers decentralized clean energy to coastal communities that lack grid access.",
+   description:"A portable, autonomous biogas production system that converts seaweed — one of Indonesia's most abundant marine resources — into clean methane energy. Combining anaerobic digestion reactors with intelligent pressure and temperature monitoring, Portable Torgas delivers decentralized clean energy to coastal communities.",
    impact:"Energy independence for remote coastal villages — clean cooking fuel from locally abundant seaweed biomass.",
    images:["images/projects/torgas-device-1.jpg","images/projects/torgas-device-2.jpg","images/projects/torgas-device-3.jpg","images/projects/torgas-device-4.jpg"],
    tags:["Biogas","Renewable Energy","Seaweed","Anaerobic Digestion"],status:"Active Development"},
   {id:"biodiesel",title:"Marine Biodiesel",subtitle:"Ocean-Sourced Biofuel Research",category:"Energy Innovation",
-   description:"Exploring sustainable biodiesel production pathways from marine algae and seaweed lipids. This early-stage research aims to develop scalable extraction and transesterification methods that could replace fossil diesel in Indonesia's massive maritime shipping fleet.",
+   description:"Exploring sustainable biodiesel production pathways from marine algae and seaweed lipids. This early-stage research aims to develop scalable extraction and transesterification methods for Indonesia's massive maritime shipping fleet.",
    impact:"Developing scalable marine biofuel pathways for Indonesia's 17,000-island maritime transport network.",
    images:["images/activities/activity-3.jpg"],
-   tags:["Biofuel","Marine Algae","Lipid Extraction","Green Chemistry"],status:"Early Research"}
+   tags:["Biofuel","Marine Algae","Lipid Extraction"],status:"Early Research"}
 ];
 
 const PEOPLE=[
-  {id:"buntora",name:"Buntora Pasaribu, Ph.D.",role:"Founder & Supervisor",level:"founder",photo:"images/people/buntora-pasaribu.jpeg",expertise:"Marine Science & Ocean Policy"},
-  {id:"david",name:"David Ferdinand Sinaga",role:"Chief Executive Officer",level:"c-level",photo:"images/people/david-ferdinand.jpeg",expertise:"Strategic Leadership"},
-  {id:"jogi",name:"Jogi Ruben N. Panggabean",role:"Chief Operating Officer",level:"c-level",photo:"images/people/jogi-panggabean.jpg",expertise:"Operations & Lab Management"},
-  {id:"kathryn",name:"Kathryn Trijatha",role:"Chief Financial Officer",level:"c-level",photo:"images/people/kathryn-trijatha.png",expertise:"Financial Strategy"},
-  {id:"lando",name:"Yolando",role:"Chief Technology Officer",level:"c-level",photo:"images/people/lando.png",expertise:"Technology & R&D"},
-  {id:"bagus",name:"Bagus Dwi Cahyo",role:"Research Engineer",level:"team",photo:"images/people/bagus-dwi-cahyo.png",expertise:"Marine Engineering"},
-  {id:"fataya",name:"Fataya Alif R. Priatna",role:"Research Scientist",level:"team",photo:"images/people/fataya-alif.jpeg",expertise:"Marine Biology"},
-  {id:"galuh",name:"Galuh Pramudya",role:"Research Scientist",level:"team",photo:"images/people/galuh-pramudya.png",expertise:"Ocean Science"},
-  {id:"raziq",name:"Raziq Aldin",role:"Data Analyst",level:"team",photo:"images/people/raziq-aldin.png",expertise:"Environmental Analytics"},
-  {id:"talita",name:"Talita Risa M.",role:"Research Scientist",level:"team",photo:"images/people/talita-risa.jpg",expertise:"Marine Ecology"},
-  {id:"yudi",name:"Yudi Ardiansyah S.",role:"Technical Specialist",level:"team",photo:"images/people/yudi-ardiansyah.jpg",expertise:"Lab Systems"}
+  {id:"buntora",name:"Buntora Pasaribu, Ph.D.",role:"Founder & Supervisor",level:"founder",head:"images/people/buntora-head.jpg",body:"images/people/buntora-body.jpg",cv:"cvs/buntora.pdf",expertise:"Marine Science & Ocean Policy"},
+  {id:"david",name:"David Ferdinand Sinaga",role:"Chief Executive Officer",level:"c-level",head:"images/people/david-head.jpg",body:"images/people/david-body.jpg",cv:"cvs/david.pdf",expertise:"Strategic Leadership"},
+  {id:"jogi",name:"Jogi Ruben N. Panggabean",role:"Chief Operating Officer",level:"c-level",head:"images/people/jogi-head.jpg",body:"images/people/jogi-body.jpg",cv:"cvs/jogi.pdf",expertise:"Operations & Lab Management"},
+  {id:"talita",name:"Talita Risa Margharedna",role:"Chief Financial Officer",level:"c-level",head:"images/people/talita-head.jpg",body:"images/people/talita-body.jpg",cv:"cvs/talita.pdf",expertise:"Financial Strategy"},
+  {id:"alifannursin",name:"Alifannursin Mahdan Atsarak",role:"Chief Technology Officer",level:"c-level",head:"images/people/alifannursin-head.jpg",body:"images/people/alifannursin-body.jpg",cv:null,expertise:"Technology & R&D"},
+  {id:"ari",name:"Ari Dwi Saputra",role:"Research Engineer",level:"team",head:"images/people/ari-head.jpg",body:"images/people/ari-body.jpg",cv:"cvs/ari.pdf",expertise:"Marine Engineering"},
+  {id:"bagus",name:"Bagus Dwi Cahyo",role:"Research Engineer",level:"team",head:"images/people/bagus-head.jpg",body:"images/people/bagus-body.jpg",cv:"cvs/bagus.pdf",expertise:"Marine Engineering"},
+  {id:"fataya",name:"Fataya Alif Rahmani Priatna",role:"Research Scientist",level:"team",head:"images/people/fataya-head.jpg",body:"images/people/fataya-body.jpg",cv:"cvs/fataya.pdf",expertise:"Marine Biology"},
+  {id:"galuh",name:"Galuh Pramudya",role:"Research Scientist",level:"team",head:"images/people/galuh-head.jpg",body:"images/people/galuh-body.jpg",cv:"cvs/galuh.pdf",expertise:"Ocean Science"},
+  {id:"kathryn",name:"Kathryn Trijatha Putri Rahayu",role:"Research Scientist",level:"team",head:"images/people/kathryn-head.jpg",body:"images/people/kathryn-body.jpg",cv:"cvs/kathryn.pdf",expertise:"Marine Ecology"},
+  {id:"raziq",name:"Raziq Aldin",role:"Data Analyst",level:"team",head:"images/people/raziq-head.jpg",body:"images/people/raziq-body.jpg",cv:"cvs/raziq.pdf",expertise:"Environmental Analytics"},
+  {id:"yolando",name:"Yolando Ambarita",role:"Research Associate",level:"team",head:"images/people/yolando-head.jpg",body:"images/people/yolando-body.jpg",cv:"cvs/yolando.pdf",expertise:"Marine Research"},
+  {id:"yudi",name:"Yudi Ardiansyah Saputra",role:"Technical Specialist",level:"team",head:"images/people/yudi-head.jpg",body:"images/people/yudi-body.jpg",cv:"cvs/yudi.pdf",expertise:"Lab Systems"},
+  {id:"annisa",name:"An-nisa Nurul Azqiya",role:"Research Intern",level:"intern",head:"images/people/annisa-head.jpg",body:"images/people/annisa-body.jpg",cv:"cvs/annisa.pdf",expertise:"Marine Science"},
+  {id:"aziza",name:"Aziza Nabila Nurshafa",role:"Research Intern",level:"intern",head:"images/people/aziza-head.jpg",body:"images/people/aziza-body.jpg",cv:"cvs/aziza.pdf",expertise:"Marine Science"},
+  {id:"fakhri",name:"Fakhri Daffa Fauzi",role:"Research Intern",level:"intern",head:"images/people/fakhri-head.jpg",body:"images/people/fakhri-body.jpg",cv:"cvs/fakhri.pdf",expertise:"Marine Science"},
+  {id:"akmal",name:"Muhammad Akmal Raynanda",role:"Research Intern",level:"intern",head:"images/people/akmal-head.jpg",body:"images/people/akmal-body.jpg",cv:"cvs/akmal.pdf",expertise:"Marine Science"},
+  {id:"muzhaffirah",name:"Muzhaffirah Gyda Kania Subagja",role:"Research Intern",level:"intern",head:"images/people/muzhaffirah-head.jpg",body:"images/people/muzhaffirah-body.jpg",cv:"cvs/muzhaffirah.pdf",expertise:"Marine Science"},
+  {id:"tabriiz",name:"Tabriiz Rosyanfiqr",role:"Research Intern",level:"intern",head:"images/people/tabriiz-head.jpg",body:"images/people/tabriiz-body.jpg",cv:"cvs/tabriiz.pdf",expertise:"Marine Science"}
 ];
 
 const ACTIVITIES=[
@@ -109,16 +116,7 @@ const ACTIVITIES=[
   {src:"images/activities/activity-9.png",caption:"Media coverage — Product presentation attracting regional press attention"},
 ];
 
-const LEGAL_DOCS=[
-  {title:"Akta Pendirian Perseroan Terbatas",desc:"Corporate charter establishing PT Torgas Blue Energy as a legal entity under Indonesian law.",icon:"shield"},
-  {title:"Keputusan Menteri Hukum RI",desc:"Ministry of Law and Human Rights decree officially recognizing the company's legal status.",icon:"stamp"},
-  {title:"NIB — Nomor Induk Berusaha",desc:"National business identification number under the risk-based licensing system (OSS-RBA).",icon:"id"},
-  {title:"Perizinan Berusaha Berbasis Risiko",desc:"Comprehensive risk-based business operating permit from the Indonesian government.",icon:"file"}
-];
-
-/* ══════════════════════════════════════════════════════
-   UTILITY HOOKS
-   ══════════════════════════════════════════════════════ */
+/* ══════════════ HOOKS ══════════════ */
 function useScrollProgress(){
   useEffect(()=>{
     const bar=document.getElementById('scroll-progress');
@@ -128,50 +126,50 @@ function useScrollProgress(){
   },[]);
 }
 
-/* Motion wrapper — graceful fallback if framer-motion fails */
-const M=({children,className='',delay=0,y=40,once=true,amount=0.15,...rest})=>{
+/* Scroll-triggered motion wrapper */
+const M=({children,className='',delay=0,y=50,once=true,amount=0.12,...rest})=>{
   const ref=useRef(null);
-  if(!motion){return <div ref={ref} className={className} {...rest}>{children}</div>}
+  if(!motion)return<div ref={ref} className={className} {...rest}>{children}</div>;
   return(
     <motion.div ref={ref} className={className}
       initial={{opacity:0,y}}
       whileInView={{opacity:1,y:0}}
       viewport={{once,amount}}
-      transition={{duration:1,delay,ease:[.23,1,.32,1]}}
+      transition={{duration:1.1,delay,ease:[.23,1,.32,1]}}
       {...rest}
     >{children}</motion.div>
   );
 };
 
-/* Hero-specific motion (uses animate instead of whileInView for first paint) */
-const MHero=({children,className='',delay=0,y=40})=>{
+/* Hero-specific (uses animate for first-paint trigger) */
+const MH=({children,className='',delay=0,y=50})=>{
   const ref=useRef(null);
-  const inView=useInView?useInView(ref,{once:true,amount:0.1}):true;
+  const inView=useInView?useInView(ref,{once:true,amount:.05}):true;
   if(!motion)return<div ref={ref} className={className}>{children}</div>;
   return(
     <motion.div ref={ref} className={className}
-      initial={{opacity:0,y,scale:y>30?.97:1}}
+      initial={{opacity:0,y,scale:y>35?.97:1}}
       animate={inView?{opacity:1,y:0,scale:1}:{}}
-      transition={{duration:1.2,delay,ease:[.23,1,.32,1]}}
+      transition={{duration:1.3,delay,ease:[.23,1,.32,1]}}
     >{children}</motion.div>
   );
 };
 
 /* SVG Icons */
-const Icons={
-  shield:<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-7 h-7"><path d="M12 2l8 4v6c0 5.25-3.5 9.74-8 11-4.5-1.26-8-5.75-8-11V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg>,
-  stamp:<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-7 h-7"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>,
-  id:<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-7 h-7"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 10h4M7 14h2"/><circle cx="16" cy="11" r="2"/></svg>,
-  file:<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-7 h-7"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/><path d="M9 15h6M9 11h6"/></svg>,
-  arrow:<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4"><path d="M5 12h14M12 5l7 7-7 7"/></svg>,
-  close:<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-5 h-5"><path d="M18 6L6 18M6 6l12 12"/></svg>,
-  menu:<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-5 h-5"><path d="M4 8h16M4 16h16"/></svg>,
-  x:<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-5 h-5"><path d="M18 6L6 18M6 6l12 12"/></svg>,
+const IC={
+  shield:<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-8 h-8"><path d="M12 2l8 4v6c0 5.25-3.5 9.74-8 11-4.5-1.26-8-5.75-8-11V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg>,
+  stamp:<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-8 h-8"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>,
+  id:<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-8 h-8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 10h4M7 14h2"/><circle cx="16" cy="11" r="2"/></svg>,
+  file:<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-8 h-8"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/><path d="M9 15h6M9 11h6"/></svg>,
+  arrow:<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-5 h-5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>,
+  close:<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-6 h-6"><path d="M18 6L6 18M6 6l12 12"/></svg>,
+  menu:<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-6 h-6"><path d="M4 7h16M4 12h16M4 17h16"/></svg>,
+  x:<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-6 h-6"><path d="M18 6L6 18M6 6l12 12"/></svg>,
 };
 
-/* ══════════════════════════════════════════════════════
+/* ══════════════════════════════════════════
    NAVIGATION
-   ══════════════════════════════════════════════════════ */
+   ══════════════════════════════════════════ */
 function Navigation(){
   const[scrolled,setScrolled]=useState(false);
   const[open,setOpen]=useState(false);
@@ -179,25 +177,25 @@ function Navigation(){
   const links=[{l:'About',h:'#identity'},{l:'Innovation',h:'#innovation'},{l:'Projects',h:'#projects'},{l:'Field Work',h:'#fieldwork'},{l:'Team',h:'#people'},{l:'Legal',h:'#legal'},{l:'Contact',h:'#contact'}];
 
   return(
-    <nav className={`fixed top-0 left-0 right-0 z-[9999] transition-all duration-700 ${scrolled?'bg-brand-dark/90 backdrop-blur-2xl shadow-lg shadow-black/20':'bg-transparent'}`} style={{height:56}}>
+    <nav className={`fixed top-0 left-0 right-0 z-[9999] transition-all duration-700 ${scrolled?'bg-brand-dark/90 backdrop-blur-2xl shadow-lg shadow-black/30':'bg-transparent'}`} style={{height:64}}>
       <div className="max-w-7xl mx-auto px-6 lg:px-10 h-full flex items-center justify-between">
         <a href="#hero" className="flex items-center gap-3 group">
-          <img src="images/logo/logo.png" alt="Torgas Blue Energy" className="w-8 h-8 rounded-xl transition-transform duration-300 group-hover:scale-110"/>
-          <span className={`text-[13px] font-bold tracking-wide transition-all duration-500 ${scrolled?'opacity-100 translate-y-0':'opacity-0 -translate-y-1'}`} style={{color:'rgba(255,255,255,.85)'}}>Torgas Blue Energy</span>
+          <img src="images/logo/logo.png" alt="Torgas Blue Energy" className="w-9 h-9 rounded-xl transition-transform duration-300 group-hover:scale-110"/>
+          <span className={`text-sm font-bold tracking-wide transition-all duration-500 ${scrolled?'opacity-100 translate-y-0':'opacity-0 -translate-y-1'}`}>Torgas Blue Energy</span>
         </a>
-        <div className="hidden lg:flex items-center gap-0.5">
+        <div className="hidden lg:flex items-center gap-1">
           {links.map(({l,h})=>(
-            <a key={h} href={h} className="text-[11px] font-semibold px-4 py-2 rounded-full transition-all duration-300 hover:bg-white/[.07]" style={{color:'rgba(255,255,255,.5)',letterSpacing:'.04em'}}>{l}</a>
+            <a key={h} href={h} className="text-sm font-medium px-5 py-2 rounded-full transition-all duration-300 hover:bg-white/[.08]" style={{color:'rgba(255,255,255,.55)'}}>{l}</a>
           ))}
         </div>
         <button className="lg:hidden p-2 -mr-2" onClick={()=>setOpen(!open)} aria-label="Menu">
-          {open?Icons.x:Icons.menu}
+          {open?IC.x:IC.menu}
         </button>
       </div>
       {open&&(
-        <div className="lg:hidden absolute top-14 left-0 right-0 bg-brand-dark/95 backdrop-blur-2xl border-t border-white/5 px-6 py-6 shadow-2xl">
+        <div className="lg:hidden absolute top-16 left-0 right-0 bg-brand-dark/95 backdrop-blur-2xl border-t border-white/5 px-6 py-6 shadow-2xl">
           {links.map(({l,h})=>(
-            <a key={h} href={h} onClick={()=>setOpen(false)} className="block py-3 text-[13px] font-medium border-b border-white/5" style={{color:'rgba(255,255,255,.6)'}}>{l}</a>
+            <a key={h} href={h} onClick={()=>setOpen(false)} className="block py-3.5 text-base font-medium border-b border-white/5" style={{color:'rgba(255,255,255,.65)'}}>{l}</a>
           ))}
         </div>
       )}
@@ -205,54 +203,50 @@ function Navigation(){
   );
 }
 
-/* ══════════════════════════════════════════════════════
+/* ══════════════════════════════════════════
    SCENE 1 — HERO
-   ══════════════════════════════════════════════════════ */
+   ══════════════════════════════════════════ */
 function Hero(){
   const ref=useRef(null);
   const inView=useInView?useInView(ref,{once:true,amount:.05}):true;
 
   return(
-    <section id="hero" ref={ref} className="relative h-screen min-h-[700px] flex items-center justify-center overflow-hidden">
-      {/* BG */}
+    <section id="hero" ref={ref} className="relative h-screen min-h-[750px] flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0">
-        <img src="images/activities/activity-2.jpg" alt="" className="img-cover transition-transform duration-[14s] ease-out" style={{transform:inView?'scale(1)':'scale(1.15)',filter:'brightness(.45) saturate(1.1)'}}/>
-        <div className="absolute inset-0" style={{background:'linear-gradient(180deg,rgba(10,22,40,.3) 0%,rgba(10,22,40,.6) 40%,rgba(10,22,40,.95) 100%)'}}/>
+        <img src="images/activities/activity-2.jpg" alt="" className="img-cover transition-transform duration-[14s] ease-out" style={{transform:inView?'scale(1)':'scale(1.15)',filter:'brightness(.4) saturate(1.1)'}}/>
+        <div className="absolute inset-0" style={{background:'linear-gradient(180deg,rgba(10,22,40,.2) 0%,rgba(10,22,40,.55) 40%,rgba(10,22,40,.97) 100%)'}}/>
       </div>
-
-      {/* Decorative gradient orb */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full pointer-events-none" style={{background:'radial-gradient(circle,rgba(46,122,184,.12) 0%,transparent 70%)',filter:'blur(60px)'}}/>
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full pointer-events-none" style={{background:'radial-gradient(circle,rgba(46,122,184,.12) 0%,transparent 70%)',filter:'blur(80px)'}}/>
 
       <div className="relative z-10 text-center max-w-5xl px-6">
-        <MHero delay={.2} y={25}>
-          <img src="images/logo/logo.png" alt="Torgas Blue Energy" className="w-[72px] h-[72px] mx-auto mb-8 rounded-2xl shadow-2xl shadow-brand-blue/20"/>
-        </MHero>
-        <MHero delay={.4} y={50}>
-          <h1 className="text-[clamp(2.5rem,7vw,5.5rem)] font-black leading-[.95] tracking-[-0.04em]">
+        <MH delay={.15} y={25}>
+          <img src="images/logo/logo.png" alt="Torgas Blue Energy" className="w-20 h-20 md:w-24 md:h-24 mx-auto mb-10 rounded-3xl shadow-2xl shadow-brand-blue/20"/>
+        </MH>
+        <MH delay={.35} y={55}>
+          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black leading-[.92] tracking-[-0.04em]">
             Powering the Future<br/>
             <span style={{background:'linear-gradient(135deg,#E8812F 0%,#2E7AB8 40%,#6DB3E8 100%)',WebkitBackgroundClip:'text',WebkitTextFillColor:'transparent'}}>Beneath the Surface</span>
           </h1>
-        </MHero>
-        <MHero delay={.7} y={30}>
-          <p className="mt-6 text-[clamp(.875rem,1.8vw,1.25rem)] tracking-[.18em] uppercase font-semibold" style={{color:'rgba(255,255,255,.4)'}}>Energy &middot; Ocean &middot; Intelligence</p>
-        </MHero>
-        <MHero delay={.9} y={20}>
-          <p className="mt-3 text-[clamp(.75rem,1.3vw,.95rem)]" style={{color:'rgba(255,255,255,.22)'}}>Blue energy research & ocean technology from Indonesia</p>
-        </MHero>
+        </MH>
+        <MH delay={.65} y={30}>
+          <p className="mt-8 text-xl sm:text-2xl md:text-3xl tracking-[.12em] uppercase font-semibold" style={{color:'rgba(255,255,255,.4)'}}>Energy &middot; Ocean &middot; Intelligence</p>
+        </MH>
+        <MH delay={.85} y={20}>
+          <p className="mt-4 text-base sm:text-lg md:text-xl" style={{color:'rgba(255,255,255,.22)'}}>Blue energy research & ocean technology from Indonesia</p>
+        </MH>
       </div>
 
-      {/* Scroll cue */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-pulse" style={{color:'rgba(255,255,255,.2)'}}>
-        <span className="text-[9px] tracking-[.2em] uppercase font-medium">Scroll</span>
-        <div className="w-px h-9" style={{background:'linear-gradient(180deg,rgba(109,179,232,.4),transparent)'}}/>
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-pulse" style={{color:'rgba(255,255,255,.2)'}}>
+        <span className="text-xs tracking-[.2em] uppercase font-medium">Scroll</span>
+        <div className="w-px h-10" style={{background:'linear-gradient(180deg,rgba(109,179,232,.4),transparent)'}}/>
       </div>
     </section>
   );
 }
 
-/* ══════════════════════════════════════════════════════
+/* ══════════════════════════════════════════
    SCENE 2 — IDENTITY
-   ══════════════════════════════════════════════════════ */
+   ══════════════════════════════════════════ */
 function Identity(){
   const pillars=[
     {title:'Blue Energy',desc:'Converting ocean biomass into clean, renewable energy for coastal communities who need it most.',color:'#E8812F'},
@@ -260,20 +254,20 @@ function Identity(){
     {title:'Climate Technology',desc:'Carbon sequestration research and predictive modeling for a measurably sustainable future.',color:'#3A8B3E'},
   ];
   return(
-    <section id="identity" className="relative py-28 md:py-40" style={{background:'#0a1628'}}>
+    <section id="identity" className="relative py-32 md:py-44" style={{background:'#0a1628'}}>
       <div className="max-w-5xl mx-auto px-6 lg:px-10 text-center">
-        <M delay={0}><p className="text-[11px] font-bold tracking-[.25em] uppercase mb-5" style={{color:'#2E7AB8'}}>Who We Are</p></M>
-        <M delay={.1}><h2 className="text-[clamp(2rem,5vw,3.5rem)] font-black tracking-tight leading-[1.05]">We turn ocean data<br/>into climate action.</h2></M>
-        <M delay={.25}><p className="mt-7 text-[clamp(.9rem,1.4vw,1.15rem)] leading-relaxed max-w-2xl mx-auto" style={{color:'rgba(255,255,255,.4)'}}>Torgas Blue Energy is an integrated research and technology company based in Jatinangor and Pangandaran, Indonesia. We combine marine science, autonomous systems, and environmental intelligence to build a sustainable blue economy.</p></M>
+        <M delay={0}><p className="text-sm font-bold tracking-[.2em] uppercase mb-6" style={{color:'#2E7AB8'}}>Who We Are</p></M>
+        <M delay={.1}><h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[1.05]">We turn ocean data<br/>into climate action.</h2></M>
+        <M delay={.25}><p className="mt-8 text-lg md:text-xl lg:text-2xl leading-relaxed max-w-3xl mx-auto" style={{color:'rgba(255,255,255,.4)'}}>Torgas Blue Energy is an integrated research and technology company based in Jatinangor and Pangandaran, Indonesia. We combine marine science, autonomous systems, and environmental intelligence to build a sustainable blue economy.</p></M>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-20">
           {pillars.map((p,i)=>(
             <M key={i} delay={.35+i*.12}>
-              <div className="group relative p-8 rounded-2xl border border-white/[.04] hover:border-white/[.08] transition-all duration-700 hover:-translate-y-1 overflow-hidden" style={{background:'rgba(255,255,255,.015)'}}>
+              <div className="group relative p-10 rounded-3xl border border-white/[.04] hover:border-white/[.1] transition-all duration-700 hover:-translate-y-2 overflow-hidden" style={{background:'rgba(255,255,255,.015)'}}>
                 <div className="absolute top-0 left-0 w-full h-[2px] transition-all duration-700 opacity-0 group-hover:opacity-100" style={{background:`linear-gradient(90deg,transparent,${p.color},transparent)`}}/>
-                <div className="w-2 h-2 rounded-full mb-5 mx-auto" style={{background:p.color,boxShadow:`0 0 20px ${p.color}40`}}/>
-                <h3 className="text-lg font-bold mb-3">{p.title}</h3>
-                <p className="text-[13px] leading-relaxed" style={{color:'rgba(255,255,255,.35)'}}>{p.desc}</p>
+                <div className="w-3 h-3 rounded-full mb-6 mx-auto" style={{background:p.color,boxShadow:`0 0 30px ${p.color}50`}}/>
+                <h3 className="text-2xl font-bold mb-4">{p.title}</h3>
+                <p className="text-base leading-relaxed" style={{color:'rgba(255,255,255,.4)'}}>{p.desc}</p>
               </div>
             </M>
           ))}
@@ -283,9 +277,9 @@ function Identity(){
   );
 }
 
-/* ══════════════════════════════════════════════════════
-   SCENE 3 — INNOVATION CINEMATIC SECTIONS
-   ══════════════════════════════════════════════════════ */
+/* ══════════════════════════════════════════
+   SCENE 3 — INNOVATION CINEMATIC
+   ══════════════════════════════════════════ */
 function Innovation(){
   const sections=[
     {tag:'Ocean Systems',title:'Monitoring the deep.\nProtecting the surface.',desc:'Autonomous vessels and sensor arrays that collect real-time marine data across Indonesian waters — from water chemistry to biological indicators.',img:'images/projects/biosentor-xray.jpg',accent:'#2E7AB8'},
@@ -296,18 +290,17 @@ function Innovation(){
   return(
     <section id="innovation">
       {sections.map((s,i)=>(
-        <div key={i} className="relative min-h-[90vh] md:min-h-screen flex items-center overflow-hidden" style={{background:i%2===0?'#060e1a':'#0a1628'}}>
+        <div key={i} className="relative min-h-screen flex items-center overflow-hidden" style={{background:i%2===0?'#060e1a':'#0a1628'}}>
           <div className="absolute inset-0">
-            <img src={s.img} alt="" className="img-cover" style={{opacity:.2,filter:'brightness(.5) saturate(.8)'}}/>
-            <div className="absolute inset-0" style={{background:`linear-gradient(${i%2===0?'135deg':'225deg'},rgba(10,22,40,.92) 0%,rgba(10,22,40,.5) 50%,rgba(10,22,40,.92) 100%)`}}/>
+            <img src={s.img} alt="" className="img-cover" style={{opacity:.25,filter:'brightness(.45) saturate(.8)'}}/>
+            <div className="absolute inset-0" style={{background:`linear-gradient(${i%2===0?'135deg':'225deg'},rgba(10,22,40,.9) 0%,rgba(10,22,40,.45) 50%,rgba(10,22,40,.9) 100%)`}}/>
           </div>
-          {/* Accent glow */}
-          <div className="absolute w-[400px] h-[400px] rounded-full pointer-events-none" style={{background:`radial-gradient(circle,${s.accent}15,transparent 70%)`,filter:'blur(80px)',top:'30%',right:i%2===0?'10%':'auto',left:i%2!==0?'10%':'auto'}}/>
+          <div className="absolute w-[500px] h-[500px] rounded-full pointer-events-none" style={{background:`radial-gradient(circle,${s.accent}15,transparent 70%)`,filter:'blur(100px)',top:'25%',right:i%2===0?'8%':'auto',left:i%2!==0?'8%':'auto'}}/>
 
-          <div className="relative z-10 max-w-5xl mx-auto px-6 lg:px-10 py-28">
-            <M y={20}><div className="flex items-center gap-3 mb-6"><div className="w-8 h-[2px]" style={{background:s.accent}}/><p className="text-[11px] font-bold tracking-[.25em] uppercase" style={{color:s.accent}}>{s.tag}</p></div></M>
-            <M delay={.15} y={50}><h2 className="text-[clamp(2.2rem,5.5vw,4.5rem)] font-black tracking-[-0.03em] leading-[1] whitespace-pre-line">{s.title}</h2></M>
-            <M delay={.3} y={30}><p className="mt-8 text-[clamp(.95rem,1.5vw,1.15rem)] max-w-xl leading-relaxed" style={{color:'rgba(255,255,255,.4)'}}>{s.desc}</p></M>
+          <div className="relative z-10 max-w-5xl mx-auto px-6 lg:px-10 py-32">
+            <M y={20}><div className="flex items-center gap-4 mb-8"><div className="w-10 h-[2px]" style={{background:s.accent}}/><p className="text-sm font-bold tracking-[.2em] uppercase" style={{color:s.accent}}>{s.tag}</p></div></M>
+            <M delay={.15} y={55}><h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-[-0.03em] leading-[.95] whitespace-pre-line">{s.title}</h2></M>
+            <M delay={.3} y={30}><p className="mt-10 text-xl md:text-2xl max-w-2xl leading-relaxed" style={{color:'rgba(255,255,255,.4)'}}>{s.desc}</p></M>
           </div>
         </div>
       ))}
@@ -315,52 +308,46 @@ function Innovation(){
   );
 }
 
-/* ══════════════════════════════════════════════════════
-   SCENE 4 — PROJECT SHOWCASE
-   ══════════════════════════════════════════════════════ */
+/* ══════════════════════════════════════════
+   SCENE 4 — PROJECTS
+   ══════════════════════════════════════════ */
 function Projects(){
   const[sel,setSel]=useState(null);
-  const catColor={
-    'Ocean Systems':'#2E7AB8',
-    'Climate Intelligence':'#3A8B3E',
-    'Energy Innovation':'#E8812F',
-  };
+  const catColor={'Ocean Systems':'#2E7AB8','Climate Intelligence':'#3A8B3E','Energy Innovation':'#E8812F'};
 
   return(
-    <section id="projects" className="relative py-28 md:py-40" style={{background:'#0a1628'}}>
+    <section id="projects" className="relative py-32 md:py-44" style={{background:'#0a1628'}}>
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
-        {/* Header */}
-        <div className="text-center mb-16 md:mb-20">
-          <M><p className="text-[11px] font-bold tracking-[.25em] uppercase mb-4" style={{color:'#2E7AB8'}}>Project Showcase</p></M>
-          <M delay={.1}><h2 className="text-[clamp(2rem,5vw,3.5rem)] font-black tracking-tight">What We Build</h2></M>
-          <M delay={.2}><p className="mt-4 text-[15px] max-w-lg mx-auto" style={{color:'rgba(255,255,255,.3)'}}>Real research. Real hardware. Real impact on Indonesia's maritime future.</p></M>
+        <div className="text-center mb-20">
+          <M><p className="text-sm font-bold tracking-[.2em] uppercase mb-5" style={{color:'#2E7AB8'}}>Project Showcase</p></M>
+          <M delay={.1}><h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight">What We Build</h2></M>
+          <M delay={.2}><p className="mt-5 text-lg md:text-xl max-w-2xl mx-auto" style={{color:'rgba(255,255,255,.35)'}}>Real research. Real hardware. Real impact on Indonesia's maritime future.</p></M>
         </div>
 
-        {/* Grid — first item spans 2 cols on lg */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {/* Project grid — bigger cards, better aspect ratios */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {PROJECTS.map((p,i)=>{
             const accent=catColor[p.category]||'#2E7AB8';
+            const isWide=i===0;
             return(
-              <M key={p.id} delay={i*.08}>
+              <M key={p.id} delay={i*.08} className={isWide?'md:col-span-2':''}>
                 <div
-                  className={`group relative rounded-2xl overflow-hidden cursor-pointer transition-all duration-600 hover:-translate-y-1.5 hover:shadow-2xl ${i===0?'lg:col-span-2':''}`}
-                  style={{aspectRatio:i===0?'2/1':'3/2.5',background:'rgba(255,255,255,.02)'}}
+                  className="group relative rounded-3xl overflow-hidden cursor-pointer transition-all duration-700 hover:-translate-y-2 hover:shadow-2xl hover:shadow-black/30"
+                  style={{height:isWide?'420px':'380px',background:'rgba(255,255,255,.02)'}}
                   onClick={()=>setSel(p)}
                 >
-                  <img src={p.images[0]} alt={p.title} className="img-cover transition-transform duration-[1.2s] ease-out group-hover:scale-[1.06]" style={{filter:'brightness(.55) saturate(1.1)'}}/>
-                  <div className="absolute inset-0" style={{background:'linear-gradient(0deg,rgba(10,22,40,.95) 0%,rgba(10,22,40,.3) 50%,transparent 100%)'}}/>
+                  <img src={p.images[0]} alt={p.title} className="img-cover transition-transform duration-[1.5s] ease-out group-hover:scale-[1.06]" style={{filter:'brightness(.5) saturate(1.1)'}}/>
+                  <div className="absolute inset-0" style={{background:'linear-gradient(0deg,rgba(10,22,40,.97) 0%,rgba(10,22,40,.4) 40%,rgba(10,22,40,.1) 100%)'}}/>
 
-                  {/* Badge */}
-                  <div className="absolute top-4 left-4">
-                    <span className="text-[9px] font-bold tracking-[.12em] uppercase px-3 py-1.5 rounded-full backdrop-blur-md" style={{background:`${accent}20`,color:accent,border:`1px solid ${accent}30`}}>{p.category}</span>
+                  <div className="absolute top-5 left-6">
+                    <span className="text-xs font-bold tracking-[.1em] uppercase px-4 py-2 rounded-full backdrop-blur-md" style={{background:`${accent}20`,color:accent,border:`1px solid ${accent}30`}}>{p.category}</span>
                   </div>
 
-                  {/* Content */}
-                  <div className="absolute bottom-0 left-0 right-0 p-6 md:p-7">
-                    <h3 className="text-xl md:text-2xl font-bold leading-tight">{p.title}</h3>
-                    <p className="text-[13px] mt-2 line-clamp-2" style={{color:'rgba(255,255,255,.45)'}}>{p.subtitle}</p>
-                    <div className="flex items-center gap-2 mt-4 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500" style={{color:accent}}>
-                      <span className="text-[11px] font-semibold">View Details</span>{Icons.arrow}
+                  <div className="absolute bottom-0 left-0 right-0 p-8 md:p-10">
+                    <h3 className="text-2xl md:text-3xl lg:text-4xl font-black leading-tight">{p.title}</h3>
+                    <p className="text-base md:text-lg mt-3 line-clamp-2" style={{color:'rgba(255,255,255,.5)'}}>{p.subtitle}</p>
+                    <div className="flex items-center gap-2 mt-5 opacity-0 translate-y-3 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500" style={{color:accent}}>
+                      <span className="text-sm font-semibold">View Details</span>{IC.arrow}
                     </div>
                   </div>
                 </div>
@@ -370,12 +357,12 @@ function Projects(){
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-px mt-16 rounded-2xl overflow-hidden">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-px mt-20 rounded-3xl overflow-hidden">
           {[{n:'5+',l:'Active Projects'},{n:'2',l:'Research Stations'},{n:'12+',l:'Researchers'},{n:'3',l:'Innovation Tracks'}].map((s,i)=>(
             <M key={i} delay={.3+i*.08}>
-              <div className="text-center py-10 px-4 transition-all duration-500 hover:bg-white/[.03]" style={{background:'rgba(255,255,255,.015)'}}>
-                <div className="text-3xl md:text-4xl font-black tracking-tight" style={{background:'linear-gradient(135deg,#6DB3E8,#2E7AB8)',WebkitBackgroundClip:'text',WebkitTextFillColor:'transparent'}}>{s.n}</div>
-                <div className="text-[10px] mt-2 tracking-[.12em] uppercase font-semibold" style={{color:'rgba(255,255,255,.25)'}}>{s.l}</div>
+              <div className="text-center py-12 px-6 transition-all duration-500 hover:bg-white/[.03]" style={{background:'rgba(255,255,255,.015)'}}>
+                <div className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight" style={{background:'linear-gradient(135deg,#6DB3E8,#2E7AB8)',WebkitBackgroundClip:'text',WebkitTextFillColor:'transparent'}}>{s.n}</div>
+                <div className="text-sm mt-3 tracking-[.1em] uppercase font-semibold" style={{color:'rgba(255,255,255,.25)'}}>{s.l}</div>
               </div>
             </M>
           ))}
@@ -386,47 +373,38 @@ function Projects(){
       {sel&&(
         <div className="fixed inset-0 z-[99999] flex items-center justify-center p-4 md:p-8" onClick={()=>setSel(null)}>
           <div className="absolute inset-0 bg-black/80 backdrop-blur-xl"/>
-          <div className="relative max-w-3xl w-full max-h-[90vh] overflow-y-auto rounded-3xl border border-white/[.06] shadow-2xl" style={{background:'#0f1a2e'}} onClick={e=>e.stopPropagation()}>
-            {/* Modal hero */}
-            <div className="relative h-56 md:h-72 overflow-hidden rounded-t-3xl">
-              <img src={sel.images[0]} alt={sel.title} className="img-cover" style={{filter:'brightness(.6)'}}/>
+          <div className="relative max-w-4xl w-full max-h-[90vh] overflow-y-auto rounded-3xl border border-white/[.06] shadow-2xl" style={{background:'#0f1a2e'}} onClick={e=>e.stopPropagation()}>
+            <div className="relative h-64 md:h-80 lg:h-96 overflow-hidden rounded-t-3xl">
+              <img src={sel.images[0]} alt={sel.title} className="img-cover" style={{filter:'brightness(.55)'}}/>
               <div className="absolute inset-0" style={{background:'linear-gradient(0deg,#0f1a2e 0%,rgba(15,26,46,.5) 40%,transparent 100%)'}}/>
-              <button className="absolute top-4 right-4 w-10 h-10 rounded-full flex items-center justify-center transition-colors hover:bg-white/20" style={{background:'rgba(0,0,0,.4)',backdropFilter:'blur(12px)',color:'rgba(255,255,255,.7)'}} onClick={()=>setSel(null)}>{Icons.close}</button>
-              <div className="absolute bottom-5 left-7 right-7">
-                <span className="text-[9px] font-bold tracking-[.12em] uppercase px-3 py-1 rounded-full" style={{background:`${catColor[sel.category]||'#2E7AB8'}25`,color:catColor[sel.category]||'#2E7AB8'}}>{sel.category}</span>
-                <h3 className="text-2xl md:text-3xl font-black mt-3">{sel.title}</h3>
-                <p className="text-sm mt-1" style={{color:'rgba(255,255,255,.5)'}}>{sel.subtitle}</p>
+              <button className="absolute top-5 right-5 w-12 h-12 rounded-full flex items-center justify-center transition-colors hover:bg-white/20" style={{background:'rgba(0,0,0,.4)',backdropFilter:'blur(12px)',color:'rgba(255,255,255,.7)'}} onClick={()=>setSel(null)}>{IC.close}</button>
+              <div className="absolute bottom-6 left-8 right-8">
+                <span className="text-xs font-bold tracking-[.1em] uppercase px-3 py-1.5 rounded-full" style={{background:`${catColor[sel.category]||'#2E7AB8'}25`,color:catColor[sel.category]||'#2E7AB8'}}>{sel.category}</span>
+                <h3 className="text-3xl md:text-4xl lg:text-5xl font-black mt-4">{sel.title}</h3>
+                <p className="text-lg mt-2" style={{color:'rgba(255,255,255,.5)'}}>{sel.subtitle}</p>
               </div>
             </div>
-            {/* Modal body */}
-            <div className="p-7 md:p-9">
-              <p className="text-[15px] leading-[1.8]" style={{color:'rgba(255,255,255,.55)'}}>{sel.description}</p>
-
-              <div className="mt-7 p-5 rounded-xl" style={{background:'rgba(46,122,184,.06)',borderLeft:'3px solid #2E7AB8'}}>
-                <p className="text-[10px] font-bold tracking-[.15em] uppercase mb-2" style={{color:'#2E7AB8'}}>Impact</p>
-                <p className="text-[13px] leading-relaxed" style={{color:'rgba(255,255,255,.45)'}}>{sel.impact}</p>
+            <div className="p-8 md:p-10 lg:p-12">
+              <p className="text-lg leading-[1.85]" style={{color:'rgba(255,255,255,.55)'}}>{sel.description}</p>
+              <div className="mt-8 p-6 rounded-2xl" style={{background:'rgba(46,122,184,.06)',borderLeft:'3px solid #2E7AB8'}}>
+                <p className="text-xs font-bold tracking-[.15em] uppercase mb-3" style={{color:'#2E7AB8'}}>Impact</p>
+                <p className="text-base leading-relaxed" style={{color:'rgba(255,255,255,.45)'}}>{sel.impact}</p>
               </div>
-
-              <div className="flex flex-wrap gap-2 mt-6">
-                {sel.tags.map((t,i)=>(
-                  <span key={i} className="text-[10px] font-semibold px-3 py-1.5 rounded-full" style={{background:'rgba(255,255,255,.04)',color:'rgba(255,255,255,.35)',border:'1px solid rgba(255,255,255,.06)'}}>{t}</span>
-                ))}
+              <div className="flex flex-wrap gap-2 mt-7">
+                {sel.tags.map((t,i)=>(<span key={i} className="text-sm font-medium px-4 py-2 rounded-full" style={{background:'rgba(255,255,255,.04)',color:'rgba(255,255,255,.4)',border:'1px solid rgba(255,255,255,.06)'}}>{t}</span>))}
               </div>
-
-              {/* Additional images */}
               {sel.images.length>1&&(
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mt-7">
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-8">
                   {sel.images.slice(1,7).map((img,i)=>(
-                    <div key={i} className="rounded-xl overflow-hidden" style={{aspectRatio:'4/3'}}>
+                    <div key={i} className="rounded-2xl overflow-hidden" style={{height:'180px'}}>
                       <img src={img} alt="" className="img-cover hover:scale-105 transition-transform duration-700"/>
                     </div>
                   ))}
                 </div>
               )}
-
-              <div className="flex items-center justify-between mt-7 pt-5 border-t border-white/5">
-                <span className="text-[10px] font-bold tracking-[.1em] uppercase px-3 py-1.5 rounded-full" style={{background:'rgba(109,179,232,.1)',color:'#6DB3E8'}}>{sel.status}</span>
-                <button className="text-xs font-semibold px-5 py-2.5 rounded-full transition-all duration-300 hover:scale-105" style={{background:'#2E7AB8',color:'#fff'}} onClick={()=>setSel(null)}>Close</button>
+              <div className="flex items-center justify-between mt-8 pt-6 border-t border-white/5">
+                <span className="text-sm font-bold tracking-[.08em] uppercase px-4 py-2 rounded-full" style={{background:'rgba(109,179,232,.1)',color:'#6DB3E8'}}>{sel.status}</span>
+                <button className="text-sm font-semibold px-6 py-3 rounded-full transition-all duration-300 hover:scale-105" style={{background:'#2E7AB8',color:'#fff'}} onClick={()=>setSel(null)}>Close</button>
               </div>
             </div>
           </div>
@@ -436,30 +414,30 @@ function Projects(){
   );
 }
 
-/* ══════════════════════════════════════════════════════
-   SCENE 5 — FIELD WORK GALLERY
-   ══════════════════════════════════════════════════════ */
+/* ══════════════════════════════════════════
+   SCENE 5 — FIELD WORK
+   ══════════════════════════════════════════ */
 function FieldWork(){
   return(
-    <section id="fieldwork" className="relative py-28 md:py-40" style={{background:'#060e1a'}}>
+    <section id="fieldwork" className="relative py-32 md:py-44" style={{background:'#060e1a'}}>
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
-        <div className="text-center mb-16 md:mb-20">
-          <M><p className="text-[11px] font-bold tracking-[.25em] uppercase mb-4" style={{color:'#E8812F'}}>Real World Presence</p></M>
-          <M delay={.1}><h2 className="text-[clamp(2rem,5vw,3.5rem)] font-black tracking-tight">In the Field</h2></M>
-          <M delay={.2}><p className="mt-4 text-[15px] max-w-lg mx-auto" style={{color:'rgba(255,255,255,.3)'}}>From ocean expeditions to national conferences — research that starts in the water and ends with real-world impact.</p></M>
+        <div className="text-center mb-20">
+          <M><p className="text-sm font-bold tracking-[.2em] uppercase mb-5" style={{color:'#E8812F'}}>Real World Presence</p></M>
+          <M delay={.1}><h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight">In the Field</h2></M>
+          <M delay={.2}><p className="mt-5 text-lg md:text-xl max-w-2xl mx-auto" style={{color:'rgba(255,255,255,.35)'}}>From ocean expeditions to national conferences — research that starts in the water and ends with real-world impact.</p></M>
         </div>
 
-        {/* Masonry-ish grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+        {/* Gallery grid with fixed proper heights */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {ACTIVITIES.map((a,i)=>{
             const tall=i===0||i===4;
             return(
-              <M key={i} delay={i*.06}>
-                <div className={`group relative rounded-2xl overflow-hidden ${tall?'sm:row-span-2':''}`} style={{aspectRatio:tall?'3/4':'16/10'}}>
-                  <img src={a.src} alt="" className="img-cover transition-transform duration-[1s] ease-out group-hover:scale-[1.05]" style={{filter:'brightness(.7) saturate(1.05)'}}/>
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-600" style={{background:'linear-gradient(0deg,rgba(10,22,40,.9) 0%,transparent 50%)'}}/>
-                  <div className="absolute bottom-0 left-0 right-0 p-5 translate-y-3 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-600">
-                    <p className="text-[12px] font-medium leading-relaxed" style={{color:'rgba(255,255,255,.7)'}}>{a.caption}</p>
+              <M key={i} delay={i*.06} className={tall?'sm:row-span-2':''}>
+                <div className="group relative rounded-3xl overflow-hidden h-full" style={{minHeight:tall?'500px':'260px'}}>
+                  <img src={a.src} alt="" className="img-cover transition-transform duration-[1.2s] ease-out group-hover:scale-[1.05]" style={{filter:'brightness(.65) saturate(1.05)'}}/>
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-600" style={{background:'linear-gradient(0deg,rgba(10,22,40,.92) 0%,transparent 40%)'}}/>
+                  <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-3 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-600">
+                    <p className="text-sm md:text-base font-medium leading-relaxed" style={{color:'rgba(255,255,255,.8)'}}>{a.caption}</p>
                   </div>
                 </div>
               </M>
@@ -471,92 +449,153 @@ function FieldWork(){
   );
 }
 
-/* ══════════════════════════════════════════════════════
+/* ══════════════════════════════════════════
    SCENE 6 — PEOPLE
-   ══════════════════════════════════════════════════════ */
+   ══════════════════════════════════════════ */
 function People(){
   const founder=PEOPLE.filter(p=>p.level==='founder');
   const cLevel=PEOPLE.filter(p=>p.level==='c-level');
   const team=PEOPLE.filter(p=>p.level==='team');
+  const interns=PEOPLE.filter(p=>p.level==='intern');
+  const[active,setActive]=useState(null);
 
-  const Card=({person,size='md',delay=0})=>{
-    const sz=size==='lg'?'w-36 h-36 md:w-40 md:h-40':'w-24 h-24 md:w-28 md:h-28';
+  useEffect(()=>{
+    if(!active)return;
+    const onKey=e=>{if(e.key==='Escape')setActive(null)};
+    document.addEventListener('keydown',onKey);
+    document.body.style.overflow='hidden';
+    return()=>{document.removeEventListener('keydown',onKey);document.body.style.overflow=''};
+  },[active]);
+
+  const Card=({person,size='md',delay=0,accent='blue'})=>{
+    const isLg=size==='lg';
+    const accentMap={blue:'#2E7AB8',orange:'#E8812F',green:'#3A8B3E',gray:'rgba(255,255,255,.4)'};
+    const ac=accentMap[accent];
     return(
-      <M delay={delay} className="group text-center">
-        <div className={`mx-auto rounded-2xl overflow-hidden mb-4 ${sz} ring-2 ring-white/[.04] group-hover:ring-brand-blue/30 transition-all duration-700`} style={{background:'rgba(255,255,255,.03)'}}>
-          <img src={person.photo} alt={person.name} className="img-cover transition-all duration-700 grayscale group-hover:grayscale-0 group-hover:scale-105" onError={e=>{e.target.parentElement.innerHTML='<div class="w-full h-full flex items-center justify-center text-2xl" style="color:rgba(255,255,255,.1)">'+person.name[0]+'</div>'}}/>
-        </div>
-        <h4 className={`font-bold leading-tight ${size==='lg'?'text-base':'text-[13px]'}`}>{person.name}</h4>
-        <p className="text-[11px] mt-1.5 font-semibold" style={{color:'#2E7AB8'}}>{person.role}</p>
-        <p className="text-[10px] mt-1" style={{color:'rgba(255,255,255,.25)'}}>{person.expertise}</p>
+      <M delay={delay}>
+        <button onClick={()=>setActive(person)}
+          className="team-card group block w-full text-left focus:outline-none">
+          <div className={`relative overflow-hidden ${isLg?'aspect-[3/4]':'aspect-[3/4]'}`}
+               style={{background:'#0d1a2e'}}>
+            <img src={person.head} alt={person.name} loading="lazy"
+              className="absolute inset-0 w-full h-full object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-[900ms] ease-out group-hover:scale-[1.04]"
+              style={{filter:'grayscale(100%) contrast(1.05)'}}
+              onError={e=>{e.target.style.display='none'}}/>
+            <div className="absolute inset-0 transition-opacity duration-700 group-hover:opacity-0 mix-blend-multiply"
+                 style={{background:`linear-gradient(180deg,transparent 40%,${ac}cc 100%)`}}/>
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700"
+                 style={{background:`linear-gradient(180deg,transparent 55%,rgba(6,14,26,.92) 100%)`}}/>
+            <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6">
+              <div className="h-px w-8 mb-3 transition-all duration-500 group-hover:w-16" style={{background:ac}}/>
+              <h4 className={`font-black leading-[1.05] tracking-tight text-white ${isLg?'text-2xl md:text-3xl':'text-lg md:text-xl'}`} style={{fontFamily:"'Playfair Display',Georgia,serif"}}>{person.name}</h4>
+              <p className={`mt-2 font-medium tracking-wide uppercase text-white/90 ${isLg?'text-xs':'text-[10px]'}`}>{person.role}</p>
+            </div>
+          </div>
+        </button>
       </M>
     );
   };
 
   return(
-    <section id="people" className="relative py-28 md:py-40" style={{background:'#0a1628'}}>
-      <div className="max-w-6xl mx-auto px-6 lg:px-10">
-        <div className="text-center mb-16 md:mb-20">
-          <M><p className="text-[11px] font-bold tracking-[.25em] uppercase mb-4" style={{color:'#2E7AB8'}}>The People</p></M>
-          <M delay={.1}><h2 className="text-[clamp(2rem,5vw,3.5rem)] font-black tracking-tight">Built by Experts</h2></M>
-          <M delay={.2}><p className="mt-4 text-[15px] max-w-md mx-auto" style={{color:'rgba(255,255,255,.3)'}}>A multidisciplinary team of marine scientists, engineers, and strategists.</p></M>
+    <section id="people" className="relative py-32 md:py-44" style={{background:'#0a1628'}}>
+      <div className="max-w-7xl mx-auto px-6 lg:px-10">
+        <div className="text-center mb-20">
+          <M><p className="text-sm font-bold tracking-[.2em] uppercase mb-5" style={{color:'#2E7AB8'}}>Meet the Team</p></M>
+          <M delay={.1}><h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight" style={{fontFamily:"'Playfair Display',Georgia,serif"}}>Built by Experts</h2></M>
+          <M delay={.2}><p className="mt-5 text-lg md:text-xl max-w-xl mx-auto" style={{color:'rgba(255,255,255,.35)'}}>A multidisciplinary team of marine scientists, engineers, and strategists. Click any portrait to learn more.</p></M>
         </div>
 
         {/* Founder */}
-        <div className="mb-16">
-          <M><p className="text-center text-[10px] font-bold tracking-[.2em] uppercase mb-8" style={{color:'rgba(255,255,255,.15)'}}>Founder</p></M>
-          <div className="flex justify-center">{founder.map((p,i)=><Card key={p.id} person={p} size="lg" delay={i*.1}/>)}</div>
+        <div className="mb-24">
+          <M><p className="text-center text-xs font-bold tracking-[.25em] uppercase mb-10" style={{color:'rgba(255,255,255,.25)'}}>— Founder —</p></M>
+          <div className="grid grid-cols-1 max-w-sm mx-auto">{founder.map((p,i)=><Card key={p.id} person={p} size="lg" delay={i*.1} accent="orange"/>)}</div>
         </div>
-
-        {/* Divider */}
-        <div className="w-16 h-px mx-auto mb-16" style={{background:'linear-gradient(90deg,transparent,rgba(46,122,184,.3),transparent)'}}/>
 
         {/* C-Level */}
-        <div className="mb-16">
-          <M><p className="text-center text-[10px] font-bold tracking-[.2em] uppercase mb-8" style={{color:'rgba(255,255,255,.15)'}}>Leadership</p></M>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-10 justify-items-center">{cLevel.map((p,i)=><Card key={p.id} person={p} size="lg" delay={i*.1}/>)}</div>
+        <div className="mb-24">
+          <M><p className="text-center text-xs font-bold tracking-[.25em] uppercase mb-10" style={{color:'rgba(255,255,255,.25)'}}>— Leadership —</p></M>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-7">{cLevel.map((p,i)=><Card key={p.id} person={p} size="lg" delay={i*.08} accent="blue"/>)}</div>
         </div>
 
-        <div className="w-16 h-px mx-auto mb-16" style={{background:'linear-gradient(90deg,transparent,rgba(46,122,184,.3),transparent)'}}/>
+        {/* Research Team */}
+        <div className="mb-24">
+          <M><p className="text-center text-xs font-bold tracking-[.25em] uppercase mb-10" style={{color:'rgba(255,255,255,.25)'}}>— Research Team —</p></M>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5 md:gap-7">{team.map((p,i)=><Card key={p.id} person={p} size="md" delay={i*.05} accent="green"/>)}</div>
+        </div>
 
-        {/* Team */}
+        {/* Interns */}
         <div>
-          <M><p className="text-center text-[10px] font-bold tracking-[.2em] uppercase mb-8" style={{color:'rgba(255,255,255,.15)'}}>Research Team</p></M>
-          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6 md:gap-8 justify-items-center">{team.map((p,i)=><Card key={p.id} person={p} size="md" delay={i*.07}/>)}</div>
+          <M><p className="text-center text-xs font-bold tracking-[.25em] uppercase mb-10" style={{color:'rgba(255,255,255,.25)'}}>— Research Interns —</p></M>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-5 md:gap-6">{interns.map((p,i)=><Card key={p.id} person={p} size="md" delay={i*.05} accent="gray"/>)}</div>
         </div>
       </div>
+
+      {/* MODAL */}
+      {active&&(
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8" style={{background:'rgba(6,14,26,.85)',backdropFilter:'blur(20px)'}} onClick={()=>setActive(null)}>
+          <div className="relative w-full max-w-5xl max-h-[92vh] overflow-hidden rounded-3xl flex flex-col md:flex-row" style={{background:'#0d1a2e',border:'1px solid rgba(255,255,255,.08)'}} onClick={e=>e.stopPropagation()}>
+            <button onClick={()=>setActive(null)} className="absolute top-4 right-4 z-20 w-11 h-11 rounded-full flex items-center justify-center transition-all hover:scale-110" style={{background:'rgba(0,0,0,.6)',color:'#fff'}} aria-label="Close">✕</button>
+            {/* LEFT — body shot (full, no crop) */}
+            <div className="md:w-[45%] flex items-center justify-center" style={{background:'#060e1a',maxHeight:'92vh'}}>
+              <img src={active.body} alt={active.name} loading="lazy" className="block w-full h-auto max-h-[50vh] md:max-h-[92vh] object-contain" onError={e=>{e.target.style.display='none'}}/>
+            </div>
+            {/* RIGHT — info + CV */}
+            <div className="md:w-[55%] p-8 md:p-12 overflow-y-auto flex flex-col justify-center">
+              <p className="text-xs font-bold tracking-[.25em] uppercase mb-4" style={{color:'#2E7AB8'}}>{active.role}</p>
+              <h3 className="text-3xl md:text-4xl lg:text-5xl font-black leading-[1.05] tracking-tight mb-4" style={{fontFamily:"'Playfair Display',Georgia,serif"}}>{active.name}</h3>
+              <div className="h-px w-16 mb-6" style={{background:'#2E7AB8'}}/>
+              <p className="text-base md:text-lg leading-relaxed mb-8" style={{color:'rgba(255,255,255,.6)'}}>{active.expertise}</p>
+              {active.cv?(
+                <a href={active.cv} target="_blank" rel="noopener" className="inline-flex items-center gap-3 px-6 py-4 rounded-full font-semibold text-base transition-all hover:scale-[1.02] self-start" style={{background:'#2E7AB8',color:'#fff'}}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                  View Curriculum Vitae
+                </a>
+              ):(
+                <p className="text-sm italic" style={{color:'rgba(255,255,255,.3)'}}>CV available upon request.</p>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
 
-/* ══════════════════════════════════════════════════════
-   SCENE 7 — TRUST & LEGAL
-   ══════════════════════════════════════════════════════ */
+/* ══════════════════════════════════════════
+   SCENE 7 — LEGAL
+   ══════════════════════════════════════════ */
 function Legal(){
-  return(
-    <section id="legal" className="relative py-28 md:py-40" style={{background:'#060e1a'}}>
-      <div className="max-w-4xl mx-auto px-6 lg:px-10 text-center">
-        <M><p className="text-[11px] font-bold tracking-[.25em] uppercase mb-4" style={{color:'#2E7AB8'}}>Trust & Compliance</p></M>
-        <M delay={.1}><h2 className="text-[clamp(2rem,5vw,3rem)] font-black tracking-tight">Legally Established.<br/>Fully Compliant.</h2></M>
-        <M delay={.2}><p className="mt-4 text-[15px] max-w-lg mx-auto" style={{color:'rgba(255,255,255,.3)'}}>PT Torgas Blue Energy is a registered Indonesian corporation with all required government permits, operating under international laboratory standards.</p></M>
+  const docs=[
+    {title:'Akta Pendirian Perseroan Terbatas',desc:'Corporate charter establishing PT Torgas Blue Energy as a legal entity under Indonesian law.',icon:'shield'},
+    {title:'Keputusan Menteri Hukum RI',desc:'Ministry of Law and Human Rights decree officially recognizing the company\'s legal status.',icon:'stamp'},
+    {title:'NIB — Nomor Induk Berusaha',desc:'National business identification number under the risk-based licensing system (OSS-RBA).',icon:'id'},
+    {title:'Perizinan Berusaha Berbasis Risiko',desc:'Comprehensive risk-based business operating permit from the Indonesian government.',icon:'file'}
+  ];
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-14">
-          {LEGAL_DOCS.map((d,i)=>(
+  return(
+    <section id="legal" className="relative py-32 md:py-44" style={{background:'#060e1a'}}>
+      <div className="max-w-5xl mx-auto px-6 lg:px-10 text-center">
+        <M><p className="text-sm font-bold tracking-[.2em] uppercase mb-5" style={{color:'#2E7AB8'}}>Trust & Compliance</p></M>
+        <M delay={.1}><h2 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight">Legally Established.<br/>Fully Compliant.</h2></M>
+        <M delay={.2}><p className="mt-5 text-lg md:text-xl max-w-2xl mx-auto" style={{color:'rgba(255,255,255,.35)'}}>PT Torgas Blue Energy is a registered Indonesian corporation with all required government permits, operating under international laboratory standards.</p></M>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-16">
+          {docs.map((d,i)=>(
             <M key={i} delay={.25+i*.1}>
-              <div className="group relative p-6 rounded-2xl border border-white/[.04] text-left transition-all duration-700 hover:border-white/[.08] hover:-translate-y-0.5 overflow-hidden" style={{background:'rgba(255,255,255,.015)'}}>
+              <div className="group relative p-8 rounded-3xl border border-white/[.04] text-left transition-all duration-700 hover:border-white/[.1] hover:-translate-y-1 overflow-hidden" style={{background:'rgba(255,255,255,.015)'}}>
                 <div className="absolute top-0 left-0 w-full h-px transition-all duration-700 opacity-0 group-hover:opacity-100" style={{background:'linear-gradient(90deg,transparent,#2E7AB8,transparent)'}}/>
-                <div className="mb-4" style={{color:'#2E7AB8'}}>{Icons[d.icon]}</div>
-                <h4 className="text-[14px] font-bold leading-tight mb-2">{d.title}</h4>
-                <p className="text-[12px] leading-relaxed" style={{color:'rgba(255,255,255,.3)'}}>{d.desc}</p>
+                <div className="mb-5" style={{color:'#2E7AB8'}}>{IC[d.icon]}</div>
+                <h4 className="text-lg font-bold leading-tight mb-3">{d.title}</h4>
+                <p className="text-base leading-relaxed" style={{color:'rgba(255,255,255,.35)'}}>{d.desc}</p>
               </div>
             </M>
           ))}
         </div>
 
         <M delay={.7}>
-          <div className="mt-12 flex flex-wrap justify-center gap-3">
+          <div className="mt-14 flex flex-wrap justify-center gap-4">
             {['GLP (OECD)','ISO/IEC 17025:2017'].map((s,i)=>(
-              <span key={i} className="text-[11px] font-semibold px-5 py-2.5 rounded-full transition-all duration-500 hover:bg-white/[.04]" style={{border:'1px solid rgba(255,255,255,.08)',color:'rgba(255,255,255,.35)'}}>{s}</span>
+              <span key={i} className="text-base font-semibold px-7 py-3 rounded-full transition-all duration-500 hover:bg-white/[.04]" style={{border:'1px solid rgba(255,255,255,.1)',color:'rgba(255,255,255,.4)'}}>{s}</span>
             ))}
           </div>
         </M>
@@ -565,48 +604,47 @@ function Legal(){
   );
 }
 
-/* ══════════════════════════════════════════════════════
-   SCENE 8 — CLOSING / CTA
-   ══════════════════════════════════════════════════════ */
+/* ══════════════════════════════════════════
+   SCENE 8 — CLOSING
+   ══════════════════════════════════════════ */
 function Closing(){
   const ref=useRef(null);
-  const inView=useInView?useInView(ref,{once:true,amount:.15}):true;
+  const inView=useInView?useInView(ref,{once:true,amount:.12}):true;
 
   return(
-    <section id="contact" ref={ref} className="relative py-36 md:py-52 overflow-hidden" style={{background:'#0a1628'}}>
-      {/* Glow orbs */}
+    <section id="contact" ref={ref} className="relative py-40 md:py-56 overflow-hidden" style={{background:'#0a1628'}}>
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute w-[500px] h-[500px] rounded-full" style={{top:'20%',left:'50%',transform:'translate(-50%,-50%)',background:'radial-gradient(circle,rgba(46,122,184,.1) 0%,transparent 70%)',filter:'blur(80px)'}}/>
-        <div className="absolute w-[300px] h-[300px] rounded-full" style={{bottom:'10%',right:'20%',background:'radial-gradient(circle,rgba(232,129,47,.07) 0%,transparent 70%)',filter:'blur(60px)'}}/>
+        <div className="absolute w-[600px] h-[600px] rounded-full" style={{top:'20%',left:'50%',transform:'translate(-50%,-50%)',background:'radial-gradient(circle,rgba(46,122,184,.12) 0%,transparent 70%)',filter:'blur(100px)'}}/>
+        <div className="absolute w-[400px] h-[400px] rounded-full" style={{bottom:'15%',right:'15%',background:'radial-gradient(circle,rgba(232,129,47,.08) 0%,transparent 70%)',filter:'blur(80px)'}}/>
       </div>
 
-      <div className="relative z-10 max-w-4xl mx-auto px-6 lg:px-10 text-center">
-        <MHero delay={.1} y={40}>
-          <h2 className="text-[clamp(2.5rem,7vw,5rem)] font-black tracking-[-0.04em] leading-[.95]">
+      <div className="relative z-10 max-w-5xl mx-auto px-6 lg:px-10 text-center">
+        <MH delay={.1} y={45}>
+          <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black tracking-[-0.04em] leading-[.92]">
             Engineering the Future<br/>
             <span style={{background:'linear-gradient(135deg,#E8812F 0%,#2E7AB8 50%,#6DB3E8 100%)',WebkitBackgroundClip:'text',WebkitTextFillColor:'transparent'}}>of Blue Energy</span>
           </h2>
-        </MHero>
-        <MHero delay={.35} y={25}>
-          <p className="mt-7 text-[clamp(.95rem,1.5vw,1.15rem)]" style={{color:'rgba(255,255,255,.3)'}}>From data to impact. From the ocean to the world.</p>
-        </MHero>
-        <MHero delay={.55} y={20}>
-          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href="mailto:info@torgasblueenergy.com" className="inline-flex items-center gap-2 text-[13px] font-semibold px-7 py-3.5 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-brand-blue/20" style={{background:'linear-gradient(135deg,#2E7AB8,#1B3A5C)',color:'#fff'}}>
-              Get in Touch {Icons.arrow}
+        </MH>
+        <MH delay={.35} y={25}>
+          <p className="mt-8 text-xl md:text-2xl lg:text-3xl" style={{color:'rgba(255,255,255,.3)'}}>From data to impact. From the ocean to the world.</p>
+        </MH>
+        <MH delay={.55} y={20}>
+          <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a href="mailto:info@torgasblueenergy.com" className="inline-flex items-center gap-3 text-base font-semibold px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-brand-blue/20" style={{background:'linear-gradient(135deg,#2E7AB8,#1B3A5C)',color:'#fff'}}>
+              Get in Touch {IC.arrow}
             </a>
           </div>
-        </MHero>
+        </MH>
       </div>
 
       {/* Footer */}
-      <div className="absolute bottom-0 left-0 right-0 border-t border-white/[.03]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10 py-6 flex flex-col sm:flex-row items-center justify-between gap-3" style={{color:'rgba(255,255,255,.15)'}}>
+      <div className="absolute bottom-0 left-0 right-0 border-t border-white/[.04]">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10 py-7 flex flex-col sm:flex-row items-center justify-between gap-4" style={{color:'rgba(255,255,255,.2)'}}>
           <div className="flex items-center gap-3">
-            <img src="images/logo/logo.png" alt="" className="w-5 h-5 rounded opacity-50"/>
-            <span className="text-[11px] font-medium">PT Torgas Blue Energy</span>
+            <img src="images/logo/logo.png" alt="" className="w-6 h-6 rounded-lg opacity-60"/>
+            <span className="text-sm font-medium">PT Torgas Blue Energy</span>
           </div>
-          <div className="flex items-center gap-4 text-[10px] tracking-wide">
+          <div className="flex items-center gap-5 text-sm">
             <span>Jatinangor</span>
             <span className="w-1 h-1 rounded-full" style={{background:'rgba(255,255,255,.15)'}}/>
             <span>Pangandaran</span>
@@ -619,9 +657,7 @@ function Closing(){
   );
 }
 
-/* ══════════════════════════════════════════════════════
-   APP
-   ══════════════════════════════════════════════════════ */
+/* ══════════════ APP ══════════════ */
 function App(){
   useScrollProgress();
   useEffect(()=>{
@@ -629,7 +665,6 @@ function App(){
     const t=setTimeout(()=>{if(loader)loader.classList.add('hidden')},1800);
     return()=>clearTimeout(t);
   },[]);
-
   return(
     <>
       <Navigation/>
