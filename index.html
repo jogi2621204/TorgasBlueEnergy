@@ -898,16 +898,6 @@ function LabSystem(){
           <M><p className="text-sm font-bold tracking-[.2em] uppercase mb-5" style={{color:'#2E7AB8'}}>Lab Operations</p></M>
           <M delay={.1}><h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight">Lab Integrated<br/><span style={{background:'linear-gradient(135deg,#2E7AB8,#6DB3E8)',WebkitBackgroundClip:'text',WebkitTextFillColor:'transparent'}}>System</span></h2></M>
           <M delay={.2}><p className="mt-6 text-lg md:text-xl max-w-2xl mx-auto" style={{color:'rgba(255,255,255,.35)'}}>One integrated system for all lab operations — bookings, mentoring, reports, safety, and maintenance.</p></M>
-          <M delay={.3}>
-            <div className="inline-flex items-center mt-8 rounded-2xl overflow-hidden text-xs font-bold" style={{border:'1px solid rgba(255,255,255,.06)',background:'rgba(255,255,255,.02)'}}>
-              {['User','Web Form','Apps Script','Lab Calendar','Dashboard'].map((s,i,a)=>(
-                <React.Fragment key={s}>
-                  <span className="px-3 py-2" style={{color:i===4?'#6DB3E8':i===3?'#3A8B3E':'rgba(255,255,255,.35)',background:i===4?'rgba(109,179,232,.1)':i===3?'rgba(58,139,62,.08)':'transparent'}}>{s}</span>
-                  {i<a.length-1&&<span style={{color:'rgba(255,255,255,.12)',padding:'0 1px'}}>›</span>}
-                </React.Fragment>
-              ))}
-            </div>
-          </M>
         </div>
 
         {/* DASHBOARD STATS */}
