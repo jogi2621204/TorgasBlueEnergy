@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Torgas Blue Energy</title>
 <meta name="description" content="Torgas Blue Energy — Ocean intelligence, climate technology, and sustainable energy innovation.">
-<meta name="theme-color" content="#0a1628">
+<meta name="theme-color" content="#2E7AB8">
 <link rel="icon" href="images/logo/logo.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
 tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','system-ui','-apple-system','sans-serif']},colors:{brand:{navy:'#1B3A5C',blue:'#2E7AB8',sky:'#6DB3E8',orange:'#E8812F',green:'#3A8B3E',dark:'#0a1628',deeper:'#060e1a'}}}}}
@@ -21,19 +21,19 @@ tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','system-ui','-apple-sy
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
-body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#0a1628;color:#fff;overflow-x:hidden;font-size:16px}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#ffffff;color:#0c1f35;overflow-x:hidden;font-size:16px}
 ::-webkit-scrollbar{width:6px}
-::-webkit-scrollbar-track{background:#0a1628}
-::-webkit-scrollbar-thumb{background:rgba(46,122,184,0.4);border-radius:3px}
-::-webkit-scrollbar-thumb:hover{background:rgba(46,122,184,0.7)}
+::-webkit-scrollbar-track{background:#f0f6fc}
+::-webkit-scrollbar-thumb{background:rgba(46,122,184,0.3);border-radius:3px}
+::-webkit-scrollbar-thumb:hover{background:rgba(46,122,184,0.6)}
 .img-cover{width:100%;height:100%;object-fit:cover;display:block}
 .img-contain{width:100%;height:100%;object-fit:contain;display:block}
 #scroll-progress{position:fixed;top:0;left:0;height:3px;z-index:10001;transition:width .05s linear;background:linear-gradient(90deg,#E8812F,#2E7AB8,#6DB3E8)}
-#app-loader{position:fixed;inset:0;z-index:99999;background:#0a1628;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:24px;transition:opacity 1s cubic-bezier(.23,1,.32,1),visibility 1s}
+#app-loader{position:fixed;inset:0;z-index:99999;background:#ffffff;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:24px;transition:opacity 1s cubic-bezier(.23,1,.32,1),visibility 1s}
 #app-loader.hidden{opacity:0;visibility:hidden;pointer-events:none}
 #app-loader img{width:72px;height:72px;border-radius:18px;animation:ldp 2s ease-in-out infinite}
 @keyframes ldp{0%,100%{opacity:.3;transform:scale(.9)}50%{opacity:1;transform:scale(1.05)}}
-#app-loader .bar{width:140px;height:2px;background:rgba(255,255,255,.06);border-radius:1px;overflow:hidden}
+#app-loader .bar{width:140px;height:2px;background:rgba(46,122,184,.12);border-radius:1px;overflow:hidden}
 #app-loader .bar-fill{height:100%;width:0%;background:linear-gradient(90deg,#E8812F,#2E7AB8);animation:ldb 1.5s ease-in-out forwards}
 @keyframes ldb{to{width:100%}}
 .line-clamp-2{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
@@ -47,7 +47,7 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#0a1628;c
 <div id="app-loader">
   <img src="images/logo/logo.png" alt="">
   <div class="bar"><div class="bar-fill"></div></div>
-  <span style="color:rgba(255,255,255,.3);font-size:12px;letter-spacing:.2em;text-transform:uppercase">Torgas Blue Energy</span>
+  <span style="color:rgba(12,31,53,.3);font-size:12px;letter-spacing:.2em;text-transform:uppercase">Torgas Blue Energy</span>
 </div>
 <div id="root"></div>
 
@@ -178,6 +178,10 @@ const IC={
   clock:<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-4 h-4"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>,
   user:<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-4 h-4"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>,
   check:<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-4 h-4"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>,
+  apply:<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-7 h-7"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/><path d="M16 11l2 2 4-4"/></svg>,
+  graduate:<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-7 h-7"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/></svg>,
+  star:<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-5 h-5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>,
+  trash:<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-3.5 h-3.5"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6M10 11v6M14 11v6M9 6V4a1 1 0 011-1h4a1 1 0 011 1v2"/></svg>,
 };
 
 /* ══════════════════════════════════════════
@@ -209,6 +213,11 @@ const LAB_SYSTEMS=[
    deadline:'Per maintenance schedule',approval:'Head Tech Dept',users:'Lab Technicians',
    badge:'ONGOING',badgeColor:'#9B6EE8',badgeBg:'rgba(155,110,232,.15)',
    icon:'maintenance',accent:'#9B6EE8',schedFilter:'Maintenance'},
+  {id:'join_application',title:'Intern & Mahasiswa Bimbingan',
+   desc:'Daftar bergabung sebagai mahasiswa intern (KP/magang) atau mahasiswa bimbingan skripsi/tesis di lab kami.',
+   deadline:'Pendaftaran dibuka sepanjang tahun',approval:'Supervisor / Lab Head',users:'Mahasiswa S1 · S2 · S3',
+   badge:'OPEN',badgeColor:'#3A8B3E',badgeBg:'rgba(58,139,62,.15)',
+   icon:'graduate',accent:'#3A8B3E',schedFilter:'Join Application'},
 ];
 
 const FORM_CONFIGS={
@@ -260,6 +269,21 @@ const FORM_CONFIGS={
     {name:'details',label:'Issue / Work Description',type:'textarea',required:true,placeholder:'Describe the issue or maintenance needed...'},
     {name:'notes',label:'Additional Notes',type:'textarea',required:false,placeholder:'Any other relevant information...'},
   ]},
+  join_application:{title:'Pendaftaran Intern / Bimbingan',activity:'Join Application',fields:[
+    {name:'role',label:'Jenis Pendaftaran',type:'select',required:true,options:['Intern / KP (Kerja Praktik)','Magang','Mahasiswa Bimbingan Skripsi (S1)','Mahasiswa Bimbingan Tesis (S2)','Mahasiswa Bimbingan Disertasi (S3)']},
+    {name:'name',label:'Nama Lengkap',type:'text',required:true,placeholder:'Nama lengkap sesuai KTM'},
+    {name:'email',label:'Email',type:'email',required:true,placeholder:'email@example.com'},
+    {name:'phone',label:'No. HP / WhatsApp',type:'tel',required:true,placeholder:'+62 8xx-xxxx-xxxx'},
+    {name:'nim',label:'NIM',type:'text',required:true,placeholder:'e.g. 140310200001'},
+    {name:'institution',label:'Perguruan Tinggi',type:'text',required:true,placeholder:'e.g. Universitas Padjadjaran'},
+    {name:'program',label:'Program Studi',type:'text',required:true,placeholder:'e.g. Geofisika, Ilmu Kelautan, Kimia'},
+    {name:'supervisor',label:'Dosen Pembimbing / Supervisor (Opsional)',type:'text',required:false,placeholder:'Nama dosen pembimbing dari kampus'},
+    {name:'topic',label:'Topik Penelitian / Bidang Minat',type:'text',required:true,placeholder:'Topik skripsi / magang yang diusulkan'},
+    {name:'startDate',label:'Rencana Tanggal Mulai',type:'date',required:true},
+    {name:'duration',label:'Durasi',type:'select',required:true,options:['1 bulan','2 bulan','3 bulan','6 bulan','1 tahun','2 tahun atau lebih']},
+    {name:'motivation',label:'Motivasi & Latar Belakang',type:'textarea',required:true,placeholder:'Ceritakan motivasi kamu bergabung dan kaitannya dengan riset Torgas Blue Energy...'},
+    {name:'gpa',label:'IPK Terakhir (Opsional)',type:'text',required:false,placeholder:'e.g. 3.75 / 4.00'},
+  ]},
 };
 
 /* ══════════════════════════════════════════
@@ -269,28 +293,37 @@ function Navigation(){
   const[scrolled,setScrolled]=useState(false);
   const[open,setOpen]=useState(false);
   useEffect(()=>{const fn=()=>setScrolled(window.scrollY>60);window.addEventListener('scroll',fn,{passive:true});return()=>window.removeEventListener('scroll',fn)},[]);
-  const links=[{l:'About',h:'#identity'},{l:'Innovation',h:'#innovation'},{l:'Projects',h:'#projects'},{l:'Field Work',h:'#fieldwork'},{l:'Team',h:'#people'},{l:'Lab System',h:'#labsystem'},{l:'Legal',h:'#legal'},{l:'Contact',h:'#contact'}];
+  const links=[{l:'About',h:'#identity'},{l:'News',h:'#news'},{l:'Projects',h:'#projects'},{l:'Field Work',h:'#fieldwork'},{l:'Team',h:'#people'},{l:'Lab System',h:'#labsystem'},{l:'Legal',h:'#legal'},{l:'Contact',h:'#contact'}];
 
+  const lc=scrolled?'#4a6b8a':'rgba(255,255,255,.7)';
   return(
-    <nav className={`fixed top-0 left-0 right-0 z-[9999] transition-all duration-700 ${scrolled?'bg-brand-dark/90 backdrop-blur-2xl shadow-lg shadow-black/30':'bg-transparent'}`} style={{height:64}}>
+    <nav className="fixed top-0 left-0 right-0 z-[9999] transition-all duration-500"
+         style={{height:64,background:scrolled?'rgba(255,255,255,.97)':'transparent',backdropFilter:scrolled?'blur(20px)':'none',borderBottom:scrolled?'1px solid rgba(46,122,184,.1)':'none',boxShadow:scrolled?'0 1px 20px rgba(12,31,53,.07)':'none'}}>
       <div className="max-w-7xl mx-auto px-6 lg:px-10 h-full flex items-center justify-between">
         <a href="#hero" className="flex items-center gap-3 group">
           <img src="images/logo/logo.png" alt="Torgas Blue Energy" className="w-9 h-9 rounded-xl transition-transform duration-300 group-hover:scale-110"/>
-          <span className={`text-sm font-bold tracking-wide transition-all duration-500 ${scrolled?'opacity-100 translate-y-0':'opacity-0 -translate-y-1'}`}>Torgas Blue Energy</span>
+          <span className="text-sm font-bold tracking-wide transition-all duration-500"
+                style={{color:scrolled?'#0c1f35':'rgba(255,255,255,.9)',opacity:scrolled?1:0,transform:scrolled?'translateY(0)':'translateY(-3px)'}}>Torgas Blue Energy</span>
         </a>
         <div className="hidden lg:flex items-center gap-1">
           {links.map(({l,h})=>(
-            <a key={h} href={h} className="text-sm font-medium px-5 py-2 rounded-full transition-all duration-300 hover:bg-white/[.08]" style={{color:'rgba(255,255,255,.55)'}}>{l}</a>
+            <a key={h} href={h} className="text-sm font-medium px-4 py-2 rounded-full transition-all duration-300"
+               style={{color:lc}}
+               onMouseEnter={e=>e.currentTarget.style.background=scrolled?'rgba(46,122,184,.07)':'rgba(255,255,255,.1)'}
+               onMouseLeave={e=>e.currentTarget.style.background='transparent'}>{l}</a>
           ))}
         </div>
-        <button className="lg:hidden p-2 -mr-2" onClick={()=>setOpen(!open)} aria-label="Menu">
+        <button className="lg:hidden p-2 -mr-2" onClick={()=>setOpen(!open)} aria-label="Menu"
+                style={{color:scrolled?'#0c1f35':'rgba(255,255,255,.9)'}}>
           {open?IC.x:IC.menu}
         </button>
       </div>
       {open&&(
-        <div className="lg:hidden absolute top-16 left-0 right-0 bg-brand-dark/95 backdrop-blur-2xl border-t border-white/5 px-6 py-6 shadow-2xl">
+        <div className="lg:hidden absolute top-16 left-0 right-0 backdrop-blur-2xl border-t px-6 py-6 shadow-xl"
+             style={{background:'rgba(255,255,255,.97)',borderColor:'rgba(46,122,184,.1)'}}>
           {links.map(({l,h})=>(
-            <a key={h} href={h} onClick={()=>setOpen(false)} className="block py-3.5 text-base font-medium border-b border-white/5" style={{color:'rgba(255,255,255,.65)'}}>{l}</a>
+            <a key={h} href={h} onClick={()=>setOpen(false)} className="block py-3.5 text-base font-semibold border-b"
+               style={{color:'#2E7AB8',borderColor:'rgba(46,122,184,.08)'}}>{l}</a>
           ))}
         </div>
       )}
@@ -318,7 +351,7 @@ function Hero(){
           <img src="images/logo/logo.png" alt="Torgas Blue Energy" className="w-20 h-20 md:w-24 md:h-24 mx-auto mb-10 rounded-3xl shadow-2xl shadow-brand-blue/20"/>
         </MH>
         <MH delay={.35} y={55}>
-          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black leading-[.92] tracking-[-0.04em]">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black leading-[.88]" style={{letterSpacing:'-0.045em'}}>
             Powering the Future<br/>
             <span style={{background:'linear-gradient(135deg,#E8812F 0%,#2E7AB8 40%,#6DB3E8 100%)',WebkitBackgroundClip:'text',WebkitTextFillColor:'transparent'}}>Beneath the Surface</span>
           </h1>
@@ -349,20 +382,29 @@ function Identity(){
     {title:'Climate Technology',desc:'Carbon sequestration research and predictive modeling for a measurably sustainable future.',color:'#3A8B3E'},
   ];
   return(
-    <section id="identity" className="relative py-32 md:py-44" style={{background:'#0a1628'}}>
+    <section id="identity" className="relative py-32 md:py-44" style={{background:'#ffffff'}}>
       <div className="max-w-5xl mx-auto px-6 lg:px-10 text-center">
-        <M delay={0}><p className="text-sm font-bold tracking-[.2em] uppercase mb-6" style={{color:'#2E7AB8'}}>Who We Are</p></M>
-        <M delay={.1}><h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[1.05]">We turn ocean data<br/>into climate action.</h2></M>
-        <M delay={.25}><p className="mt-8 text-lg md:text-xl lg:text-2xl leading-relaxed max-w-3xl mx-auto" style={{color:'rgba(255,255,255,.4)'}}>Torgas Blue Energy is an integrated research and technology company based in Jatinangor and Pangandaran, Indonesia. We combine marine science, autonomous systems, and environmental intelligence to build a sustainable blue economy.</p></M>
+        <M delay={0}>
+          <div className="flex items-center gap-5 mb-4">
+            <div className="flex-1 h-px" style={{background:'rgba(46,122,184,.18)'}}/>
+            <span className="text-xs font-black tracking-[.28em] uppercase" style={{color:'#2E7AB8'}}>Who We Are</span>
+            <div className="flex-1 h-px" style={{background:'rgba(46,122,184,.18)'}}/>
+          </div>
+        </M>
+        <M delay={.1}><h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-[1.03]" style={{letterSpacing:'-0.04em',color:'#0c1f35'}}>We turn ocean data<br/>into climate action.</h2></M>
+        <M delay={.25}><p className="mt-8 text-lg md:text-xl lg:text-2xl leading-relaxed max-w-3xl mx-auto" style={{color:'#5a7b9a'}}>Torgas Blue Energy is an integrated research and technology company based in Jatinangor and Pangandaran, Indonesia. We combine marine science, autonomous systems, and environmental intelligence to build a sustainable blue economy.</p></M>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-20">
           {pillars.map((p,i)=>(
             <M key={i} delay={.35+i*.12}>
-              <div className="group relative p-10 rounded-3xl border border-white/[.04] hover:border-white/[.1] transition-all duration-700 hover:-translate-y-2 overflow-hidden" style={{background:'rgba(255,255,255,.015)'}}>
-                <div className="absolute top-0 left-0 w-full h-[2px] transition-all duration-700 opacity-0 group-hover:opacity-100" style={{background:`linear-gradient(90deg,transparent,${p.color},transparent)`}}/>
-                <div className="w-3 h-3 rounded-full mb-6 mx-auto" style={{background:p.color,boxShadow:`0 0 30px ${p.color}50`}}/>
-                <h3 className="text-2xl font-bold mb-4">{p.title}</h3>
-                <p className="text-base leading-relaxed" style={{color:'rgba(255,255,255,.4)'}}>{p.desc}</p>
+              <div className="group relative p-10 rounded-3xl transition-all duration-500 hover:-translate-y-2 overflow-hidden"
+                   style={{background:'#f4f9ff',border:`1px solid rgba(46,122,184,.1)`,boxShadow:'0 2px 12px rgba(12,31,53,.04)'}}>
+                <div className="absolute top-0 left-0 w-full h-[3px] transition-all duration-500 opacity-0 group-hover:opacity-100" style={{background:`linear-gradient(90deg,transparent,${p.color},transparent)`}}/>
+                <div className="w-10 h-10 rounded-2xl mb-6 mx-auto flex items-center justify-center" style={{background:`${p.color}18`}}>
+                  <div className="w-3 h-3 rounded-full" style={{background:p.color}}/>
+                </div>
+                <h3 className="text-xl font-black mb-3" style={{color:'#0c1f35',letterSpacing:'-0.02em'}}>{p.title}</h3>
+                <p className="text-sm leading-relaxed" style={{color:'#5a7b9a'}}>{p.desc}</p>
               </div>
             </M>
           ))}
@@ -373,33 +415,238 @@ function Identity(){
 }
 
 /* ══════════════════════════════════════════
-   SCENE 3 — INNOVATION CINEMATIC
+   SCENE 3 — NEWS (CAROUSEL)
    ══════════════════════════════════════════ */
-function Innovation(){
-  const sections=[
-    {tag:'Ocean Systems',title:'Monitoring the deep.\nProtecting the surface.',desc:'Autonomous vessels and sensor arrays that collect real-time marine data across Indonesian waters — from water chemistry to biological indicators.',img:'images/projects/biosentor-xray.jpg',accent:'#2E7AB8'},
-    {tag:'Climate Intelligence',title:'From mangroves\nto carbon models.',desc:'Quantifying blue carbon potential through rigorous field research across 5 stations in Java — building the data foundation for national climate policy.',img:'images/activities/activity-6.jpg',accent:'#3A8B3E'},
-    {tag:'Energy Innovation',title:'Seaweed to energy.\nOcean to impact.',desc:'Portable biogas systems that transform abundant marine biomass into clean cooking fuel and electricity for off-grid coastal communities.',img:'images/activities/activity-1.jpeg',accent:'#E8812F'},
-  ];
+
+const STATIC_NEWS=[
+  {id:'n1',date:'2025-03-15',title:'Portable Torgas Biogas System Demonstrated Before Government Officials',category:'Technology',summary:'PT Torgas Blue Energy presented its flagship portable biogas device to senior officials from the Ministry of Maritime Affairs, showcasing a fully operational prototype capable of converting seaweed into clean methane energy.',content:'The demonstration marked a significant milestone in the commercialization pathway for Portable Torgas — a compact, autonomous system designed to bring clean energy to off-grid coastal communities. Officials were shown a live biogas generation cycle, with the device processing locally-sourced seaweed biomass.\n\nThe event drew significant interest from regional government representatives who expressed willingness to pilot the technology in remote island communities across Eastern Indonesia.',imageURL:'images/activities/activity-1.jpeg',author:'Torgas Communications'},
+  {id:'n2',date:'2025-02-08',title:'Biosentor Completes First Autonomous Coastal Survey Mission in Pangandaran',category:'Research',summary:'The Biosentor unmanned surface vessel successfully completed a 6-hour autonomous survey of Pangandaran coastal waters, collecting real-time water quality, pH, and temperature data across 12 sampling stations.',content:'This mission represents the first fully autonomous deployment of Biosentor in real-world coastal conditions. The vessel navigated a pre-programmed route spanning 14 kilometers of coastline, collecting continuous sensor readings without human intervention.\n\nData collected during the mission is currently being processed by the Torgas analytics team to identify patterns in water quality degradation and build predictive models for coastal ecosystem health.',imageURL:'images/projects/biosentor-prototype-1.jpg',author:'Research Team'},
+  {id:'n3',date:'2025-01-20',title:'Carbon Storage Research Station Established in Pasuruan Mangrove Ecosystem',category:'Field Work',summary:'Torgas Blue Energy has established a permanent research station within the Pasuruan mangrove belt, East Java, expanding our carbon sequestration monitoring network to a total of five active stations across Indonesia.',content:'The new station adds critical data coverage for the eastern Java mangrove corridor — one of the most ecologically significant blue carbon sinks in the archipelago. Researchers will conduct quarterly biomass measurements, soil carbon sampling, and hydrological monitoring.\n\nThis expansion supports Indonesia\'s national blue carbon accounting framework and contributes data to international climate modeling efforts under the Paris Agreement.',imageURL:'images/activities/activity-6.jpg',author:'Field Research Division'},
+  {id:'n4',date:'2024-12-05',title:'Torgas Blue Energy Featured at National Marine Technology Conference',category:'Events',summary:'The company presented research findings across three active projects at the annual Indonesian Marine Technology Conference, attracting significant attention from academic institutions and industry partners.',content:'Representatives from Torgas Blue Energy delivered three presentations covering Biosentor autonomous monitoring, carbon sequestration methodology, and the Portable Torgas biogas system. The conference brought together over 400 researchers, engineers, and policymakers from across the archipelago.\n\nSeveral collaboration proposals were initiated during the conference, with potential partners from Universitas Indonesia, IPB, and LIPI expressing interest in joint research programs.',imageURL:'images/activities/activity-8.jpeg',author:'Torgas Communications'},
+];
+
+const NEWS_CATEGORIES=['All','Research','Technology','Field Work','Events'];
+
+function News(){
+  const[news,setNews]=useState(STATIC_NEWS);
+  const[loading,setLoading]=useState(false);
+  const[cat,setCat]=useState('All');
+  const[sel,setSel]=useState(null);
+  const[idx,setIdx]=useState(0);
+  const[dir,setDir]=useState(1);
+  const pauseRef=useRef(false);
+  const timerRef=useRef(null);
+
+  useEffect(()=>{
+    if(!WEBAPI_URL)return;
+    setLoading(true);
+    fetch(WEBAPI_URL+'?action=news')
+      .then(r=>r.json())
+      .then(d=>{if(d.success&&d.data&&d.data.length>0)setNews(d.data);})
+      .catch(()=>{})
+      .finally(()=>setLoading(false));
+  },[]);
+
+  const filtered=cat==='All'?news:news.filter(n=>n.category===cat);
+  useEffect(()=>setIdx(0),[cat]);
+
+  useEffect(()=>{
+    clearInterval(timerRef.current);
+    timerRef.current=setInterval(()=>{
+      if(!pauseRef.current&&filtered.length>1){setDir(1);setIdx(i=>(i+1)%filtered.length);}
+    },6000);
+    return()=>clearInterval(timerRef.current);
+  },[filtered.length]);
+
+  const go=(n,d)=>{setDir(d);setIdx(n);};
+  const prev=()=>go((idx-1+filtered.length)%filtered.length,-1);
+  const next=()=>go((idx+1)%filtered.length,1);
+
+  useEffect(()=>{
+    const fn=e=>{if(e.key==='ArrowLeft')prev();if(e.key==='ArrowRight')next();};
+    window.addEventListener('keydown',fn);return()=>window.removeEventListener('keydown',fn);
+  },[idx,filtered.length]);
+
+  const catColors={'Research':'#2E7AB8','Technology':'#E8812F','Field Work':'#3A8B3E','Events':'#9B6EE8'};
+  const fmtDate=d=>{try{const dt=new Date(d);if(isNaN(dt))return d;const dd=String(dt.getDate()).padStart(2,'0');const mm=String(dt.getMonth()+1).padStart(2,'0');return`${dd}/${mm}/${dt.getFullYear()}`;}catch{return d;}};
+  const cur=filtered[idx]||filtered[0];
 
   return(
-    <section id="innovation">
-      {sections.map((s,i)=>(
-        <div key={i} className="relative min-h-screen flex items-center overflow-hidden" style={{background:i%2===0?'#060e1a':'#0a1628'}}>
-          <div className="absolute inset-0">
-            <img src={s.img} alt="" className="img-cover" style={{opacity:.25,filter:'brightness(.45) saturate(.8)'}}/>
-            <div className="absolute inset-0" style={{background:`linear-gradient(${i%2===0?'135deg':'225deg'},rgba(10,22,40,.9) 0%,rgba(10,22,40,.45) 50%,rgba(10,22,40,.9) 100%)`}}/>
-          </div>
-          <div className="absolute w-[500px] h-[500px] rounded-full pointer-events-none" style={{background:`radial-gradient(circle,${s.accent}15,transparent 70%)`,filter:'blur(100px)',top:'25%',right:i%2===0?'8%':'auto',left:i%2!==0?'8%':'auto'}}/>
+    <section id="news" className="relative py-28 md:py-36" style={{background:'#f4f9ff'}}>
+      <div className="max-w-7xl mx-auto px-6 lg:px-10">
 
-          <div className="relative z-10 max-w-5xl mx-auto px-6 lg:px-10 py-32">
-            <M y={20}><div className="flex items-center gap-4 mb-8"><div className="w-10 h-[2px]" style={{background:s.accent}}/><p className="text-sm font-bold tracking-[.2em] uppercase" style={{color:s.accent}}>{s.tag}</p></div></M>
-            <M delay={.15} y={55}><h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-[-0.03em] leading-[.95] whitespace-pre-line">{s.title}</h2></M>
-            <M delay={.3} y={30}><p className="mt-10 text-xl md:text-2xl max-w-2xl leading-relaxed" style={{color:'rgba(255,255,255,.4)'}}>{s.desc}</p></M>
+        <M>
+          <div className="flex items-center gap-5 mb-4">
+            <div className="flex-1 h-px" style={{background:'rgba(46,122,184,.2)'}}/>
+            <span className="text-xs font-black tracking-[.28em] uppercase" style={{color:'#2E7AB8'}}>Latest from the Field</span>
+            <div className="flex-1 h-px" style={{background:'rgba(46,122,184,.2)'}}/>
+          </div>
+          <h2 className="text-center text-4xl sm:text-5xl md:text-6xl font-black leading-tight mb-3"
+              style={{letterSpacing:'-0.04em',color:'#0c1f35'}}>News &amp; Updates</h2>
+          <p className="text-center text-base max-w-lg mx-auto mb-10" style={{color:'#5a7b9a'}}>Research milestones, field dispatches, and technology breakthroughs.</p>
+        </M>
+
+        <M delay={.08}>
+          <div className="flex items-center justify-center gap-2 flex-wrap mb-10">
+            {NEWS_CATEGORIES.map(c=>(
+              <button key={c} onClick={()=>setCat(c)}
+                className="px-5 py-2 rounded-full text-sm font-semibold transition-all duration-300"
+                style={{background:cat===c?'#2E7AB8':'rgba(46,122,184,.07)',color:cat===c?'#fff':'#4a6b8a',border:`1px solid ${cat===c?'#2E7AB8':'rgba(46,122,184,.18)'}`}}>
+                {c}
+              </button>
+            ))}
+          </div>
+        </M>
+
+        {loading&&(
+          <div className="flex justify-center py-24">
+            <div className="w-8 h-8 rounded-full border-2 animate-spin" style={{borderColor:'rgba(46,122,184,.2)',borderTopColor:'#2E7AB8'}}/>
+          </div>
+        )}
+
+        {!loading&&cur&&(
+          <div className="relative"
+               onMouseEnter={()=>{pauseRef.current=true;}}
+               onMouseLeave={()=>{pauseRef.current=false;}}>
+
+            {AnimatePresence?(
+              <AnimatePresence mode="wait" custom={dir}>
+                <motion.div key={cur.id||idx}
+                  custom={dir}
+                  initial={d=>({opacity:0,x:d*48})}
+                  animate={{opacity:1,x:0}}
+                  exit={d=>({opacity:0,x:d*-48})}
+                  transition={{duration:.5,ease:[.23,1,.32,1]}}>
+                  <NewsSlide cur={cur} onOpen={()=>setSel(cur)} catColors={catColors} fmtDate={fmtDate}/>
+                </motion.div>
+              </AnimatePresence>
+            ):(
+              <NewsSlide cur={cur} onOpen={()=>setSel(cur)} catColors={catColors} fmtDate={fmtDate}/>
+            )}
+
+            {filtered.length>1&&(
+              <>
+                <button className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-5 w-11 h-11 rounded-full flex items-center justify-center z-10 transition-all duration-300 hover:scale-110 shadow-lg hidden md:flex"
+                        style={{background:'#ffffff',color:'#2E7AB8',border:'1px solid rgba(46,122,184,.2)',boxShadow:'0 4px 16px rgba(12,31,53,.12)'}}
+                        onClick={e=>{e.stopPropagation();prev();}}>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-4 h-4"><path d="M15 18l-6-6 6-6"/></svg>
+                </button>
+                <button className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-5 w-11 h-11 rounded-full flex items-center justify-center z-10 transition-all duration-300 hover:scale-110 hidden md:flex"
+                        style={{background:'#ffffff',color:'#2E7AB8',border:'1px solid rgba(46,122,184,.2)',boxShadow:'0 4px 16px rgba(12,31,53,.12)'}}
+                        onClick={e=>{e.stopPropagation();next();}}>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-4 h-4"><path d="M9 18l6-6-6-6"/></svg>
+                </button>
+              </>
+            )}
+          </div>
+        )}
+
+        {!loading&&filtered.length===0&&(
+          <div className="text-center py-20" style={{color:'#8aa5bf'}}>
+            <p className="text-4xl mb-3">📰</p>
+            <p className="font-semibold">No articles in this category yet</p>
+          </div>
+        )}
+
+        {filtered.length>1&&(
+          <div className="flex items-center justify-center gap-2 mt-8">
+            {filtered.map((_,i)=>(
+              <button key={i} onClick={()=>go(i,i>idx?1:-1)}
+                      className="rounded-full transition-all duration-400"
+                      style={{width:i===idx?'28px':'8px',height:'8px',background:i===idx?'#2E7AB8':'rgba(46,122,184,.22)'}}/>
+            ))}
+          </div>
+        )}
+
+        {/* Mobile nav buttons */}
+        {filtered.length>1&&(
+          <div className="flex items-center justify-center gap-4 mt-6 md:hidden">
+            <button className="w-10 h-10 rounded-full flex items-center justify-center"
+                    style={{background:'#ffffff',color:'#2E7AB8',border:'1px solid rgba(46,122,184,.2)',boxShadow:'0 2px 8px rgba(12,31,53,.08)'}}
+                    onClick={prev}>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-4 h-4"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <span className="text-xs font-semibold" style={{color:'#8aa5bf'}}>{idx+1} / {filtered.length}</span>
+            <button className="w-10 h-10 rounded-full flex items-center justify-center"
+                    style={{background:'#ffffff',color:'#2E7AB8',border:'1px solid rgba(46,122,184,.2)',boxShadow:'0 2px 8px rgba(12,31,53,.08)'}}
+                    onClick={next}>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-4 h-4"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+          </div>
+        )}
+      </div>
+
+      {/* Article reader modal */}
+      {sel&&(
+        <div className="fixed inset-0 z-[99999] flex items-center justify-center p-4 md:p-8" onClick={()=>setSel(null)}>
+          <div className="absolute inset-0" style={{background:'rgba(12,31,53,.7)',backdropFilter:'blur(16px)'}}/>
+          <div className="relative max-w-2xl w-full max-h-[92vh] overflow-y-auto rounded-3xl shadow-2xl bg-white" onClick={e=>e.stopPropagation()}>
+            <div className="relative overflow-hidden rounded-t-3xl" style={{height:'260px'}}>
+              <img src={sel.imageURL} alt={sel.title} className="img-cover"/>
+              <div className="absolute inset-0" style={{background:'linear-gradient(0deg,rgba(255,255,255,.9) 0%,rgba(255,255,255,.1) 50%,transparent 100%)'}}/>
+              <button className="absolute top-4 right-4 w-10 h-10 rounded-full flex items-center justify-center"
+                      style={{background:'rgba(12,31,53,.5)',backdropFilter:'blur(8px)',color:'#fff'}} onClick={()=>setSel(null)}>{IC.close}</button>
+              <div className="absolute bottom-4 left-6">
+                <span className="text-xs font-black tracking-[.15em] uppercase px-3 py-1.5 rounded-full"
+                      style={{background:`${catColors[sel.category]||'#2E7AB8'}18`,color:catColors[sel.category]||'#2E7AB8',border:`1px solid ${catColors[sel.category]||'#2E7AB8'}30`}}>
+                  {sel.category}
+                </span>
+              </div>
+            </div>
+            <div className="px-7 md:px-10 py-7 md:py-9">
+              <p className="text-xs mb-4 font-medium" style={{color:'#8aa5bf'}}>{fmtDate(sel.date)} · By {sel.author}</p>
+              <h2 className="text-2xl md:text-3xl font-black leading-snug mb-6" style={{letterSpacing:'-0.03em',color:'#0c1f35'}}>{sel.title}</h2>
+              <div className="h-px mb-6" style={{background:'rgba(46,122,184,.1)'}}/>
+              {(sel.content||sel.summary).split('\n\n').map((para,i)=>(
+                <p key={i} className="text-base leading-[1.85] mb-4" style={{color:'#4a6b8a'}}>{para}</p>
+              ))}
+              <div className="flex justify-end mt-6 pt-5" style={{borderTop:'1px solid rgba(46,122,184,.08)'}}>
+                <button className="px-6 py-2.5 rounded-full text-sm font-semibold transition-all hover:scale-105"
+                        style={{background:'#f4f9ff',color:'#2E7AB8',border:'1px solid rgba(46,122,184,.2)'}} onClick={()=>setSel(null)}>Close</button>
+              </div>
+            </div>
           </div>
         </div>
-      ))}
+      )}
     </section>
+  );
+}
+
+function NewsSlide({cur,onOpen,catColors,fmtDate}){
+  const accent=catColors[cur.category]||'#2E7AB8';
+  return(
+    <div className="grid grid-cols-1 lg:grid-cols-5 rounded-3xl overflow-hidden cursor-pointer group"
+         style={{boxShadow:'0 4px 32px rgba(12,31,53,.1)',border:'1px solid rgba(46,122,184,.1)'}}
+         onClick={onOpen}>
+      <div className="relative lg:col-span-3 overflow-hidden" style={{minHeight:'360px'}}>
+        <img src={cur.imageURL} alt={cur.title} className="img-cover transition-transform duration-[2s] group-hover:scale-[1.04]" style={{filter:'brightness(.82)'}}/>
+        <div className="absolute inset-0" style={{background:'linear-gradient(135deg,rgba(27,58,92,.55) 0%,transparent 60%)'}}/>
+        <div className="absolute top-6 left-7">
+          <span className="text-[10px] font-black tracking-[.18em] uppercase px-3.5 py-2 rounded-full"
+                style={{background:'rgba(255,255,255,.18)',color:'#fff',border:'1px solid rgba(255,255,255,.3)',backdropFilter:'blur(8px)'}}>
+            {cur.category}
+          </span>
+        </div>
+        <div className="absolute bottom-6 left-7">
+          <p className="text-xs font-medium" style={{color:'rgba(255,255,255,.65)'}}>{fmtDate(cur.date)}</p>
+        </div>
+      </div>
+      <div className="lg:col-span-2 flex flex-col justify-center p-8 md:p-10 bg-white">
+        <span className="text-[10px] font-black tracking-[.2em] uppercase mb-4 block" style={{color:accent}}>{cur.category}</span>
+        <h3 className="text-2xl md:text-3xl font-black leading-[1.08] mb-5" style={{letterSpacing:'-0.03em',color:'#0c1f35'}}>{cur.title}</h3>
+        <p className="text-sm leading-relaxed line-clamp-3 mb-6" style={{color:'#5a7b9a'}}>{cur.summary}</p>
+        <div className="flex items-center gap-2 mt-auto mb-6" style={{color:'#2E7AB8'}}>
+          <span className="text-sm font-bold">Read Article</span>
+          {IC.arrow}
+        </div>
+        <div className="pt-5 flex items-center gap-2" style={{borderTop:'1px solid rgba(46,122,184,.1)'}}>
+          <div className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0" style={{background:'rgba(46,122,184,.1)'}}>
+            <svg viewBox="0 0 24 24" fill="none" stroke="#2E7AB8" strokeWidth="2" className="w-3 h-3"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <p className="text-xs font-medium" style={{color:'#8aa5bf'}}>{cur.author}</p>
+        </div>
+      </div>
+    </div>
   );
 }
 
@@ -408,101 +655,234 @@ function Innovation(){
    ══════════════════════════════════════════ */
 function Projects(){
   const[sel,setSel]=useState(null);
+  const[lightbox,setLightbox]=useState(null); // {images:[], idx:0}
   const catColor={'Ocean Systems':'#2E7AB8','Climate Intelligence':'#3A8B3E','Energy Innovation':'#E8812F'};
 
+  const flagship=PROJECTS.find(p=>p.id==='torgas-biogas');
+  const others=PROJECTS.filter(p=>p.id!=='torgas-biogas');
+
+  const openLightbox=(images,idx)=>{setLightbox({images,idx});};
+  const lbPrev=()=>setLightbox(l=>({...l,idx:(l.idx-1+l.images.length)%l.images.length}));
+  const lbNext=()=>setLightbox(l=>({...l,idx:(l.idx+1)%l.images.length}));
+
+  useEffect(()=>{
+    if(!lightbox)return;
+    const fn=e=>{
+      if(e.key==='Escape')setLightbox(null);
+      if(e.key==='ArrowLeft')lbPrev();
+      if(e.key==='ArrowRight')lbNext();
+    };
+    window.addEventListener('keydown',fn);
+    return()=>window.removeEventListener('keydown',fn);
+  },[lightbox]);
+
   return(
-    <section id="projects" className="relative py-32 md:py-44" style={{background:'#0a1628'}}>
-      <div className="max-w-7xl mx-auto px-6 lg:px-10">
-        <div className="text-center mb-20">
-          <M><p className="text-sm font-bold tracking-[.2em] uppercase mb-5" style={{color:'#2E7AB8'}}>Project Showcase</p></M>
-          <M delay={.1}><h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight">What We Build</h2></M>
-          <M delay={.2}><p className="mt-5 text-lg md:text-xl max-w-2xl mx-auto" style={{color:'rgba(255,255,255,.35)'}}>Real research. Real hardware. Real impact on Indonesia's maritime future.</p></M>
-        </div>
+    <section id="projects" className="relative" style={{background:'#0a1628'}}>
 
-        {/* Project grid — bigger cards, better aspect ratios */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-          {PROJECTS.map((p,i)=>{
-            const accent=catColor[p.category]||'#2E7AB8';
-            const isWide=i===0;
-            return(
-              <M key={p.id} delay={i*.08} className={isWide?'md:col-span-2':''}>
-                <div
-                  className="group relative rounded-3xl overflow-hidden cursor-pointer transition-all duration-700 hover:-translate-y-2 hover:shadow-2xl hover:shadow-black/30"
-                  style={{height:isWide?'420px':'380px',background:'rgba(255,255,255,.02)'}}
-                  onClick={()=>setSel(p)}
-                >
-                  <img src={p.images[0]} alt={p.title} className="img-cover transition-transform duration-[1.5s] ease-out group-hover:scale-[1.06]" style={{filter:'brightness(.5) saturate(1.1)'}}/>
-                  <div className="absolute inset-0" style={{background:'linear-gradient(0deg,rgba(10,22,40,.97) 0%,rgba(10,22,40,.4) 40%,rgba(10,22,40,.1) 100%)'}}/>
+      {/* ── FLAGSHIP: Torgas Biogas ── */}
+      {flagship&&(
+        <div className="relative overflow-hidden cursor-pointer group" style={{minHeight:'480px'}}
+             onClick={()=>setSel(flagship)}>
+          <img src={flagship.images[0]} alt={flagship.title} className="img-cover transition-transform duration-[3s] ease-out group-hover:scale-[1.04]" style={{filter:'brightness(.35) saturate(1.1)'}}/>
+          <div className="absolute inset-0" style={{background:'linear-gradient(180deg,rgba(10,22,40,.2) 0%,rgba(10,22,40,.5) 40%,rgba(10,22,40,.98) 100%)'}}/>
 
-                  <div className="absolute top-5 left-6">
-                    <span className="text-xs font-bold tracking-[.1em] uppercase px-4 py-2 rounded-full backdrop-blur-md" style={{background:`${accent}20`,color:accent,border:`1px solid ${accent}30`}}>{p.category}</span>
-                  </div>
+          {/* Flagship badge */}
+          <div className="absolute top-10 left-0 right-0 px-6">
+            <div className="flex items-center gap-5 max-w-7xl mx-auto">
+              <div className="flex-1 h-px" style={{background:'rgba(232,129,47,.35)'}}/>
+              <span className="text-xs font-black tracking-[.28em] uppercase px-5 py-2 rounded-full flex-shrink-0"
+                    style={{background:'rgba(232,129,47,.12)',color:'#E8812F',border:'1px solid rgba(232,129,47,.25)'}}>
+                ★ Flagship Project
+              </span>
+              <div className="flex-1 h-px" style={{background:'rgba(232,129,47,.35)'}}/>
+            </div>
+          </div>
 
-                  <div className="absolute bottom-0 left-0 right-0 p-8 md:p-10">
-                    <h3 className="text-2xl md:text-3xl lg:text-4xl font-black leading-tight">{p.title}</h3>
-                    <p className="text-base md:text-lg mt-3 line-clamp-2" style={{color:'rgba(255,255,255,.5)'}}>{p.subtitle}</p>
-                    <div className="flex items-center gap-2 mt-5 opacity-0 translate-y-3 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500" style={{color:accent}}>
-                      <span className="text-sm font-semibold">View Details</span>{IC.arrow}
-                    </div>
-                  </div>
+          <div className="absolute bottom-0 left-0 right-0">
+            <div className="max-w-7xl mx-auto px-6 lg:px-10 pb-16 md:pb-24">
+              <M y={30}>
+                <span className="inline-block text-xs font-bold tracking-[.15em] uppercase px-4 py-2 rounded-full mb-6"
+                      style={{background:'rgba(232,129,47,.15)',color:'#E8812F',border:'1px solid rgba(232,129,47,.25)'}}>
+                  {flagship.category}
+                </span>
+                <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-[.9] max-w-4xl"
+                    style={{letterSpacing:'-0.04em'}}>
+                  {flagship.title}
+                </h2>
+                <p className="mt-4 text-xl md:text-2xl max-w-2xl" style={{color:'rgba(255,255,255,.5)'}}>{flagship.subtitle}</p>
+                <p className="mt-6 text-base md:text-lg max-w-2xl leading-relaxed" style={{color:'rgba(255,255,255,.35)'}}>{flagship.description.slice(0,200)}…</p>
+                <div className="flex items-center gap-3 mt-8 opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-500">
+                  <span className="text-base font-bold" style={{color:'#E8812F'}}>Explore Project</span>
+                  {IC.arrow}
                 </div>
               </M>
-            );
-          })}
+            </div>
+          </div>
         </div>
+      )}
 
-        {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-px mt-20 rounded-3xl overflow-hidden">
-          {[{n:'5+',l:'Active Projects'},{n:'2',l:'Research Stations'},{n:'12+',l:'Researchers'},{n:'3',l:'Innovation Tracks'}].map((s,i)=>(
-            <M key={i} delay={.3+i*.08}>
-              <div className="text-center py-12 px-6 transition-all duration-500 hover:bg-white/[.03]" style={{background:'rgba(255,255,255,.015)'}}>
-                <div className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight" style={{background:'linear-gradient(135deg,#6DB3E8,#2E7AB8)',WebkitBackgroundClip:'text',WebkitTextFillColor:'transparent'}}>{s.n}</div>
-                <div className="text-sm mt-3 tracking-[.1em] uppercase font-semibold" style={{color:'rgba(255,255,255,.25)'}}>{s.l}</div>
-              </div>
-            </M>
-          ))}
+      {/* ── OTHER PROJECTS ── */}
+      <div className="py-24 md:py-32" style={{background:'#ffffff'}}>
+        <div className="max-w-7xl mx-auto px-6 lg:px-10">
+
+          <M>
+            <div className="flex items-center gap-5 mb-4">
+              <div className="flex-1 h-px" style={{background:'rgba(46,122,184,.18)'}}/>
+              <span className="text-xs font-black tracking-[.28em] uppercase" style={{color:'#2E7AB8'}}>Research Portfolio</span>
+              <div className="flex-1 h-px" style={{background:'rgba(46,122,184,.18)'}}/>
+            </div>
+            <h2 className="text-center text-4xl sm:text-5xl md:text-6xl font-black mb-3"
+                style={{letterSpacing:'-0.04em',color:'#0c1f35'}}>What We Build</h2>
+            <p className="text-center text-base max-w-xl mx-auto mb-14" style={{color:'#5a7b9a'}}>Real research. Real hardware. Real impact on Indonesia's maritime future.</p>
+          </M>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            {others.map((p,i)=>{
+              const accent=catColor[p.category]||'#2E7AB8';
+              return(
+                <M key={p.id} delay={i*.08}>
+                  <div className="group relative rounded-3xl overflow-hidden cursor-pointer transition-all duration-500 hover:-translate-y-2 hover:shadow-xl"
+                       style={{height:'380px',boxShadow:'0 2px 12px rgba(12,31,53,.07)',border:'1px solid rgba(46,122,184,.08)'}}
+                       onClick={()=>setSel(p)}>
+                    <img src={p.images[0]} alt={p.title} className="img-cover transition-transform duration-[2s] ease-out group-hover:scale-[1.06]" style={{filter:'brightness(.4) saturate(1.05)'}}/>
+                    <div className="absolute inset-0" style={{background:'linear-gradient(0deg,rgba(10,22,40,.98) 0%,rgba(10,22,40,.35) 45%,rgba(10,22,40,.05) 100%)'}}/>
+                    <div className="absolute top-5 left-6">
+                      <span className="text-xs font-bold tracking-[.1em] uppercase px-4 py-2 rounded-full backdrop-blur-sm"
+                            style={{background:`${accent}18`,color:accent,border:`1px solid ${accent}28`}}>{p.category}</span>
+                    </div>
+                    <div className="absolute bottom-0 left-0 right-0 p-7 md:p-9">
+                      <h3 className="text-2xl md:text-3xl font-black leading-tight"
+                          style={{letterSpacing:'-0.03em'}}>{p.title}</h3>
+                      <p className="text-sm md:text-base mt-2 line-clamp-2" style={{color:'rgba(255,255,255,.45)'}}>{p.subtitle}</p>
+                      <div className="flex items-center gap-2 mt-4 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500" style={{color:accent}}>
+                        <span className="text-sm font-semibold">View Project</span>{IC.arrow}
+                      </div>
+                    </div>
+                  </div>
+                </M>
+              );
+            })}
+          </div>
+
+          {/* Stats bar */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-20">
+            {[{n:'5+',l:'Active Projects'},{n:'5',l:'Research Stations'},{n:'12+',l:'Researchers'},{n:'3',l:'Innovation Tracks'}].map((s,i)=>(
+              <M key={i} delay={.3+i*.08}>
+                <div className="text-center py-10 px-6 rounded-2xl" style={{background:'#f4f9ff',border:'1px solid rgba(46,122,184,.1)'}}>
+                  <div className="text-4xl md:text-5xl font-black" style={{color:'#2E7AB8',letterSpacing:'-0.04em'}}>{s.n}</div>
+                  <div className="text-xs mt-2 tracking-[.1em] uppercase font-bold" style={{color:'#8aa5bf'}}>{s.l}</div>
+                </div>
+              </M>
+            ))}
+          </div>
         </div>
       </div>
 
-      {/* ── MODAL ── */}
+      {/* ── PROJECT DETAIL MODAL ── */}
       {sel&&(
         <div className="fixed inset-0 z-[99999] flex items-center justify-center p-4 md:p-8" onClick={()=>setSel(null)}>
-          <div className="absolute inset-0 bg-black/80 backdrop-blur-xl"/>
-          <div className="relative max-w-4xl w-full max-h-[90vh] overflow-y-auto rounded-3xl border border-white/[.06] shadow-2xl" style={{background:'#0f1a2e'}} onClick={e=>e.stopPropagation()}>
-            <div className="relative h-64 md:h-80 lg:h-96 overflow-hidden rounded-t-3xl">
-              <img src={sel.images[0]} alt={sel.title} className="img-cover" style={{filter:'brightness(.55)'}}/>
-              <div className="absolute inset-0" style={{background:'linear-gradient(0deg,#0f1a2e 0%,rgba(15,26,46,.5) 40%,transparent 100%)'}}/>
-              <button className="absolute top-5 right-5 w-12 h-12 rounded-full flex items-center justify-center transition-colors hover:bg-white/20" style={{background:'rgba(0,0,0,.4)',backdropFilter:'blur(12px)',color:'rgba(255,255,255,.7)'}} onClick={()=>setSel(null)}>{IC.close}</button>
-              <div className="absolute bottom-6 left-8 right-8">
-                <span className="text-xs font-bold tracking-[.1em] uppercase px-3 py-1.5 rounded-full" style={{background:`${catColor[sel.category]||'#2E7AB8'}25`,color:catColor[sel.category]||'#2E7AB8'}}>{sel.category}</span>
-                <h3 className="text-3xl md:text-4xl lg:text-5xl font-black mt-4">{sel.title}</h3>
-                <p className="text-lg mt-2" style={{color:'rgba(255,255,255,.5)'}}>{sel.subtitle}</p>
+          <div className="absolute inset-0" style={{background:'rgba(12,31,53,.65)',backdropFilter:'blur(16px)'}}/>
+          <div className="relative max-w-4xl w-full max-h-[92vh] overflow-y-auto rounded-3xl shadow-2xl bg-white" onClick={e=>e.stopPropagation()}>
+
+            <div className="relative overflow-hidden rounded-t-3xl cursor-zoom-in" style={{height:'300px'}}
+                 onClick={e=>{e.stopPropagation();openLightbox(sel.images,0);}}>
+              <img src={sel.images[0]} alt={sel.title} className="img-cover"/>
+              <div className="absolute inset-0" style={{background:'linear-gradient(0deg,rgba(255,255,255,.95) 0%,rgba(255,255,255,.2) 40%,transparent 100%)'}}/>
+              <div className="absolute top-4 right-4 flex gap-2">
+                <span className="text-xs font-bold px-3 py-1.5 rounded-full" style={{background:'rgba(12,31,53,.45)',color:'rgba(255,255,255,.8)',backdropFilter:'blur(8px)'}}>
+                  🔍 Click to enlarge
+                </span>
+                <button className="w-10 h-10 rounded-full flex items-center justify-center" style={{background:'rgba(12,31,53,.45)',backdropFilter:'blur(8px)',color:'#fff'}} onClick={e=>{e.stopPropagation();setSel(null);}}>{IC.close}</button>
+              </div>
+              <div className="absolute bottom-5 left-7 right-7">
+                <span className="text-xs font-black tracking-[.1em] uppercase px-3 py-1.5 rounded-full"
+                      style={{background:`${catColor[sel.category]||'#2E7AB8'}18`,color:catColor[sel.category]||'#2E7AB8',border:`1px solid ${catColor[sel.category]||'#2E7AB8'}30`}}>
+                  {sel.category}
+                </span>
+                <h3 className="text-3xl md:text-4xl font-black mt-3 leading-[1.0]"
+                    style={{letterSpacing:'-0.04em',color:'#0c1f35'}}>{sel.title}</h3>
+                <p className="text-sm mt-1.5 font-medium" style={{color:'#5a7b9a'}}>{sel.subtitle}</p>
               </div>
             </div>
-            <div className="p-8 md:p-10 lg:p-12">
-              <p className="text-lg leading-[1.85]" style={{color:'rgba(255,255,255,.55)'}}>{sel.description}</p>
-              <div className="mt-8 p-6 rounded-2xl" style={{background:'rgba(46,122,184,.06)',borderLeft:'3px solid #2E7AB8'}}>
-                <p className="text-xs font-bold tracking-[.15em] uppercase mb-3" style={{color:'#2E7AB8'}}>Impact</p>
-                <p className="text-base leading-relaxed" style={{color:'rgba(255,255,255,.45)'}}>{sel.impact}</p>
+
+            <div className="p-7 md:p-10">
+              <p className="text-base leading-[1.85]" style={{color:'#4a6b8a'}}>{sel.description}</p>
+              <div className="mt-6 p-5 rounded-2xl" style={{background:'rgba(46,122,184,.05)',borderLeft:'3px solid #2E7AB8'}}>
+                <p className="text-xs font-black tracking-[.15em] uppercase mb-2" style={{color:'#2E7AB8'}}>Impact</p>
+                <p className="text-sm leading-relaxed" style={{color:'#5a7b9a'}}>{sel.impact}</p>
               </div>
-              <div className="flex flex-wrap gap-2 mt-7">
-                {sel.tags.map((t,i)=>(<span key={i} className="text-sm font-medium px-4 py-2 rounded-full" style={{background:'rgba(255,255,255,.04)',color:'rgba(255,255,255,.4)',border:'1px solid rgba(255,255,255,.06)'}}>{t}</span>))}
+              <div className="flex flex-wrap gap-2 mt-6">
+                {sel.tags.map((t,i)=>(<span key={i} className="text-xs font-semibold px-3 py-1.5 rounded-full" style={{background:'rgba(46,122,184,.07)',color:'#2E7AB8',border:'1px solid rgba(46,122,184,.15)'}}>{t}</span>))}
               </div>
-              {sel.images.length>1&&(
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-8">
-                  {sel.images.slice(1,7).map((img,i)=>(
-                    <div key={i} className="rounded-2xl overflow-hidden" style={{height:'180px'}}>
-                      <img src={img} alt="" className="img-cover hover:scale-105 transition-transform duration-700"/>
-                    </div>
-                  ))}
+
+              {sel.images.length>0&&(
+                <div className="mt-7">
+                  <p className="text-xs font-black tracking-[.15em] uppercase mb-4" style={{color:'#8aa5bf'}}>Gallery — click to enlarge</p>
+                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                    {sel.images.map((img,i)=>(
+                      <div key={i} className="relative group rounded-xl overflow-hidden cursor-zoom-in" style={{height:'140px'}}
+                           onClick={e=>{e.stopPropagation();openLightbox(sel.images,i);}}>
+                        <img src={img} alt="" className="img-cover transition-transform duration-700 group-hover:scale-[1.08]"/>
+                        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center"
+                             style={{background:'rgba(12,31,53,.3)'}}>
+                          <span className="text-xl">🔍</span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               )}
-              <div className="flex items-center justify-between mt-8 pt-6 border-t border-white/5">
-                <span className="text-sm font-bold tracking-[.08em] uppercase px-4 py-2 rounded-full" style={{background:'rgba(109,179,232,.1)',color:'#6DB3E8'}}>{sel.status}</span>
-                <button className="text-sm font-semibold px-6 py-3 rounded-full transition-all duration-300 hover:scale-105" style={{background:'#2E7AB8',color:'#fff'}} onClick={()=>setSel(null)}>Close</button>
+
+              <div className="flex items-center justify-between mt-7 pt-5" style={{borderTop:'1px solid rgba(46,122,184,.1)'}}>
+                <span className="text-xs font-black tracking-[.1em] uppercase px-4 py-2 rounded-full" style={{background:'rgba(46,122,184,.08)',color:'#2E7AB8',border:'1px solid rgba(46,122,184,.15)'}}>{sel.status}</span>
+                <button className="text-sm font-semibold px-6 py-2.5 rounded-full transition-all hover:scale-105"
+                        style={{background:'#f4f9ff',color:'#2E7AB8',border:'1px solid rgba(46,122,184,.2)'}} onClick={()=>setSel(null)}>Close</button>
               </div>
             </div>
           </div>
+        </div>
+      )}
+
+      {/* ── LIGHTBOX ── */}
+      {lightbox&&(
+        <div className="fixed inset-0 z-[999999] flex items-center justify-center"
+             style={{background:'rgba(0,0,0,.95)',backdropFilter:'blur(24px)'}}
+             onClick={()=>setLightbox(null)}>
+          <button className="absolute top-5 right-5 w-12 h-12 rounded-full flex items-center justify-center z-10"
+                  style={{background:'rgba(255,255,255,.1)',color:'rgba(255,255,255,.8)'}}
+                  onClick={()=>setLightbox(null)}>{IC.close}</button>
+
+          {lightbox.images.length>1&&(
+            <>
+              <button className="absolute left-4 md:left-8 w-12 h-12 rounded-full flex items-center justify-center z-10 transition-all hover:scale-110"
+                      style={{background:'rgba(255,255,255,.1)',color:'rgba(255,255,255,.8)'}}
+                      onClick={e=>{e.stopPropagation();lbPrev();}}>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-6 h-6"><path d="M15 18l-6-6 6-6"/></svg>
+              </button>
+              <button className="absolute right-4 md:right-8 w-12 h-12 rounded-full flex items-center justify-center z-10 transition-all hover:scale-110"
+                      style={{background:'rgba(255,255,255,.1)',color:'rgba(255,255,255,.8)'}}
+                      onClick={e=>{e.stopPropagation();lbNext();}}>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-6 h-6"><path d="M9 18l6-6-6-6"/></svg>
+              </button>
+            </>
+          )}
+
+          <img src={lightbox.images[lightbox.idx]} alt=""
+               className="max-w-[90vw] max-h-[90vh] object-contain rounded-2xl shadow-2xl"
+               style={{boxShadow:'0 40px 120px rgba(0,0,0,.8)'}}
+               onClick={e=>e.stopPropagation()}/>
+
+          {lightbox.images.length>1&&(
+            <div className="absolute bottom-6 left-1/2" style={{transform:'translateX(-50%)'}}>
+              <div className="flex gap-2">
+                {lightbox.images.map((_,i)=>(
+                  <button key={i} onClick={e=>{e.stopPropagation();setLightbox(l=>({...l,idx:i}));}}
+                          className="w-2 h-2 rounded-full transition-all duration-300"
+                          style={{background:i===lightbox.idx?'#fff':'rgba(255,255,255,.3)',transform:i===lightbox.idx?'scale(1.4)':'scale(1)'}}/>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       )}
     </section>
@@ -513,26 +893,50 @@ function Projects(){
    SCENE 5 — FIELD WORK
    ══════════════════════════════════════════ */
 function FieldWork(){
+  const[lightbox,setLightbox]=useState(null);
+  const imgs=ACTIVITIES.map(a=>a.src);
+
+  useEffect(()=>{
+    if(lightbox===null)return;
+    const fn=e=>{
+      if(e.key==='Escape')setLightbox(null);
+      if(e.key==='ArrowLeft')setLightbox(l=>l===null?null:(l-1+imgs.length)%imgs.length);
+      if(e.key==='ArrowRight')setLightbox(l=>l===null?null:(l+1)%imgs.length);
+    };
+    window.addEventListener('keydown',fn);
+    return()=>window.removeEventListener('keydown',fn);
+  },[lightbox]);
+
   return(
     <section id="fieldwork" className="relative py-32 md:py-44" style={{background:'#060e1a'}}>
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div className="text-center mb-20">
-          <M><p className="text-sm font-bold tracking-[.2em] uppercase mb-5" style={{color:'#E8812F'}}>Real World Presence</p></M>
-          <M delay={.1}><h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight">In the Field</h2></M>
+          <M>
+            <div className="flex items-center gap-5 mb-4">
+              <div className="flex-1 h-px" style={{background:'rgba(255,255,255,.08)'}}/>
+              <span className="text-xs font-black tracking-[.28em] uppercase" style={{color:'#E8812F'}}>Real World Presence</span>
+              <div className="flex-1 h-px" style={{background:'rgba(255,255,255,.08)'}}/>
+            </div>
+          </M>
+          <M delay={.1}><h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black" style={{letterSpacing:'-0.04em'}}>In the Field</h2></M>
           <M delay={.2}><p className="mt-5 text-lg md:text-xl max-w-2xl mx-auto" style={{color:'rgba(255,255,255,.35)'}}>From ocean expeditions to national conferences — research that starts in the water and ends with real-world impact.</p></M>
         </div>
 
-        {/* Gallery grid with fixed proper heights */}
+        {/* Gallery grid — every image clickable */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {ACTIVITIES.map((a,i)=>{
             const tall=i===0||i===4;
             return(
               <M key={i} delay={i*.06} className={tall?'sm:row-span-2':''}>
-                <div className="group relative rounded-3xl overflow-hidden h-full" style={{minHeight:tall?'500px':'260px'}}>
+                <div className="group relative rounded-3xl overflow-hidden h-full cursor-pointer" style={{minHeight:tall?'500px':'260px'}}
+                     onClick={()=>setLightbox(i)}>
                   <img src={a.src} alt="" className="img-cover transition-transform duration-[1.2s] ease-out group-hover:scale-[1.05]" style={{filter:'brightness(.65) saturate(1.05)'}}/>
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-600" style={{background:'linear-gradient(0deg,rgba(10,22,40,.92) 0%,transparent 40%)'}}/>
-                  <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-3 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-600">
-                    <p className="text-sm md:text-base font-medium leading-relaxed" style={{color:'rgba(255,255,255,.8)'}}>{a.caption}</p>
+                  <div className="absolute inset-0 transition-opacity duration-500" style={{background:'linear-gradient(0deg,rgba(10,22,40,.88) 0%,transparent 50%)'}}/>
+                  <div className="absolute top-4 right-4 w-8 h-8 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{background:'rgba(0,0,0,.45)',backdropFilter:'blur(8px)'}}>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.8)" strokeWidth="2" className="w-4 h-4"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                  </div>
+                  <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6">
+                    <p className="text-sm font-medium leading-relaxed opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-400" style={{color:'rgba(255,255,255,.85)'}}>{a.caption}</p>
                   </div>
                 </div>
               </M>
@@ -540,6 +944,41 @@ function FieldWork(){
           })}
         </div>
       </div>
+
+      {/* FieldWork Lightbox */}
+      {lightbox!==null&&(
+        <div className="fixed inset-0 z-[999999] flex items-center justify-center"
+             style={{background:'rgba(0,0,0,.96)',backdropFilter:'blur(24px)'}}
+             onClick={()=>setLightbox(null)}>
+          <button className="absolute top-5 right-5 w-12 h-12 rounded-full flex items-center justify-center z-10"
+                  style={{background:'rgba(255,255,255,.1)',color:'rgba(255,255,255,.8)'}}
+                  onClick={()=>setLightbox(null)}>{IC.close}</button>
+          <button className="absolute left-4 md:left-8 w-12 h-12 rounded-full flex items-center justify-center z-10 transition-all hover:scale-110"
+                  style={{background:'rgba(255,255,255,.1)',color:'rgba(255,255,255,.8)'}}
+                  onClick={e=>{e.stopPropagation();setLightbox(l=>(l-1+imgs.length)%imgs.length);}}>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-6 h-6"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <button className="absolute right-4 md:right-8 w-12 h-12 rounded-full flex items-center justify-center z-10 transition-all hover:scale-110"
+                  style={{background:'rgba(255,255,255,.1)',color:'rgba(255,255,255,.8)'}}
+                  onClick={e=>{e.stopPropagation();setLightbox(l=>(l+1)%imgs.length);}}>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-6 h-6"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+          <div className="flex flex-col items-center gap-4 max-w-[90vw]" onClick={e=>e.stopPropagation()}>
+            <img src={imgs[lightbox]} alt=""
+                 className="max-w-[90vw] max-h-[80vh] object-contain rounded-2xl shadow-2xl"/>
+            <p className="text-sm text-center max-w-2xl" style={{color:'rgba(255,255,255,.5)'}}>{ACTIVITIES[lightbox].caption}</p>
+          </div>
+          <div className="absolute bottom-6 left-1/2" style={{transform:'translateX(-50%)'}}>
+            <div className="flex gap-2">
+              {imgs.map((_,i)=>(
+                <button key={i} onClick={e=>{e.stopPropagation();setLightbox(i);}}
+                        className="w-1.5 h-1.5 rounded-full transition-all duration-300"
+                        style={{background:i===lightbox?'#fff':'rgba(255,255,255,.25)',transform:i===lightbox?'scale(1.6)':'scale(1)'}}/>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
@@ -564,7 +1003,7 @@ function People(){
 
   const Card=({person,size='md',delay=0,accent='blue'})=>{
     const isLg=size==='lg';
-    const accentMap={blue:'#2E7AB8',orange:'#E8812F',green:'#3A8B3E',gray:'rgba(255,255,255,.4)'};
+    const accentMap={blue:'#2E7AB8',orange:'#E8812F',green:'#3A8B3E',gray:'#8aa5bf'};
     const ac=accentMap[accent];
     return(
       <M delay={delay}>
@@ -582,7 +1021,7 @@ function People(){
                  style={{background:`linear-gradient(180deg,transparent 55%,rgba(6,14,26,.92) 100%)`}}/>
             <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6">
               <div className="h-px w-8 mb-3 transition-all duration-500 group-hover:w-16" style={{background:ac}}/>
-              <h4 className={`font-black leading-[1.05] tracking-tight text-white ${isLg?'text-2xl md:text-3xl':'text-lg md:text-xl'}`} style={{fontFamily:"'Playfair Display',Georgia,serif"}}>{person.name}</h4>
+              <h4 className={`font-black leading-[1.05] text-white ${isLg?'text-2xl md:text-3xl':'text-lg md:text-xl'}`} style={{letterSpacing:'-0.03em'}}>{person.name}</h4>
               <p className={`mt-2 font-medium tracking-wide uppercase text-white/90 ${isLg?'text-xs':'text-[10px]'}`}>{person.role}</p>
             </div>
           </div>
@@ -592,61 +1031,92 @@ function People(){
   };
 
   return(
-    <section id="people" className="relative py-32 md:py-44" style={{background:'#0a1628'}}>
+    <section id="people" className="relative py-32 md:py-44" style={{background:'#f4f9ff'}}>
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div className="text-center mb-20">
-          <M><p className="text-sm font-bold tracking-[.2em] uppercase mb-5" style={{color:'#2E7AB8'}}>Meet the Team</p></M>
-          <M delay={.1}><h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight" style={{fontFamily:"'Playfair Display',Georgia,serif"}}>Built by Experts</h2></M>
-          <M delay={.2}><p className="mt-5 text-lg md:text-xl max-w-xl mx-auto" style={{color:'rgba(255,255,255,.35)'}}>A multidisciplinary team of marine scientists, engineers, and strategists. Click any portrait to learn more.</p></M>
+          <M>
+            <div className="flex items-center gap-5 mb-4">
+              <div className="flex-1 h-px" style={{background:'rgba(46,122,184,.18)'}}/>
+              <span className="text-xs font-black tracking-[.28em] uppercase" style={{color:'#2E7AB8'}}>Meet the Team</span>
+              <div className="flex-1 h-px" style={{background:'rgba(46,122,184,.18)'}}/>
+            </div>
+          </M>
+          <M delay={.1}><h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black" style={{letterSpacing:'-0.04em',color:'#0c1f35'}}>Built by Experts</h2></M>
+          <M delay={.2}><p className="mt-5 text-lg md:text-xl max-w-xl mx-auto" style={{color:'#5a7b9a'}}>A multidisciplinary team of marine scientists, engineers, and strategists. Click any portrait to learn more.</p></M>
         </div>
 
         {/* Founder */}
         <div className="mb-24">
-          <M><p className="text-center text-xs font-bold tracking-[.25em] uppercase mb-10" style={{color:'rgba(255,255,255,.25)'}}>— Founder —</p></M>
+          <M>
+            <div className="flex items-center gap-5 mb-10">
+              <div className="flex-1 h-px" style={{background:'rgba(46,122,184,.12)'}}/>
+              <span className="text-[10px] font-black tracking-[.3em] uppercase" style={{color:'rgba(232,129,47,.5)'}}>Founder</span>
+              <div className="flex-1 h-px" style={{background:'rgba(46,122,184,.12)'}}/>
+            </div>
+          </M>
           <div className="grid grid-cols-1 max-w-sm mx-auto">{founder.map((p,i)=><Card key={p.id} person={p} size="lg" delay={i*.1} accent="orange"/>)}</div>
         </div>
 
         {/* C-Level */}
         <div className="mb-24">
-          <M><p className="text-center text-xs font-bold tracking-[.25em] uppercase mb-10" style={{color:'rgba(255,255,255,.25)'}}>— Leadership —</p></M>
+          <M>
+            <div className="flex items-center gap-5 mb-10">
+              <div className="flex-1 h-px" style={{background:'rgba(46,122,184,.12)'}}/>
+              <span className="text-[10px] font-black tracking-[.3em] uppercase" style={{color:'rgba(46,122,184,.5)'}}>Leadership</span>
+              <div className="flex-1 h-px" style={{background:'rgba(46,122,184,.12)'}}/>
+            </div>
+          </M>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-7">{cLevel.map((p,i)=><Card key={p.id} person={p} size="lg" delay={i*.08} accent="blue"/>)}</div>
         </div>
 
         {/* Research Team */}
         <div className="mb-24">
-          <M><p className="text-center text-xs font-bold tracking-[.25em] uppercase mb-10" style={{color:'rgba(255,255,255,.25)'}}>— Research Team —</p></M>
+          <M>
+            <div className="flex items-center gap-5 mb-10">
+              <div className="flex-1 h-px" style={{background:'rgba(46,122,184,.12)'}}/>
+              <span className="text-[10px] font-black tracking-[.3em] uppercase" style={{color:'rgba(58,139,62,.5)'}}>Research Team</span>
+              <div className="flex-1 h-px" style={{background:'rgba(46,122,184,.12)'}}/>
+            </div>
+          </M>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5 md:gap-7">{team.map((p,i)=><Card key={p.id} person={p} size="md" delay={i*.05} accent="green"/>)}</div>
         </div>
 
         {/* Interns */}
         <div>
-          <M><p className="text-center text-xs font-bold tracking-[.25em] uppercase mb-10" style={{color:'rgba(255,255,255,.25)'}}>— Research Interns —</p></M>
+          <M>
+            <div className="flex items-center gap-5 mb-10">
+              <div className="flex-1 h-px" style={{background:'rgba(46,122,184,.12)'}}/>
+              <span className="text-[10px] font-black tracking-[.3em] uppercase" style={{color:'#8aa5bf'}}>Research Interns</span>
+              <div className="flex-1 h-px" style={{background:'rgba(46,122,184,.12)'}}/>
+            </div>
+          </M>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-5 md:gap-6">{interns.map((p,i)=><Card key={p.id} person={p} size="md" delay={i*.05} accent="gray"/>)}</div>
         </div>
       </div>
 
       {/* MODAL */}
       {active&&(
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8" style={{background:'rgba(6,14,26,.85)',backdropFilter:'blur(20px)'}} onClick={()=>setActive(null)}>
-          <div className="relative w-full max-w-5xl max-h-[92vh] overflow-hidden rounded-3xl flex flex-col md:flex-row" style={{background:'#0d1a2e',border:'1px solid rgba(255,255,255,.08)'}} onClick={e=>e.stopPropagation()}>
-            <button onClick={()=>setActive(null)} className="absolute top-4 right-4 z-20 w-11 h-11 rounded-full flex items-center justify-center transition-all hover:scale-110" style={{background:'rgba(0,0,0,.6)',color:'#fff'}} aria-label="Close">✕</button>
-            {/* LEFT — body shot (full, no crop) */}
-            <div className="md:w-[45%] flex items-center justify-center" style={{background:'#060e1a',maxHeight:'92vh'}}>
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8"
+             style={{background:'rgba(12,31,53,.6)',backdropFilter:'blur(20px)'}} onClick={()=>setActive(null)}>
+          <div className="relative w-full max-w-5xl max-h-[92vh] overflow-hidden rounded-3xl flex flex-col md:flex-row bg-white shadow-2xl"
+               onClick={e=>e.stopPropagation()}>
+            <button onClick={()=>setActive(null)} className="absolute top-4 right-4 z-20 w-10 h-10 rounded-full flex items-center justify-center transition-all hover:scale-110"
+                    style={{background:'rgba(12,31,53,.12)',color:'#0c1f35'}} aria-label="Close">✕</button>
+            <div className="md:w-[45%] flex items-center justify-center" style={{background:'#f4f9ff',maxHeight:'92vh'}}>
               <img src={active.body} alt={active.name} loading="lazy" className="block w-full h-auto max-h-[50vh] md:max-h-[92vh] object-contain" onError={e=>{e.target.style.display='none'}}/>
             </div>
-            {/* RIGHT — info + CV */}
             <div className="md:w-[55%] p-8 md:p-12 overflow-y-auto flex flex-col justify-center">
-              <p className="text-xs font-bold tracking-[.25em] uppercase mb-4" style={{color:'#2E7AB8'}}>{active.role}</p>
-              <h3 className="text-3xl md:text-4xl lg:text-5xl font-black leading-[1.05] tracking-tight mb-4" style={{fontFamily:"'Playfair Display',Georgia,serif"}}>{active.name}</h3>
-              <div className="h-px w-16 mb-6" style={{background:'#2E7AB8'}}/>
-              <p className="text-base md:text-lg leading-relaxed mb-8" style={{color:'rgba(255,255,255,.6)'}}>{active.expertise}</p>
+              <p className="text-xs font-black tracking-[.25em] uppercase mb-4" style={{color:'#2E7AB8'}}>{active.role}</p>
+              <h3 className="text-3xl md:text-4xl lg:text-5xl font-black leading-[1.02] mb-4" style={{letterSpacing:'-0.04em',color:'#0c1f35'}}>{active.name}</h3>
+              <div className="h-px w-12 mb-6" style={{background:'#2E7AB8'}}/>
+              <p className="text-base leading-relaxed mb-8" style={{color:'#5a7b9a'}}>{active.expertise}</p>
               {active.cv?(
-                <a href={active.cv} target="_blank" rel="noopener" className="inline-flex items-center gap-3 px-6 py-4 rounded-full font-semibold text-base transition-all hover:scale-[1.02] self-start" style={{background:'#2E7AB8',color:'#fff'}}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                <a href={active.cv} target="_blank" rel="noopener" className="inline-flex items-center gap-3 px-6 py-3.5 rounded-full font-semibold text-sm transition-all hover:scale-[1.02] self-start" style={{background:'#2E7AB8',color:'#fff'}}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
                   View Curriculum Vitae
                 </a>
               ):(
-                <p className="text-sm italic" style={{color:'rgba(255,255,255,.3)'}}>CV available upon request.</p>
+                <p className="text-sm italic" style={{color:'#8aa5bf'}}>CV available upon request.</p>
               )}
             </div>
           </div>
@@ -661,7 +1131,7 @@ function People(){
    ══════════════════════════════════════════ */
 
 // ── Paste your Apps Script Web App URL below after deployment ──
-const WEBAPI_URL = 'https://script.google.com/macros/s/AKfycbxxWr5LkXxo8Bs_6q9IyScprlbC3otRmZ27mUbkO4vIJxLONbzyb03ohLB2HCmmTJen/exec';
+const WEBAPI_URL = 'https://script.google.com/macros/s/AKfycbxzs0O0W9-4Ges4jBx9NBLLa0q930tLSNVh1Srd-62WvS-ec2UnWzwToF9OwtseHIhW/exec';
 // Example: 'https://script.google.com/macros/s/AKfycb.../exec'
 // See appsscript/SETUP.md for full deployment instructions
 
@@ -703,28 +1173,27 @@ function FormModal({sys,onClose}){
     }finally{setSubmitting(false);}
   };
 
-  const iStyle={background:'rgba(255,255,255,.04)',border:'1px solid rgba(255,255,255,.09)',color:'rgba(255,255,255,.85)',colorScheme:'dark'};
+  const iStyle={background:'#f4f9ff',border:'1px solid rgba(46,122,184,.18)',color:'#0c1f35'};
   const iCls='w-full px-4 py-3 rounded-xl text-sm outline-none transition-colors';
 
   return(
     <div className="fixed inset-0 z-[300] flex items-end sm:items-center justify-center p-0 sm:p-6"
-         style={{background:'rgba(6,14,26,.92)',backdropFilter:'blur(28px)'}}
+         style={{background:'rgba(12,31,53,.6)',backdropFilter:'blur(24px)'}}
          onClick={onClose}>
-      <div className="relative w-full sm:max-w-2xl flex flex-col rounded-t-3xl sm:rounded-3xl overflow-hidden"
-           style={{background:'#0d1a2e',border:'1px solid rgba(255,255,255,.09)',maxHeight:'92vh'}}
+      <div className="relative w-full sm:max-w-2xl flex flex-col rounded-t-3xl sm:rounded-3xl overflow-hidden bg-white shadow-2xl"
+           style={{border:'1px solid rgba(46,122,184,.12)',maxHeight:'92vh'}}
            onClick={e=>e.stopPropagation()}>
-        {/* Header */}
-        <div className="flex items-center gap-3 px-6 py-4 flex-shrink-0" style={{borderBottom:'1px solid rgba(255,255,255,.06)'}}>
+        <div className="flex items-center gap-3 px-6 py-4 flex-shrink-0" style={{borderBottom:'1px solid rgba(46,122,184,.08)'}}>
           <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
-               style={{background:sys.badgeBg,color:sys.accent}}>{IC[sys.icon]}</div>
+               style={{background:`${sys.accent}12`,color:sys.accent}}>{IC[sys.icon]}</div>
           <div className="flex-1 min-w-0">
-            <h3 className="font-black text-base leading-tight">{cfg.title}</h3>
-            <p className="text-xs mt-0.5" style={{color:'rgba(255,255,255,.3)'}}>Fill all required fields and submit</p>
+            <h3 className="font-black text-base leading-tight" style={{color:'#0c1f35'}}>{cfg.title}</h3>
+            <p className="text-xs mt-0.5" style={{color:'#8aa5bf'}}>Fill all required fields and submit</p>
           </div>
           <span className="text-[10px] font-black tracking-[.15em] uppercase px-2.5 py-1 rounded-full flex-shrink-0 hidden sm:block"
-                style={{background:sys.badgeBg,color:sys.badgeColor,border:`1px solid ${sys.badgeColor}30`}}>{sys.badge}</span>
+                style={{background:`${sys.accent}12`,color:sys.accent,border:`1px solid ${sys.accent}25`}}>{sys.badge}</span>
           <button onClick={onClose} className="w-9 h-9 flex items-center justify-center rounded-xl transition-all hover:scale-110 flex-shrink-0"
-                  style={{background:'rgba(255,255,255,.05)',color:'rgba(255,255,255,.5)'}}>✕</button>
+                  style={{background:'rgba(12,31,53,.06)',color:'#5a7b9a'}}>✕</button>
         </div>
         {/* Body */}
         <div className="flex-1 overflow-y-auto px-6 py-6">
@@ -735,7 +1204,7 @@ function FormModal({sys,onClose}){
               </div>
               <div>
                 <h4 className="text-2xl font-black mb-2">Submitted!</h4>
-                <p className="text-sm leading-relaxed max-w-xs" style={{color:'rgba(255,255,255,.45)'}}>
+                <p className="text-sm leading-relaxed max-w-xs" style={{color:'#5a7b9a'}}>
                   {WEBAPI_URL?'Your submission has been recorded in the Lab Calendar.':'Submission recorded locally. Connect the Apps Script backend to save data automatically.'}
                 </p>
                 {subId&&<p className="mt-3 font-mono text-xs px-3 py-1.5 rounded-lg inline-block" style={{background:'rgba(46,122,184,.1)',color:'#6DB3E8'}}>ID: {subId}</p>}
@@ -747,7 +1216,7 @@ function FormModal({sys,onClose}){
             <form onSubmit={handleSubmit} className="space-y-4">
               {cfg.fields.map(f=>(
                 <div key={f.name}>
-                  <label className="block text-xs font-bold mb-1.5 tracking-wide" style={{color:'rgba(255,255,255,.45)'}}>
+                  <label className="block text-xs font-bold mb-1.5 tracking-wide" style={{color:'#4a6b8a'}}>
                     {f.label}{f.required&&<span className="ml-1" style={{color:sys.accent}}>*</span>}
                   </label>
                   {f.type==='select'?(
@@ -806,6 +1275,10 @@ function LabSystem(){
   const[showAdminLogin,setShowAdminLogin]=useState(false);
   const[adminPw,setAdminPw]=useState('');
   const[adminErr,setAdminErr]=useState('');
+  const[editRow,setEditRow]=useState(null);
+  const[editDate,setEditDate]=useState('');
+  const[editTime,setEditTime]=useState('');
+  const[deleteConfirm,setDeleteConfirm]=useState(null);
   const ADMIN_PW='torgas2025';
   const tryAdminLogin=()=>{
     if(adminPw===ADMIN_PW){setIsAdmin(true);setShowAdminLogin(false);setAdminPw('');setAdminErr('');}
@@ -858,14 +1331,73 @@ function LabSystem(){
     finally{setActionLoading(null);}
   };
 
+  const handleEdit=async(id,newDate,newTime)=>{
+    if(!WEBAPI_URL)return;
+    setActionLoading(id+'edit');
+    try{
+      const payloadStr=JSON.stringify({action:'update',id,date:newDate,time:newTime});
+      const f=document.createElement('form');
+      f.method='POST';f.action=WEBAPI_URL;f.target='gas-iframe';
+      const inp=document.createElement('input');
+      inp.type='hidden';inp.name='payload';inp.value=payloadStr;
+      f.appendChild(inp);document.body.appendChild(f);f.submit();
+      document.body.removeChild(f);
+      await new Promise(r=>setTimeout(r,1200));
+      setSchedData(prev=>prev.map(r=>r['ID']===id?{...r,Date:newDate,Time:newTime}:r));
+      setEditRow(null);
+    }catch(ex){}
+    finally{setActionLoading(null);}
+  };
+
+  const handleDelete=async(id)=>{
+    if(!WEBAPI_URL)return;
+    setActionLoading(id+'delete');
+    try{
+      const payloadStr=JSON.stringify({action:'delete',id});
+      const f=document.createElement('form');
+      f.method='POST';f.action=WEBAPI_URL;f.target='gas-iframe';
+      const inp=document.createElement('input');
+      inp.type='hidden';inp.name='payload';inp.value=payloadStr;
+      f.appendChild(inp);document.body.appendChild(f);f.submit();
+      document.body.removeChild(f);
+      await new Promise(r=>setTimeout(r,1200));
+      setSchedData(prev=>prev.filter(r=>r['ID']!==id));
+      setDeleteConfirm(null);
+    }catch(ex){}
+    finally{setActionLoading(null);}
+  };
+
   const openSched=(filter,title)=>{
     setSchedData([]);setFilterDate('');setFilterStatus('all');setFilterName('');
     setSched({open:true,filter,title});
   };
 
+  // Fix 1899 bug: Google Sheets time-only → "1899-12-30Txx:xx:xx.000Z"
+  const fmtTime=v=>{
+    if(!v||v==='—')return'—';
+    const s=String(v);
+    if(s.includes('T')||s.includes('1899')){
+      try{const d=new Date(s);return d.toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit',hour12:false});}catch{return s;}
+    }
+    return s;
+  };
+  const toInputDate=v=>{
+    if(!v)return'';
+    try{const d=new Date(v);if(isNaN(d.getTime()))return'';return d.toISOString().slice(0,10);}catch{return'';}
+  };
+  const toInputTime=v=>{
+    if(!v||v==='—')return'';
+    const s=String(v);
+    if(s.includes('T')||s.includes('1899')){
+      try{const d=new Date(s);const h=String(d.getHours()).padStart(2,'0');const m=String(d.getMinutes()).padStart(2,'0');return`${h}:${m}`;}catch{return'';}
+    }
+    if(/^\d{2}:\d{2}/.test(s))return s.slice(0,5);
+    return'';
+  };
+
   const sBadge=s=>{
     const map={Pending:{c:'#E8812F',bg:'rgba(232,129,47,.15)'},Approved:{c:'#3A8B3E',bg:'rgba(58,139,62,.15)'},Rejected:{c:'#dc2626',bg:'rgba(220,38,38,.12)'},Completed:{c:'#6DB3E8',bg:'rgba(109,179,232,.15)'}};
-    return map[s]||{c:'rgba(255,255,255,.4)',bg:'rgba(255,255,255,.06)'};
+    return map[s]||{c:'#4a6b8a',bg:'rgba(46,122,184,.08)'};
   };
 
   const aColor={
@@ -874,9 +1406,10 @@ function LabSystem(){
     'Progress Report':{bg:'rgba(58,139,62,.1)',c:'#86efac'},
     'K3 Incident':{bg:'rgba(232,129,47,.15)',c:'#fb923c'},
     'Maintenance':{bg:'rgba(155,110,232,.15)',c:'#c084fc'},
+    'Join Application':{bg:'rgba(58,139,62,.12)',c:'#3A8B3E'},
   };
 
-  const fmtDate=v=>{if(!v)return'—';try{return new Date(v).toLocaleDateString('en-GB',{day:'2-digit',month:'short',year:'numeric'});}catch{return v;}};
+  const fmtDate=v=>{if(!v)return'—';try{const dt=new Date(v);if(isNaN(dt))return v;const dd=String(dt.getDate()).padStart(2,'0');const mm=String(dt.getMonth()+1).padStart(2,'0');return`${dd}/${mm}/${dt.getFullYear()}`;}catch{return v;}};
 
   const DASH=[
     {key:'bookingHariIni',label:'Bookings Today',color:'#2E7AB8',bg:'rgba(46,122,184,.1)',icon:'booking',filter:'Booking Lab'},
@@ -886,7 +1419,7 @@ function LabSystem(){
   ];
 
   return(
-    <section id="labsystem" className="relative py-32 md:py-44" style={{background:'#060e1a'}}>
+    <section id="labsystem" className="relative py-32 md:py-44" style={{background:'#ffffff'}}>
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute w-[700px] h-[700px] rounded-full" style={{top:'30%',left:'60%',transform:'translate(-50%,-50%)',background:'radial-gradient(circle,rgba(46,122,184,.07) 0%,transparent 65%)',filter:'blur(80px)'}}/>
         <div className="absolute w-[400px] h-[400px] rounded-full" style={{bottom:'10%',left:'10%',background:'radial-gradient(circle,rgba(232,129,47,.05) 0%,transparent 65%)',filter:'blur(60px)'}}/>
@@ -895,9 +1428,15 @@ function LabSystem(){
 
         {/* HEADER */}
         <div className="text-center mb-16">
-          <M><p className="text-sm font-bold tracking-[.2em] uppercase mb-5" style={{color:'#2E7AB8'}}>Lab Operations</p></M>
-          <M delay={.1}><h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight">Lab Integrated<br/><span style={{background:'linear-gradient(135deg,#2E7AB8,#6DB3E8)',WebkitBackgroundClip:'text',WebkitTextFillColor:'transparent'}}>System</span></h2></M>
-          <M delay={.2}><p className="mt-6 text-lg md:text-xl max-w-2xl mx-auto" style={{color:'rgba(255,255,255,.35)'}}>One integrated system for all lab operations — bookings, mentoring, reports, safety, and maintenance.</p></M>
+          <M>
+            <div className="flex items-center gap-5 mb-4">
+              <div className="flex-1 h-px" style={{background:'rgba(46,122,184,.18)'}}/>
+              <span className="text-xs font-black tracking-[.28em] uppercase" style={{color:'#2E7AB8'}}>Lab Operations</span>
+              <div className="flex-1 h-px" style={{background:'rgba(46,122,184,.18)'}}/>
+            </div>
+          </M>
+          <M delay={.1}><h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black" style={{letterSpacing:'-0.04em',color:'#0c1f35'}}>Lab Integrated<br/><span style={{background:'linear-gradient(135deg,#2E7AB8,#6DB3E8)',WebkitBackgroundClip:'text',WebkitTextFillColor:'transparent'}}>System</span></h2></M>
+          <M delay={.2}><p className="mt-6 text-lg md:text-xl max-w-2xl mx-auto" style={{color:'#5a7b9a'}}>One integrated system for all lab operations — bookings, mentoring, reports, safety, and maintenance.</p></M>
         </div>
 
         {/* DASHBOARD STATS */}
@@ -905,16 +1444,16 @@ function LabSystem(){
           {DASH.map((d,i)=>(
             <M key={d.key} delay={i*.06}>
               <button onClick={()=>openSched(d.filter,'All Schedules')}
-                className="group w-full rounded-2xl p-5 text-left transition-all duration-500 hover:-translate-y-1 hover:shadow-lg"
-                style={{background:d.bg,border:`1px solid ${d.color}22`}}>
+                className="group w-full rounded-2xl p-5 text-left transition-all duration-400 hover:-translate-y-1"
+                style={{background:'#ffffff',border:`1px solid ${d.color}20`,boxShadow:`0 2px 12px rgba(12,31,53,.06)`}}>
                 <div className="flex items-center justify-between mb-4">
-                  <div style={{color:d.color}}>{IC[d.icon]}</div>
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{background:`${d.color}12`,color:d.color}}>{IC[d.icon]}</div>
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-3 h-3 opacity-0 group-hover:opacity-60 transition-opacity" style={{color:d.color}}><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </div>
-                <div className="text-3xl md:text-4xl font-black mb-1 tabular-nums" style={{color:d.color}}>
-                  {statsLoading?<span className="inline-block w-8 h-8 rounded-lg animate-pulse" style={{background:`${d.color}22`}}/>:stats[d.key]}
+                <div className="text-3xl md:text-4xl font-black mb-1 tabular-nums" style={{color:d.color,letterSpacing:'-0.03em'}}>
+                  {statsLoading?<span className="inline-block w-8 h-7 rounded-lg animate-pulse" style={{background:`${d.color}14`}}/>:stats[d.key]}
                 </div>
-                <p className="text-xs font-semibold leading-tight" style={{color:'rgba(255,255,255,.4)'}}>{d.label}</p>
+                <p className="text-xs font-semibold leading-tight" style={{color:'#8aa5bf'}}>{d.label}</p>
               </button>
             </M>
           ))}
@@ -924,9 +1463,9 @@ function LabSystem(){
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 mb-12">
           {LAB_SYSTEMS.map((sys,i)=>(
             <M key={sys.id} delay={i*.07}>
-              <div className="group relative flex flex-col rounded-3xl overflow-hidden h-full transition-all duration-700 hover:-translate-y-1 hover:shadow-xl"
-                   style={{background:'rgba(255,255,255,.025)',border:'1px solid rgba(255,255,255,.06)'}}>
-                <div className="absolute top-0 left-0 right-0 h-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-700" style={{background:`linear-gradient(90deg,transparent,${sys.accent},transparent)`}}/>
+              <div className="group relative flex flex-col rounded-3xl overflow-hidden h-full transition-all duration-500 hover:-translate-y-1"
+                   style={{background:'#ffffff',border:`1px solid rgba(46,122,184,.09)`,boxShadow:'0 2px 12px rgba(12,31,53,.06)'}}>
+                <div className="absolute top-0 left-0 right-0 h-[3px] opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{background:`linear-gradient(90deg,transparent,${sys.accent},transparent)`}}/>
                 <div className="p-7 flex flex-col h-full gap-5">
                   <div className="flex items-start justify-between">
                     <div className="w-12 h-12 rounded-2xl flex items-center justify-center transition-transform duration-500 group-hover:scale-110"
@@ -939,24 +1478,24 @@ function LabSystem(){
                     </span>
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-black tracking-tight mb-2">{sys.title}</h3>
-                    <p className="text-sm leading-relaxed mb-4" style={{color:'rgba(255,255,255,.4)'}}>{sys.desc}</p>
+                    <h3 className="text-xl font-black mb-2" style={{color:'#0c1f35',letterSpacing:'-0.02em'}}>{sys.title}</h3>
+                    <p className="text-sm leading-relaxed mb-4" style={{color:'#5a7b9a'}}>{sys.desc}</p>
                     <div className="space-y-2">
-                      <div className="flex items-start gap-2 text-xs" style={{color:'rgba(255,255,255,.3)'}}><span className="mt-0.5 flex-shrink-0" style={{color:sys.accent}}>{IC.clock}</span><span><strong style={{color:'rgba(255,255,255,.5)'}}>Deadline:</strong> {sys.deadline}</span></div>
-                      <div className="flex items-start gap-2 text-xs" style={{color:'rgba(255,255,255,.3)'}}><span className="mt-0.5 flex-shrink-0" style={{color:sys.accent}}>{IC.check}</span><span><strong style={{color:'rgba(255,255,255,.5)'}}>Approval:</strong> {sys.approval}</span></div>
-                      <div className="flex items-start gap-2 text-xs" style={{color:'rgba(255,255,255,.3)'}}><span className="mt-0.5 flex-shrink-0" style={{color:sys.accent}}>{IC.user}</span><span><strong style={{color:'rgba(255,255,255,.5)'}}>User:</strong> {sys.users}</span></div>
+                      <div className="flex items-start gap-2 text-xs" style={{color:'#8aa5bf'}}><span className="mt-0.5 flex-shrink-0" style={{color:sys.accent}}>{IC.clock}</span><span><strong style={{color:'#5a7b9a'}}>Deadline:</strong> {sys.deadline}</span></div>
+                      <div className="flex items-start gap-2 text-xs" style={{color:'#8aa5bf'}}><span className="mt-0.5 flex-shrink-0" style={{color:sys.accent}}>{IC.check}</span><span><strong style={{color:'#5a7b9a'}}>Approval:</strong> {sys.approval}</span></div>
+                      <div className="flex items-start gap-2 text-xs" style={{color:'#8aa5bf'}}><span className="mt-0.5 flex-shrink-0" style={{color:sys.accent}}>{IC.user}</span><span><strong style={{color:'#5a7b9a'}}>User:</strong> {sys.users}</span></div>
                     </div>
                   </div>
-                  <div className="h-px" style={{background:'rgba(255,255,255,.05)'}}/>
+                  <div className="h-px" style={{background:'rgba(46,122,184,.08)'}}/>
                   <div className="flex gap-3">
                     <button onClick={()=>setFormModal(sys)}
-                       className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl text-sm font-bold transition-all hover:scale-[1.02] hover:shadow-lg"
-                       style={{background:`linear-gradient(135deg,${sys.accent},${sys.accent}bb)`,color:'#fff'}}>
+                       className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl text-sm font-bold transition-all hover:scale-[1.02] hover:shadow-md"
+                       style={{background:`linear-gradient(135deg,${sys.accent},${sys.accent}cc)`,color:'#fff'}}>
                       {IC.form} Submit Form
                     </button>
                     <button onClick={()=>openSched(sys.schedFilter,sys.title)}
                       className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl text-sm font-bold transition-all hover:scale-[1.02]"
-                      style={{background:'rgba(255,255,255,.05)',color:'rgba(255,255,255,.7)',border:'1px solid rgba(255,255,255,.08)'}}>
+                      style={{background:'#f4f9ff',color:'#2E7AB8',border:'1px solid rgba(46,122,184,.2)'}}>
                       {IC.table} View Data
                     </button>
                   </div>
@@ -970,14 +1509,14 @@ function LabSystem(){
         <M delay={.5}>
           <a href="https://docs.google.com/spreadsheets/d/1q0Lf5cUFUfKvYpQX7wUuoUgQQB3FFp7vJGIMVGIgvfQ/edit"
              target="_blank" rel="noopener"
-             className="group flex items-center gap-5 rounded-2xl p-5 transition-all duration-500 hover:-translate-y-0.5 hover:shadow-lg"
-             style={{background:'rgba(46,122,184,.06)',border:'1px solid rgba(46,122,184,.18)'}}>
-            <div className="w-12 h-12 flex-shrink-0 rounded-xl flex items-center justify-center" style={{background:'rgba(46,122,184,.15)',color:'#2E7AB8'}}>
+             className="group flex items-center gap-5 rounded-2xl p-5 transition-all duration-400 hover:-translate-y-0.5"
+             style={{background:'#f4f9ff',border:'1px solid rgba(46,122,184,.18)',boxShadow:'0 2px 8px rgba(12,31,53,.05)'}}>
+            <div className="w-12 h-12 flex-shrink-0 rounded-xl flex items-center justify-center" style={{background:'rgba(46,122,184,.1)',color:'#2E7AB8'}}>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-6 h-6"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg>
             </div>
             <div className="flex-1 min-w-0">
-              <p className="font-bold text-base" style={{color:'rgba(255,255,255,.8)'}}>Lab Calendar — Single Source of Truth</p>
-              <p className="text-sm mt-0.5 truncate" style={{color:'rgba(255,255,255,.35)'}}>All web form submissions auto-sync to the central Lab Calendar spreadsheet</p>
+              <p className="font-bold text-sm" style={{color:'#0c1f35'}}>Lab Calendar — Single Source of Truth</p>
+              <p className="text-xs mt-0.5 truncate" style={{color:'#8aa5bf'}}>All web form submissions auto-sync to the central Lab Calendar spreadsheet</p>
             </div>
             <div className="flex-shrink-0 opacity-40 group-hover:opacity-80 transition-opacity">{IC.external}</div>
           </a>
@@ -987,15 +1526,15 @@ function LabSystem(){
       {/* SCHEDULE / DATA MODAL */}
       {sched.open&&(
         <div className="fixed inset-0 z-[200] flex items-end sm:items-center justify-center p-0 sm:p-4"
-             style={{background:'rgba(6,14,26,.88)',backdropFilter:'blur(24px)'}}
+             style={{background:'rgba(12,31,53,.6)',backdropFilter:'blur(20px)'}}
              onClick={()=>setSched(s=>({...s,open:false}))}>
-          <div className="relative w-full sm:max-w-6xl flex flex-col rounded-t-3xl sm:rounded-3xl overflow-hidden"
-               style={{background:'#0d1a2e',border:'1px solid rgba(255,255,255,.08)',maxHeight:'92vh'}}
+          <div className="relative w-full sm:max-w-6xl flex flex-col rounded-t-3xl sm:rounded-3xl overflow-hidden bg-white shadow-2xl"
+               style={{border:'1px solid rgba(46,122,184,.12)',maxHeight:'92vh'}}
                onClick={e=>e.stopPropagation()}>
-            <div className="flex items-center gap-4 px-6 py-4 flex-shrink-0" style={{borderBottom:'1px solid rgba(255,255,255,.06)'}}>
+            <div className="flex items-center gap-4 px-6 py-4 flex-shrink-0" style={{borderBottom:'1px solid rgba(46,122,184,.08)'}}>
               <div className="flex-1 min-w-0">
-                <h3 className="font-black text-lg">{sched.title||'Lab Schedule'}</h3>
-                <p className="text-xs mt-0.5" style={{color:'rgba(255,255,255,.3)'}}>{sched.filter==='all'?'All activities':sched.filter} · Lab Calendar</p>
+                <h3 className="font-black text-lg" style={{color:'#0c1f35'}}>{sched.title||'Lab Schedule'}</h3>
+                <p className="text-xs mt-0.5" style={{color:'#8aa5bf'}}>{sched.filter==='all'?'All activities':sched.filter} · Lab Calendar</p>
               </div>
               <div className="flex items-center gap-2">
                 <a href="https://docs.google.com/spreadsheets/d/1q0Lf5cUFUfKvYpQX7wUuoUgQQB3FFp7vJGIMVGIgvfQ/edit"
@@ -1006,34 +1545,34 @@ function LabSystem(){
                 </a>
                 <button onClick={()=>setSched(s=>({...s,open:false}))}
                         className="w-9 h-9 flex items-center justify-center rounded-xl transition-all hover:scale-110"
-                        style={{background:'rgba(255,255,255,.05)',color:'rgba(255,255,255,.5)'}}>✕</button>
+                        style={{background:'rgba(12,31,53,.06)',color:'#5a7b9a'}}>✕</button>
               </div>
             </div>
-            <div className="flex flex-wrap gap-2.5 px-6 py-4 flex-shrink-0" style={{borderBottom:'1px solid rgba(255,255,255,.04)'}}>
-              <div className="flex rounded-xl overflow-hidden" style={{border:'1px solid rgba(255,255,255,.07)'}}>
-                {[['all','All'],['Booking Lab','Booking'],['Bimbingan','Mentoring'],['Progress Report','Progress'],['K3 Incident','K3'],['Maintenance','Maint.']].map(([v,l])=>(
+            <div className="flex flex-wrap gap-2.5 px-6 py-4 flex-shrink-0" style={{borderBottom:'1px solid rgba(46,122,184,.07)',background:'#f8fbff'}}>
+              <div className="flex rounded-xl overflow-hidden" style={{border:'1px solid rgba(46,122,184,.15)'}}>
+                {[['all','All'],['Booking Lab','Booking'],['Bimbingan','Mentoring'],['Progress Report','Progress'],['K3 Incident','K3'],['Maintenance','Maint.'],['Join Application','Join']].map(([v,l])=>(
                   <button key={v} onClick={()=>setSched(s=>({...s,filter:v}))}
                           className="px-3 py-2 text-xs font-bold transition-all"
-                          style={{background:sched.filter===v?'rgba(46,122,184,.25)':'transparent',color:sched.filter===v?'#6DB3E8':'rgba(255,255,255,.4)'}}>
+                          style={{background:sched.filter===v?'#2E7AB8':'transparent',color:sched.filter===v?'#fff':'#5a7b9a'}}>
                     {l}
                   </button>
                 ))}
               </div>
-              <div className="flex rounded-xl overflow-hidden" style={{border:'1px solid rgba(255,255,255,.07)'}}>
+              <div className="flex rounded-xl overflow-hidden" style={{border:'1px solid rgba(46,122,184,.15)'}}>
                 {[['all','Status'],['Pending','Pending'],['Approved','Approved'],['Rejected','Rejected'],['Completed','Done']].map(([v,l])=>(
                   <button key={v} onClick={()=>setFilterStatus(v)}
                           className="px-3 py-2 text-xs font-bold transition-all"
-                          style={{background:filterStatus===v?'rgba(46,122,184,.25)':'transparent',color:filterStatus===v?'#6DB3E8':'rgba(255,255,255,.4)'}}>
+                          style={{background:filterStatus===v?'#2E7AB8':'transparent',color:filterStatus===v?'#fff':'#5a7b9a'}}>
                     {l}
                   </button>
                 ))}
               </div>
               <input type="date" value={filterDate} onChange={e=>setFilterDate(e.target.value)}
                      className="px-3 py-2 text-xs rounded-xl font-medium outline-none"
-                     style={{background:'rgba(255,255,255,.04)',border:'1px solid rgba(255,255,255,.07)',color:'rgba(255,255,255,.6)',colorScheme:'dark'}}/>
+                     style={{background:'#ffffff',border:'1px solid rgba(46,122,184,.15)',color:'#4a6b8a'}}/>
               <input type="text" placeholder="Search name..." value={filterName} onChange={e=>setFilterName(e.target.value)}
                      className="px-3 py-2 text-xs rounded-xl font-medium outline-none min-w-0"
-                     style={{background:'rgba(255,255,255,.04)',border:'1px solid rgba(255,255,255,.07)',color:'rgba(255,255,255,.6)'}}/>
+                     style={{background:'#ffffff',border:'1px solid rgba(46,122,184,.15)',color:'#4a6b8a'}}/>
               {(filterDate||filterName||filterStatus!=='all')&&(
                 <button onClick={()=>{setFilterDate('');setFilterName('');setFilterStatus('all');}}
                         className="px-3 py-2 text-xs font-bold rounded-xl transition-all hover:scale-105"
@@ -1045,14 +1584,14 @@ function LabSystem(){
                 <div className="flex items-center justify-center py-20">
                   <div className="flex flex-col items-center gap-4">
                     <div className="w-10 h-10 rounded-full border-2 animate-spin" style={{borderColor:'rgba(46,122,184,.4)',borderTopColor:'transparent'}}/>
-                    <p className="text-sm" style={{color:'rgba(255,255,255,.3)'}}>Fetching data from Lab Calendar…</p>
+                    <p className="text-sm" style={{color:'#5a7b9a'}}>Fetching data from Lab Calendar…</p>
                   </div>
                 </div>
               ):schedData.length===0?(
                 <div className="flex flex-col items-center justify-center py-20 gap-4">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="w-12 h-12" style={{color:'rgba(255,255,255,.1)'}}><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 3v18"/></svg>
-                  <p className="text-base font-semibold" style={{color:'rgba(255,255,255,.3)'}}>No data found</p>
-                  <p className="text-xs text-center max-w-xs" style={{color:'rgba(255,255,255,.2)'}}>Entries will appear here once submitted via the web forms and the Apps Script backend is connected.</p>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="w-12 h-12" style={{color:'rgba(46,122,184,.25)'}}><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 3v18"/></svg>
+                  <p className="text-base font-semibold" style={{color:'#4a6b8a'}}>No data found</p>
+                  <p className="text-xs text-center max-w-xs" style={{color:'#8aa5bf'}}>Entries will appear here once submitted via the web forms and the Apps Script backend is connected.</p>
                   <a href="https://docs.google.com/spreadsheets/d/1q0Lf5cUFUfKvYpQX7wUuoUgQQB3FFp7vJGIMVGIgvfQ/edit" target="_blank" rel="noopener"
                      className="flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition-all hover:scale-105"
                      style={{background:'rgba(46,122,184,.15)',color:'#6DB3E8',border:'1px solid rgba(46,122,184,.2)'}}>
@@ -1062,53 +1601,84 @@ function LabSystem(){
               ):(
                 <table className="w-full text-sm border-collapse" style={{minWidth:'700px'}}>
                   <thead>
-                    <tr style={{borderBottom:'1px solid rgba(255,255,255,.06)'}}>
+                    <tr style={{borderBottom:'1px solid rgba(46,122,184,.1)'}}>
                       {['ID','Date','Time','Name','Activity','Details','Room / Equipment','Status','Action'].map(h=>(
                         <th key={h} className="text-left px-5 py-3 text-xs font-black tracking-wider uppercase"
-                            style={{color:'rgba(255,255,255,.25)',background:'rgba(255,255,255,.015)',whiteSpace:'nowrap'}}>{h}</th>
+                            style={{color:'#8aa5bf',background:'#f8fbff',whiteSpace:'nowrap'}}>{h}</th>
                       ))}
                     </tr>
                   </thead>
                   <tbody>
                     {schedData.map((row,i)=>{
                       const badge=sBadge(row['Status']||'');
-                      const ac=aColor[row['Activity']]||{bg:'rgba(255,255,255,.06)',c:'rgba(255,255,255,.4)'};
+                      const ac=aColor[row['Activity']]||{bg:'rgba(46,122,184,.08)',c:'#4a6b8a'};
                       return(
-                        <tr key={i} className="transition-colors" style={{borderBottom:'1px solid rgba(255,255,255,.03)'}}
-                            onMouseEnter={e=>e.currentTarget.style.background='rgba(255,255,255,.02)'}
+                        <tr key={i} className="transition-colors" style={{borderBottom:'1px solid rgba(46,122,184,.06)'}}
+                            onMouseEnter={e=>e.currentTarget.style.background='rgba(46,122,184,.03)'}
                             onMouseLeave={e=>e.currentTarget.style.background='transparent'}>
-                          <td className="px-5 py-3.5 font-mono text-xs" style={{color:'rgba(255,255,255,.3)',whiteSpace:'nowrap'}}>{row['ID']||'—'}</td>
-                          <td className="px-5 py-3.5 font-medium" style={{color:'rgba(255,255,255,.7)',whiteSpace:'nowrap'}}>{fmtDate(row['Date'])}</td>
-                          <td className="px-5 py-3.5" style={{color:'rgba(255,255,255,.5)',whiteSpace:'nowrap'}}>{row['Time']||'—'}</td>
-                          <td className="px-5 py-3.5 font-semibold" style={{color:'rgba(255,255,255,.8)',whiteSpace:'nowrap'}}>{row['Name']||'—'}</td>
+                          <td className="px-5 py-3.5 font-mono text-xs" style={{color:'#8aa5bf',whiteSpace:'nowrap'}}>{row['ID']||'—'}</td>
+                          <td className="px-5 py-3.5 font-semibold" style={{color:'#0c1f35',whiteSpace:'nowrap'}}>{fmtDate(row['Date'])}</td>
+                          <td className="px-5 py-3.5 font-mono text-sm" style={{color:'#2E7AB8',whiteSpace:'nowrap'}}>{fmtTime(row['Time'])}</td>
+                          <td className="px-5 py-3.5 font-semibold" style={{color:'#0c1f35',whiteSpace:'nowrap'}}>{row['Name']||'—'}</td>
                           <td className="px-5 py-3.5 whitespace-nowrap">
                             <span className="px-2.5 py-1 rounded-lg text-xs font-bold" style={{background:ac.bg,color:ac.c}}>{row['Activity']||'—'}</span>
                           </td>
-                          <td className="px-5 py-3.5 max-w-xs truncate" style={{color:'rgba(255,255,255,.45)'}}>{row['Details']||'—'}</td>
-                          <td className="px-5 py-3.5 whitespace-nowrap" style={{color:'rgba(255,255,255,.4)'}}>{row['Room/Equipment']||'—'}</td>
+                          <td className="px-5 py-3.5 max-w-xs truncate" style={{color:'#5a7b9a'}}>{row['Details']||'—'}</td>
+                          <td className="px-5 py-3.5 whitespace-nowrap" style={{color:'#8aa5bf'}}>{row['Room/Equipment']||'—'}</td>
                           <td className="px-5 py-3.5 whitespace-nowrap">
                             <span className="px-2.5 py-1 rounded-full text-xs font-bold" style={{background:badge.bg,color:badge.c}}>{row['Status']||'—'}</span>
                           </td>
                           <td className="px-5 py-3.5 whitespace-nowrap">
-                            {isAdmin&&row['Status']==='Pending'?(
-                              <div className="flex gap-2">
+                            {isAdmin?(
+                              <div className="flex gap-1.5 items-center flex-wrap">
+                                {row['Status']==='Pending'&&(<>
+                                  <button
+                                    disabled={!!actionLoading}
+                                    onClick={()=>handleAction(row['ID'],'approve')}
+                                    className="px-2.5 py-1.5 rounded-lg text-xs font-bold transition-all hover:scale-105 disabled:opacity-40"
+                                    style={{background:'rgba(58,139,62,.15)',color:'#22c55e',border:'1px solid rgba(58,139,62,.25)'}}>
+                                    {actionLoading===row['ID']+'approve'?'…':'✓ Approve'}
+                                  </button>
+                                  <button
+                                    disabled={!!actionLoading}
+                                    onClick={()=>handleAction(row['ID'],'deny')}
+                                    className="px-2.5 py-1.5 rounded-lg text-xs font-bold transition-all hover:scale-105 disabled:opacity-40"
+                                    style={{background:'rgba(220,38,38,.1)',color:'#f87171',border:'1px solid rgba(220,38,38,.2)'}}>
+                                    {actionLoading===row['ID']+'deny'?'…':'✕ Deny'}
+                                  </button>
+                                </>)}
                                 <button
                                   disabled={!!actionLoading}
-                                  onClick={()=>handleAction(row['ID'],'approve')}
-                                  className="px-3 py-1.5 rounded-lg text-xs font-bold transition-all hover:scale-105 disabled:opacity-40"
-                                  style={{background:'rgba(58,139,62,.2)',color:'#4ade80',border:'1px solid rgba(58,139,62,.3)'}}>
-                                  {actionLoading===row['ID']+'approve'?'…':'✓ Approve'}
+                                  onClick={()=>{setEditRow(row);setEditDate(toInputDate(row['Date']));setEditTime(toInputTime(row['Time']));}}
+                                  className="w-7 h-7 flex items-center justify-center rounded-lg transition-all hover:scale-110 disabled:opacity-40"
+                                  style={{background:'rgba(46,122,184,.1)',color:'#2E7AB8',border:'1px solid rgba(46,122,184,.2)'}}>
+                                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-3.5 h-3.5"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
                                 </button>
-                                <button
-                                  disabled={!!actionLoading}
-                                  onClick={()=>handleAction(row['ID'],'deny')}
-                                  className="px-3 py-1.5 rounded-lg text-xs font-bold transition-all hover:scale-105 disabled:opacity-40"
-                                  style={{background:'rgba(220,38,38,.15)',color:'#f87171',border:'1px solid rgba(220,38,38,.25)'}}>
-                                  {actionLoading===row['ID']+'deny'?'…':'✕ Deny'}
-                                </button>
+                                {deleteConfirm===row['ID']?(
+                                  <div className="flex items-center gap-1">
+                                    <button
+                                      disabled={!!actionLoading}
+                                      onClick={()=>handleDelete(row['ID'])}
+                                      className="px-2 py-1 rounded-lg text-xs font-bold transition-all hover:scale-105 disabled:opacity-40"
+                                      style={{background:'rgba(220,38,38,.15)',color:'#f87171',border:'1px solid rgba(220,38,38,.3)'}}>
+                                      {actionLoading===row['ID']+'delete'?'…':'Hapus?'}
+                                    </button>
+                                    <button onClick={()=>setDeleteConfirm(null)}
+                                      className="w-6 h-6 flex items-center justify-center rounded-lg text-xs"
+                                      style={{background:'rgba(12,31,53,.06)',color:'#8aa5bf'}}>✕</button>
+                                  </div>
+                                ):(
+                                  <button
+                                    disabled={!!actionLoading}
+                                    onClick={()=>setDeleteConfirm(row['ID'])}
+                                    className="w-7 h-7 flex items-center justify-center rounded-lg transition-all hover:scale-110 disabled:opacity-40"
+                                    style={{background:'rgba(220,38,38,.07)',color:'#f87171',border:'1px solid rgba(220,38,38,.15)'}}>
+                                    {IC.trash}
+                                  </button>
+                                )}
                               </div>
                             ):(
-                              <span className="text-xs" style={{color:'rgba(255,255,255,.2)'}}>—</span>
+                              <span className="text-xs" style={{color:'#8aa5bf'}}>—</span>
                             )}
                           </td>
                         </tr>
@@ -1119,53 +1689,48 @@ function LabSystem(){
               )}
             </div>
             {!schedLoading&&schedData.length>0&&(
-              <div className="px-6 py-3 flex-shrink-0 flex items-center justify-between" style={{borderTop:'1px solid rgba(255,255,255,.04)'}}>
-                <p className="text-xs" style={{color:'rgba(255,255,255,.25)'}}>{schedData.length} entries found</p>
+              <div className="px-6 py-3 flex-shrink-0 flex items-center justify-between" style={{borderTop:'1px solid rgba(46,122,184,.08)',background:'#f8fbff'}}>
+                <p className="text-xs font-medium" style={{color:'#8aa5bf'}}>{schedData.length} entries found</p>
                 <div className="flex items-center gap-3">
                   {isAdmin?(
                     <button onClick={()=>setIsAdmin(false)}
                       className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition-all hover:scale-105"
-                      style={{background:'rgba(58,139,62,.15)',color:'#4ade80',border:'1px solid rgba(58,139,62,.25)'}}>
+                      style={{background:'rgba(58,139,62,.1)',color:'#3A8B3E',border:'1px solid rgba(58,139,62,.2)'}}>
                       🔓 Admin Mode ON
                     </button>
                   ):(
                     <button onClick={()=>{setShowAdminLogin(true);setAdminErr('');setAdminPw('');}}
                       className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition-all hover:scale-105"
-                      style={{background:'rgba(255,255,255,.05)',color:'rgba(255,255,255,.35)',border:'1px solid rgba(255,255,255,.08)'}}>
+                      style={{background:'rgba(46,122,184,.07)',color:'#2E7AB8',border:'1px solid rgba(46,122,184,.18)'}}>
                       🔒 Admin Login
                     </button>
                   )}
-                  <p className="text-xs" style={{color:'rgba(255,255,255,.2)'}}>Source: Lab Calendar</p>
+                  <p className="text-xs" style={{color:'#8aa5bf'}}>Source: Lab Calendar</p>
                 </div>
               </div>
             )}
 
             {/* Admin Password Modal */}
             {showAdminLogin&&(
-              <div className="absolute inset-0 z-10 flex items-center justify-center" style={{background:'rgba(6,14,26,.88)',backdropFilter:'blur(12px)'}}>
-                <div className="w-full max-w-xs mx-4 rounded-2xl p-6 flex flex-col gap-4" style={{background:'#0d1a2e',border:'1px solid rgba(255,255,255,.1)'}}>
+              <div className="absolute inset-0 z-10 flex items-center justify-center" style={{background:'rgba(12,31,53,.5)',backdropFilter:'blur(12px)'}}>
+                <div className="w-full max-w-xs mx-4 rounded-2xl p-6 flex flex-col gap-4 bg-white shadow-2xl" style={{border:'1px solid rgba(46,122,184,.15)'}}>
                   <div className="text-center">
                     <div className="text-3xl mb-2">🔒</div>
-                    <h3 className="font-black text-base">Admin Access</h3>
-                    <p className="text-xs mt-1" style={{color:'rgba(255,255,255,.35)'}}>Enter admin password to enable Approve / Deny</p>
+                    <h3 className="font-black text-base" style={{color:'#0c1f35'}}>Admin Access</h3>
+                    <p className="text-xs mt-1" style={{color:'#8aa5bf'}}>Enter admin password to enable Approve / Deny</p>
                   </div>
-                  <input
-                    type="password"
-                    autoFocus
-                    placeholder="Password"
-                    value={adminPw}
-                    onChange={e=>setAdminPw(e.target.value)}
-                    onKeyDown={e=>e.key==='Enter'&&tryAdminLogin()}
+                  <input type="password" autoFocus placeholder="Password" value={adminPw}
+                    onChange={e=>setAdminPw(e.target.value)} onKeyDown={e=>e.key==='Enter'&&tryAdminLogin()}
                     className="w-full px-4 py-3 rounded-xl text-sm outline-none text-center tracking-widest"
-                    style={{background:'rgba(255,255,255,.06)',border:'1px solid rgba(255,255,255,.1)',color:'#fff',colorScheme:'dark'}}/>
-                  {adminErr&&<p className="text-xs text-center" style={{color:'#f87171'}}>{adminErr}</p>}
+                    style={{background:'#f4f9ff',border:'1px solid rgba(46,122,184,.2)',color:'#0c1f35'}}/>
+                  {adminErr&&<p className="text-xs text-center" style={{color:'#dc2626'}}>{adminErr}</p>}
                   <div className="flex gap-3">
                     <button onClick={()=>setShowAdminLogin(false)}
                       className="flex-1 py-2.5 rounded-xl text-sm font-bold transition-all hover:scale-105"
-                      style={{background:'rgba(255,255,255,.05)',color:'rgba(255,255,255,.4)',border:'1px solid rgba(255,255,255,.08)'}}>Cancel</button>
+                      style={{background:'#f4f9ff',color:'#5a7b9a',border:'1px solid rgba(46,122,184,.15)'}}>Cancel</button>
                     <button onClick={tryAdminLogin}
                       className="flex-1 py-2.5 rounded-xl text-sm font-bold transition-all hover:scale-105"
-                      style={{background:'rgba(46,122,184,.2)',color:'#6DB3E8',border:'1px solid rgba(46,122,184,.3)'}}>Unlock</button>
+                      style={{background:'#2E7AB8',color:'#fff'}}>Unlock</button>
                   </div>
                 </div>
               </div>
@@ -1176,6 +1741,69 @@ function LabSystem(){
 
       {/* FORM SUBMISSION MODAL */}
       {formModal&&<FormModal sys={formModal} onClose={()=>setFormModal(null)}/>}
+
+      {/* ADMIN EDIT MODAL */}
+      {editRow&&isAdmin&&(
+        <div className="fixed inset-0 z-[500] flex items-center justify-center p-4"
+             style={{background:'rgba(12,31,53,.65)',backdropFilter:'blur(20px)'}}
+             onClick={()=>setEditRow(null)}>
+          <div className="relative w-full max-w-sm rounded-3xl overflow-hidden bg-white shadow-2xl"
+               style={{border:'1px solid rgba(46,122,184,.15)'}}
+               onClick={e=>e.stopPropagation()}>
+            {/* Header */}
+            <div className="flex items-center gap-3 px-6 py-4" style={{borderBottom:'1px solid rgba(46,122,184,.08)'}}>
+              <div className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0"
+                   style={{background:'rgba(46,122,184,.1)',color:'#2E7AB8'}}>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+              </div>
+              <div className="flex-1 min-w-0">
+                <h3 className="font-black text-base" style={{color:'#0c1f35'}}>Edit Schedule</h3>
+                <p className="text-xs font-mono mt-0.5 truncate" style={{color:'#8aa5bf'}}>ID: {editRow['ID']} · {editRow['Name']||''}</p>
+              </div>
+              <button onClick={()=>setEditRow(null)} className="w-8 h-8 flex items-center justify-center rounded-xl"
+                      style={{background:'rgba(12,31,53,.06)',color:'#5a7b9a'}}>✕</button>
+            </div>
+            {/* Body */}
+            <div className="px-6 py-6 space-y-4">
+              <div>
+                <label className="block text-xs font-bold mb-1.5 tracking-wide" style={{color:'#4a6b8a'}}>
+                  Date <span style={{color:'#2E7AB8'}}>*</span>
+                </label>
+                <input type="date" value={editDate} onChange={e=>setEditDate(e.target.value)}
+                       className="w-full px-4 py-3 rounded-xl text-sm outline-none"
+                       style={{background:'#f4f9ff',border:'1px solid rgba(46,122,184,.2)',color:'#0c1f35'}}/>
+              </div>
+              <div>
+                <label className="block text-xs font-bold mb-1.5 tracking-wide" style={{color:'#4a6b8a'}}>
+                  Time <span style={{color:'#2E7AB8'}}>*</span>
+                </label>
+                <input type="time" value={editTime} onChange={e=>setEditTime(e.target.value)}
+                       className="w-full px-4 py-3 rounded-xl text-sm outline-none"
+                       style={{background:'#f4f9ff',border:'1px solid rgba(46,122,184,.2)',color:'#0c1f35'}}/>
+              </div>
+              <div className="pt-1 flex gap-3">
+                <button onClick={()=>setEditRow(null)}
+                        className="flex-1 py-3 rounded-xl text-sm font-bold transition-all hover:opacity-80"
+                        style={{background:'rgba(12,31,53,.05)',color:'#5a7b9a'}}>
+                  Cancel
+                </button>
+                <button
+                  disabled={!editDate||!editTime||!!actionLoading}
+                  onClick={()=>handleEdit(editRow['ID'],editDate,editTime)}
+                  className="flex-1 py-3 rounded-xl text-sm font-bold transition-all hover:opacity-90 disabled:opacity-40 disabled:cursor-not-allowed"
+                  style={{background:'linear-gradient(135deg,#2E7AB8,#1B3A5C)',color:'#fff'}}>
+                  {actionLoading===editRow['ID']+'edit'?(
+                    <span className="flex items-center justify-center gap-2">
+                      <svg className="w-4 h-4 animate-spin" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10" strokeOpacity=".25"/><path d="M12 2a10 10 0 0110 10" strokeLinecap="round"/></svg>
+                      Saving…
+                    </span>
+                  ):'Save Changes'}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
@@ -1192,20 +1820,27 @@ function Legal(){
   ];
 
   return(
-    <section id="legal" className="relative py-32 md:py-44" style={{background:'#060e1a'}}>
+    <section id="legal" className="relative py-32 md:py-44" style={{background:'#f4f9ff'}}>
       <div className="max-w-5xl mx-auto px-6 lg:px-10 text-center">
-        <M><p className="text-sm font-bold tracking-[.2em] uppercase mb-5" style={{color:'#2E7AB8'}}>Trust & Compliance</p></M>
-        <M delay={.1}><h2 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight">Legally Established.<br/>Fully Compliant.</h2></M>
-        <M delay={.2}><p className="mt-5 text-lg md:text-xl max-w-2xl mx-auto" style={{color:'rgba(255,255,255,.35)'}}>PT Torgas Blue Energy is a registered Indonesian corporation with all required government permits, operating under international laboratory standards.</p></M>
+        <M>
+          <div className="flex items-center gap-5 mb-4">
+            <div className="flex-1 h-px" style={{background:'rgba(46,122,184,.18)'}}/>
+            <span className="text-xs font-black tracking-[.28em] uppercase" style={{color:'#2E7AB8'}}>Trust &amp; Compliance</span>
+            <div className="flex-1 h-px" style={{background:'rgba(46,122,184,.18)'}}/>
+          </div>
+        </M>
+        <M delay={.1}><h2 className="text-4xl sm:text-5xl md:text-6xl font-black" style={{letterSpacing:'-0.04em',color:'#0c1f35'}}>Legally Established.<br/>Fully Compliant.</h2></M>
+        <M delay={.2}><p className="mt-5 text-lg md:text-xl max-w-2xl mx-auto" style={{color:'#5a7b9a'}}>PT Torgas Blue Energy is a registered Indonesian corporation with all required government permits, operating under international laboratory standards.</p></M>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-16">
           {docs.map((d,i)=>(
             <M key={i} delay={.25+i*.1}>
-              <div className="group relative p-8 rounded-3xl border border-white/[.04] text-left transition-all duration-700 hover:border-white/[.1] hover:-translate-y-1 overflow-hidden" style={{background:'rgba(255,255,255,.015)'}}>
+              <div className="group relative p-8 rounded-3xl text-left transition-all duration-700 hover:-translate-y-1 overflow-hidden bg-white"
+                   style={{border:'1px solid rgba(46,122,184,.12)',boxShadow:'0 2px 16px rgba(12,31,53,.06)'}}>
                 <div className="absolute top-0 left-0 w-full h-px transition-all duration-700 opacity-0 group-hover:opacity-100" style={{background:'linear-gradient(90deg,transparent,#2E7AB8,transparent)'}}/>
-                <div className="mb-5" style={{color:'#2E7AB8'}}>{IC[d.icon]}</div>
-                <h4 className="text-lg font-bold leading-tight mb-3">{d.title}</h4>
-                <p className="text-base leading-relaxed" style={{color:'rgba(255,255,255,.35)'}}>{d.desc}</p>
+                <div className="mb-5 w-11 h-11 rounded-xl flex items-center justify-center" style={{background:'rgba(46,122,184,.08)',color:'#2E7AB8'}}>{IC[d.icon]}</div>
+                <h4 className="text-lg font-bold leading-tight mb-3" style={{color:'#0c1f35'}}>{d.title}</h4>
+                <p className="text-base leading-relaxed" style={{color:'#5a7b9a'}}>{d.desc}</p>
               </div>
             </M>
           ))}
@@ -1214,7 +1849,8 @@ function Legal(){
         <M delay={.7}>
           <div className="mt-14 flex flex-wrap justify-center gap-4">
             {['GLP (OECD)','ISO/IEC 17025:2017'].map((s,i)=>(
-              <span key={i} className="text-base font-semibold px-7 py-3 rounded-full transition-all duration-500 hover:bg-white/[.04]" style={{border:'1px solid rgba(255,255,255,.1)',color:'rgba(255,255,255,.4)'}}>{s}</span>
+              <span key={i} className="text-base font-semibold px-7 py-3 rounded-full transition-all duration-500"
+                    style={{border:'1px solid rgba(46,122,184,.2)',color:'#4a6b8a',background:'white'}}>{s}</span>
             ))}
           </div>
         </M>
@@ -1231,7 +1867,7 @@ function Closing(){
   const inView=useInView?useInView(ref,{once:true,amount:.12}):true;
 
   return(
-    <section id="contact" ref={ref} className="relative py-40 md:py-56 overflow-hidden" style={{background:'#0a1628'}}>
+    <section id="contact" ref={ref} className="relative py-40 md:py-56 overflow-hidden" style={{background:'#1B3A5C'}}>
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute w-[600px] h-[600px] rounded-full" style={{top:'20%',left:'50%',transform:'translate(-50%,-50%)',background:'radial-gradient(circle,rgba(46,122,184,.12) 0%,transparent 70%)',filter:'blur(100px)'}}/>
         <div className="absolute w-[400px] h-[400px] rounded-full" style={{bottom:'15%',right:'15%',background:'radial-gradient(circle,rgba(232,129,47,.08) 0%,transparent 70%)',filter:'blur(80px)'}}/>
@@ -1239,7 +1875,7 @@ function Closing(){
 
       <div className="relative z-10 max-w-5xl mx-auto px-6 lg:px-10 text-center">
         <MH delay={.1} y={45}>
-          <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black tracking-[-0.04em] leading-[.92]">
+          <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black leading-[.88]" style={{letterSpacing:'-0.045em'}}>
             Engineering the Future<br/>
             <span style={{background:'linear-gradient(135deg,#E8812F 0%,#2E7AB8 50%,#6DB3E8 100%)',WebkitBackgroundClip:'text',WebkitTextFillColor:'transparent'}}>of Blue Energy</span>
           </h2>
@@ -1253,7 +1889,7 @@ function Closing(){
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-5 h-5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
               Email Us
             </a>
-            <a href="https://www.instagram.com/torgasblueenergy" target="_blank" rel="noopener" className="inline-flex items-center gap-3 text-base font-semibold px-8 py-4 rounded-full transition-all duration-300 hover:scale-105" style={{background:'rgba(255,255,255,.05)',color:'rgba(255,255,255,.7)',border:'1px solid rgba(255,255,255,.1)'}}>
+            <a href="https://www.instagram.com/torgasblueenergy" target="_blank" rel="noopener" className="inline-flex items-center gap-3 text-base font-semibold px-8 py-4 rounded-full transition-all duration-300 hover:scale-105" style={{background:'rgba(255,255,255,.08)',color:'rgba(255,255,255,.85)',border:'1px solid rgba(255,255,255,.15)'}}>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-5 h-5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
               Instagram
             </a>
@@ -1261,23 +1897,29 @@ function Closing(){
               <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
               WhatsApp COO
             </a>
+            <a href="https://www.youtube.com/@torgaslab" target="_blank" rel="noopener" className="inline-flex items-center gap-3 text-base font-semibold px-8 py-4 rounded-full transition-all duration-300 hover:scale-105" style={{background:'rgba(255,0,0,.08)',color:'#ff4444',border:'1px solid rgba(255,0,0,.2)'}}>
+              <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+              YouTube
+            </a>
           </div>
         </MH>
       </div>
 
       {/* Footer */}
-      <div className="absolute bottom-0 left-0 right-0 border-t border-white/[.04]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10 py-7 flex flex-col sm:flex-row items-center justify-between gap-4" style={{color:'rgba(255,255,255,.2)'}}>
-          <div className="flex items-center gap-3">
-            <img src="images/logo/logo.png" alt="" className="w-6 h-6 rounded-lg opacity-60"/>
+      <div className="absolute bottom-0 left-0 right-0" style={{borderTop:'1px solid rgba(255,255,255,.08)'}}>
+        <div className="max-w-7xl mx-auto px-6 lg:px-10 py-7 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-3" style={{color:'rgba(255,255,255,.5)'}}>
+            <img src="images/logo/logo.png" alt="" className="w-6 h-6 rounded-lg opacity-70"/>
             <span className="text-sm font-medium">PT Torgas Blue Energy</span>
           </div>
           <div className="flex items-center gap-5 text-sm flex-wrap justify-center sm:justify-end">
-            <a href="mailto:torgasblueenergy@gmail.com" className="hover:text-white transition-colors" style={{color:'rgba(255,255,255,.3)'}}>torgasblueenergy@gmail.com</a>
-            <span className="w-1 h-1 rounded-full hidden sm:block" style={{background:'rgba(255,255,255,.15)'}}/>
-            <a href="https://www.instagram.com/torgasblueenergy" target="_blank" rel="noopener" className="hover:text-white transition-colors" style={{color:'rgba(255,255,255,.3)'}}>@torgasblueenergy</a>
-            <span className="w-1 h-1 rounded-full hidden sm:block" style={{background:'rgba(255,255,255,.15)'}}/>
-            <a href="https://wa.me/628116182612" target="_blank" rel="noopener" className="hover:text-white transition-colors" style={{color:'rgba(255,255,255,.3)'}}>+62 811-618-2612</a>
+            <a href="mailto:torgasblueenergy@gmail.com" className="hover:text-white transition-colors" style={{color:'rgba(255,255,255,.45)'}}>torgasblueenergy@gmail.com</a>
+            <span className="w-1 h-1 rounded-full hidden sm:block" style={{background:'rgba(255,255,255,.2)'}}/>
+            <a href="https://www.instagram.com/torgasblueenergy" target="_blank" rel="noopener" className="hover:text-white transition-colors" style={{color:'rgba(255,255,255,.45)'}}>@torgasblueenergy</a>
+            <span className="w-1 h-1 rounded-full hidden sm:block" style={{background:'rgba(255,255,255,.2)'}}/>
+            <a href="https://www.youtube.com/@torgaslab" target="_blank" rel="noopener" className="hover:text-white transition-colors" style={{color:'rgba(255,255,255,.45)'}}>YouTube @torgaslab</a>
+            <span className="w-1 h-1 rounded-full hidden sm:block" style={{background:'rgba(255,255,255,.2)'}}/>
+            <a href="https://wa.me/628116182612" target="_blank" rel="noopener" className="hover:text-white transition-colors" style={{color:'rgba(255,255,255,.45)'}}>+62 811-618-2612</a>
           </div>
         </div>
       </div>
@@ -1299,7 +1941,7 @@ function App(){
       <main>
         <Hero/>
         <Identity/>
-        <Innovation/>
+        <News/>
         <Projects/>
         <FieldWork/>
         <People/>
