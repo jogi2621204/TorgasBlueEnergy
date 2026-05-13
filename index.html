@@ -201,22 +201,22 @@ const LAB_SYSTEMS=[
   {id:'bimbingan',title:'Mentoring Request',
    desc:'Submit a structured and documented mentoring session request with your supervisor.',
    deadline:'At least 2 days before scheduled session',approval:'Supervisor',users:'Thesis & Internship Students',
-   badge:'SCHEDULED',badgeColor:'#6DB3E8',badgeBg:'rgba(109,179,232,.12)',
+   badge:'SCHEDULED',badgeColor:'#1a6b9a',badgeBg:'rgba(109,179,232,.1)',
    icon:'mentoring',accent:'#6DB3E8',schedFilter:'Bimbingan'},
-  {id:'k3',title:'Incident Report K3',
-   desc:'Report any safety and health incident immediately after it occurs. Safety is the top priority.',
-   deadline:'Immediately after the incident',approval:'Head Tech Dept + Lab Head',users:'All lab users',
-   badge:'URGENT',badgeColor:'#E8812F',badgeBg:'rgba(232,129,47,.15)',
-   icon:'safety',accent:'#E8812F',schedFilter:'K3 Incident'},
+  {id:'rab',title:'Procurement Request (RAB)',
+   desc:'Submit your weekly lab materials and supplies procurement request in a structured and traceable format.',
+   deadline:'Every Thursday before Lab Meeting',approval:'Head Dept → Lab Head → Finance/Admin',users:'All lab users',
+   badge:'WEEKLY',badgeColor:'#0f766e',badgeBg:'rgba(13,148,136,.1)',
+   icon:'file',accent:'#0D9488',schedFilter:'Procurement Request'},
   {id:'maintenance',title:'Maintenance Equipment',
    desc:'Record and monitor routine laboratory equipment maintenance to ensure optimal performance.',
    deadline:'Per maintenance schedule',approval:'Head Tech Dept',users:'Lab Technicians',
    badge:'ONGOING',badgeColor:'#9B6EE8',badgeBg:'rgba(155,110,232,.15)',
    icon:'maintenance',accent:'#9B6EE8',schedFilter:'Maintenance'},
-  {id:'join_application',title:'Intern & Mahasiswa Bimbingan',
-   desc:'Daftar bergabung sebagai mahasiswa intern (KP/magang) atau mahasiswa bimbingan skripsi/tesis di lab kami.',
-   deadline:'Pendaftaran dibuka sepanjang tahun',approval:'Supervisor / Lab Head',users:'Mahasiswa S1 · S2 · S3',
-   badge:'OPEN',badgeColor:'#3A8B3E',badgeBg:'rgba(58,139,62,.15)',
+  {id:'join_application',title:'Intern & Student Ambassador',
+   desc:'Register to join as an intern (KP/practical training) or thesis/dissertation student at our laboratory.',
+   deadline:'Open year-round',approval:'Supervisor / Lab Head',users:'Undergraduate · Graduate · PhD Students',
+   badge:'OPEN',badgeColor:'#166534',badgeBg:'rgba(58,139,62,.12)',
    icon:'graduate',accent:'#3A8B3E',schedFilter:'Join Application'},
 ];
 
@@ -269,20 +269,34 @@ const FORM_CONFIGS={
     {name:'details',label:'Issue / Work Description',type:'textarea',required:true,placeholder:'Describe the issue or maintenance needed...'},
     {name:'notes',label:'Additional Notes',type:'textarea',required:false,placeholder:'Any other relevant information...'},
   ]},
-  join_application:{title:'Pendaftaran Intern / Bimbingan',activity:'Join Application',fields:[
-    {name:'role',label:'Jenis Pendaftaran',type:'select',required:true,options:['Intern / KP (Kerja Praktik)','Magang','Mahasiswa Bimbingan Skripsi (S1)','Mahasiswa Bimbingan Tesis (S2)','Mahasiswa Bimbingan Disertasi (S3)']},
-    {name:'name',label:'Nama Lengkap',type:'text',required:true,placeholder:'Nama lengkap sesuai KTM'},
-    {name:'email',label:'Email',type:'email',required:true,placeholder:'email@example.com'},
-    {name:'phone',label:'No. HP / WhatsApp',type:'tel',required:true,placeholder:'+62 8xx-xxxx-xxxx'},
-    {name:'nim',label:'NIM',type:'text',required:true,placeholder:'e.g. 140310200001'},
-    {name:'institution',label:'Perguruan Tinggi',type:'text',required:true,placeholder:'e.g. Universitas Padjadjaran'},
-    {name:'program',label:'Program Studi',type:'text',required:true,placeholder:'e.g. Geofisika, Ilmu Kelautan, Kimia'},
-    {name:'supervisor',label:'Dosen Pembimbing / Supervisor (Opsional)',type:'text',required:false,placeholder:'Nama dosen pembimbing dari kampus'},
-    {name:'topic',label:'Topik Penelitian / Bidang Minat',type:'text',required:true,placeholder:'Topik skripsi / magang yang diusulkan'},
-    {name:'startDate',label:'Rencana Tanggal Mulai',type:'date',required:true},
-    {name:'duration',label:'Durasi',type:'select',required:true,options:['1 bulan','2 bulan','3 bulan','6 bulan','1 tahun','2 tahun atau lebih']},
-    {name:'motivation',label:'Motivasi & Latar Belakang',type:'textarea',required:true,placeholder:'Ceritakan motivasi kamu bergabung dan kaitannya dengan riset Torgas Blue Energy...'},
-    {name:'gpa',label:'IPK Terakhir (Opsional)',type:'text',required:false,placeholder:'e.g. 3.75 / 4.00'},
+  join_application:{title:'Intern & Thesis Student Registration',activity:'Join Application',fields:[
+    {name:'role',label:'Registration Type',type:'select',required:true,options:['Internship / KP (Practical Training)','Internship (Magang)','Thesis Student (S1 — Undergraduate)','Thesis Student (S2 — Master)','Dissertation Student (S3 — PhD)']},
+    {name:'name',label:'Full Name',type:'text',required:true,placeholder:'Full name as on student ID'},
+    {name:'email',label:'Email Address',type:'email',required:true,placeholder:'email@example.com'},
+    {name:'phone',label:'Phone / WhatsApp Number',type:'tel',required:true,placeholder:'+62 8xx-xxxx-xxxx'},
+    {name:'nim',label:'Student ID (NIM)',type:'text',required:true,placeholder:'e.g. 140310200001'},
+    {name:'institution',label:'University / Institution',type:'text',required:true,placeholder:'e.g. Universitas Padjadjaran'},
+    {name:'program',label:'Study Program',type:'text',required:true,placeholder:'e.g. Geophysics, Marine Science, Chemistry'},
+    {name:'supervisor',label:'Academic Supervisor (Optional)',type:'text',required:false,placeholder:'Supervisor name from your university'},
+    {name:'topic',label:'Research Topic / Area of Interest',type:'text',required:true,placeholder:'Proposed thesis or internship topic'},
+    {name:'startDate',label:'Planned Start Date',type:'date',required:true},
+    {name:'duration',label:'Duration',type:'select',required:true,options:['1 month','2 months','3 months','6 months','1 year','2 years or more']},
+    {name:'motivation',label:'Motivation & Background',type:'textarea',required:true,placeholder:'Tell us your motivation for joining and how it relates to Torgas Blue Energy research...'},
+    {name:'gpa',label:'Latest GPA (Optional)',type:'text',required:false,placeholder:'e.g. 3.75 / 4.00'},
+  ]},
+  rab:{title:'Procurement Request — Materials & Supplies',activity:'Procurement Request',fields:[
+    {name:'name',label:'Requester Name',type:'text',required:true,placeholder:'Your full name'},
+    {name:'email',label:'Email Address',type:'email',required:true,placeholder:'email@example.com'},
+    {name:'departemen',label:'Department / Unit',type:'select',required:true,options:['Pangandaran Dept','Jatinangor Dept','Tech Dept','Secretariat']},
+    {name:'jabatan',label:'Position / Role',type:'text',required:true,placeholder:'e.g. Research Intern, Lab Technician'},
+    {name:'tanggalPengajuan',label:'Submission Date',type:'date',required:true},
+    {name:'dibutuhkanPaling',label:'Required By (Latest)',type:'date',required:true},
+    {name:'tujuan',label:'Purpose / Brief Description',type:'textarea',required:true,placeholder:'Describe the purpose of this procurement request...'},
+    {name:'items',label:'List of Items / Materials Requested',type:'textarea',required:true,placeholder:'Format: No. Item Name | Specification | Unit | Qty | Est. Price (Rp)\n\nExample:\n1. Distilled Water | Technical grade, 5L | bottle | 3 | Rp 25,000\n2. Alcohol 70% | Pharmacy grade | litre | 2 | Rp 30,000'},
+    {name:'justifikasi',label:'Justification / Reason',type:'textarea',required:true,placeholder:'Why are these items urgent or important to procure?'},
+    {name:'urgensi',label:'Urgency Level',type:'select',required:true,options:['Critical (≤3 days)','High (≤1 week)','Normal (≤2 weeks)','Low (>2 weeks)']},
+    {name:'kategori',label:'Item Category',type:'select',required:true,options:['Chemical Reagents','Lab Consumables','Small Equipment','Stationery & Office Supplies','PPE / Safety Gear','Other']},
+    {name:'anggaran',label:'Budget Source',type:'select',required:true,options:['Lab Operational Fund','Research Fund [Project Code]','Internship Fund','Personal Fund']},
   ]},
 };
 
@@ -336,14 +350,43 @@ function Navigation(){
    ══════════════════════════════════════════ */
 function Hero(){
   const ref=useRef(null);
-  const inView=useInView?useInView(ref,{once:true,amount:.05}):true;
+  const vidRef=useRef(null);
+  const[muted,setMuted]=useState(true);
+  const[vidReady,setVidReady]=useState(false);
+
+  useEffect(()=>{
+    const v=vidRef.current;
+    if(!v)return;
+    v.play().catch(()=>{});
+  },[]);
+
+  const toggleAudio=()=>{
+    const v=vidRef.current;
+    if(!v)return;
+    const next=!muted;
+    v.muted=next;
+    setMuted(next);
+    if(!next){v.volume=0.7;}
+  };
 
   return(
     <section id="hero" ref={ref} className="relative h-screen min-h-[750px] flex items-center justify-center overflow-hidden">
+      {/* VIDEO BACKGROUND */}
       <div className="absolute inset-0">
-        <img src="images/activities/activity-2.jpg" alt="" className="img-cover transition-transform duration-[14s] ease-out" style={{transform:inView?'scale(1)':'scale(1.15)',filter:'brightness(.4) saturate(1.1)'}}/>
-        <div className="absolute inset-0" style={{background:'linear-gradient(180deg,rgba(10,22,40,.2) 0%,rgba(10,22,40,.55) 40%,rgba(10,22,40,.97) 100%)'}}/>
+        <video
+          ref={vidRef}
+          src="reels%20fix.MP4"
+          autoPlay loop playsInline muted
+          onCanPlay={()=>setVidReady(true)}
+          style={{width:'100%',height:'100%',objectFit:'cover',display:'block',filter:'brightness(.45) saturate(1.15)',transition:'opacity 1.2s ease',opacity:vidReady?1:0}}
+        />
+        {/* Fallback image while video loads */}
+        {!vidReady&&(
+          <img src="images/activities/activity-2.jpg" alt="" className="img-cover absolute inset-0" style={{filter:'brightness(.4) saturate(1.1)'}}/>
+        )}
+        <div className="absolute inset-0" style={{background:'linear-gradient(180deg,rgba(10,22,40,.15) 0%,rgba(10,22,40,.5) 40%,rgba(10,22,40,.97) 100%)'}}/>
       </div>
+
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full pointer-events-none" style={{background:'radial-gradient(circle,rgba(46,122,184,.12) 0%,transparent 70%)',filter:'blur(80px)'}}/>
 
       <div className="relative z-10 text-center max-w-5xl px-6">
@@ -351,7 +394,7 @@ function Hero(){
           <img src="images/logo/logo.png" alt="Torgas Blue Energy" className="w-20 h-20 md:w-24 md:h-24 mx-auto mb-10 rounded-3xl shadow-2xl shadow-brand-blue/20"/>
         </MH>
         <MH delay={.35} y={55}>
-          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black leading-[.88]" style={{letterSpacing:'-0.045em'}}>
+          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black leading-[.88]" style={{letterSpacing:'-0.045em',color:'#ffffff'}}>
             Powering the Future<br/>
             <span style={{background:'linear-gradient(135deg,#E8812F 0%,#2E7AB8 40%,#6DB3E8 100%)',WebkitBackgroundClip:'text',WebkitTextFillColor:'transparent'}}>Beneath the Surface</span>
           </h1>
@@ -364,10 +407,26 @@ function Hero(){
         </MH>
       </div>
 
+      {/* SCROLL INDICATOR */}
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-pulse" style={{color:'rgba(255,255,255,.2)'}}>
         <span className="text-xs tracking-[.2em] uppercase font-medium">Scroll</span>
         <div className="w-px h-10" style={{background:'linear-gradient(180deg,rgba(109,179,232,.4),transparent)'}}/>
       </div>
+
+      {/* AUDIO TOGGLE */}
+      <button
+        onClick={toggleAudio}
+        className="absolute bottom-10 right-6 z-20 flex items-center gap-2 px-3 py-2 rounded-full transition-all duration-300 hover:scale-105"
+        style={{background:'rgba(255,255,255,.1)',border:'1px solid rgba(255,255,255,.18)',backdropFilter:'blur(12px)',color:'rgba(255,255,255,.7)'}}
+        title={muted?'Enable sound':'Mute'}
+      >
+        {muted?(
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+        ):(
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.07"/></svg>
+        )}
+        <span className="text-xs font-semibold tracking-wide">{muted?'Sound Off':'Sound On'}</span>
+      </button>
     </section>
   );
 }
@@ -752,7 +811,7 @@ function Projects(){
                     </div>
                     <div className="absolute bottom-0 left-0 right-0 p-7 md:p-9">
                       <h3 className="text-2xl md:text-3xl font-black leading-tight"
-                          style={{letterSpacing:'-0.03em'}}>{p.title}</h3>
+                          style={{letterSpacing:'-0.03em',color:'#ffffff'}}>{p.title}</h3>
                       <p className="text-sm md:text-base mt-2 line-clamp-2" style={{color:'rgba(255,255,255,.45)'}}>{p.subtitle}</p>
                       <div className="flex items-center gap-2 mt-4 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500" style={{color:accent}}>
                         <span className="text-sm font-semibold">View Project</span>{IC.arrow}
@@ -1407,12 +1466,13 @@ function LabSystem(){
   };
 
   const aColor={
-    'Booking Lab':{bg:'rgba(46,122,184,.15)',c:'#6DB3E8'},
-    'Bimbingan':{bg:'rgba(58,139,62,.15)',c:'#4ade80'},
-    'Progress Report':{bg:'rgba(58,139,62,.1)',c:'#86efac'},
-    'K3 Incident':{bg:'rgba(232,129,47,.15)',c:'#fb923c'},
-    'Maintenance':{bg:'rgba(155,110,232,.15)',c:'#c084fc'},
-    'Join Application':{bg:'rgba(58,139,62,.12)',c:'#3A8B3E'},
+    'Booking Lab':{bg:'rgba(46,122,184,.12)',c:'#1B5E8A'},
+    'Bimbingan':{bg:'rgba(46,122,184,.1)',c:'#1a5276'},
+    'Progress Report':{bg:'rgba(58,139,62,.1)',c:'#166534'},
+    'K3 Incident':{bg:'rgba(232,129,47,.12)',c:'#9a3412'},
+    'Maintenance':{bg:'rgba(155,110,232,.12)',c:'#5B21B6'},
+    'Join Application':{bg:'rgba(58,139,62,.1)',c:'#166534'},
+    'Procurement Request':{bg:'rgba(13,148,136,.1)',c:'#0f766e'},
   };
 
   const fmtDate=v=>{if(!v)return'—';try{const dt=new Date(v);if(isNaN(dt))return v;const dd=String(dt.getDate()).padStart(2,'0');const mm=String(dt.getMonth()+1).padStart(2,'0');return`${dd}/${mm}/${dt.getFullYear()}`;}catch{return v;}};
@@ -1556,7 +1616,7 @@ function LabSystem(){
             </div>
             <div className="flex flex-wrap gap-2.5 px-6 py-4 flex-shrink-0" style={{borderBottom:'1px solid rgba(46,122,184,.07)',background:'#f8fbff'}}>
               <div className="flex rounded-xl overflow-hidden" style={{border:'1px solid rgba(46,122,184,.15)'}}>
-                {[['all','All'],['Booking Lab','Booking'],['Bimbingan','Mentoring'],['Progress Report','Progress'],['K3 Incident','K3'],['Maintenance','Maint.'],['Join Application','Join']].map(([v,l])=>(
+                {[['all','All'],['Booking Lab','Booking'],['Bimbingan','Mentoring'],['Progress Report','Progress'],['K3 Incident','K3'],['Maintenance','Maint.'],['Join Application','Join'],['Procurement Request','RAB']].map(([v,l])=>(
                   <button key={v} onClick={()=>setSched(s=>({...s,filter:v}))}
                           className="px-3 py-2 text-xs font-bold transition-all"
                           style={{background:sched.filter===v?'#2E7AB8':'transparent',color:sched.filter===v?'#fff':'#5a7b9a'}}>
@@ -1881,7 +1941,7 @@ function Closing(){
 
       <div className="relative z-10 max-w-5xl mx-auto px-6 lg:px-10 text-center">
         <MH delay={.1} y={45}>
-          <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black leading-[.88]" style={{letterSpacing:'-0.045em'}}>
+          <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black leading-[.88]" style={{letterSpacing:'-0.045em',color:'#ffffff'}}>
             Engineering the Future<br/>
             <span style={{background:'linear-gradient(135deg,#E8812F 0%,#2E7AB8 50%,#6DB3E8 100%)',WebkitBackgroundClip:'text',WebkitTextFillColor:'transparent'}}>of Blue Energy</span>
           </h2>
