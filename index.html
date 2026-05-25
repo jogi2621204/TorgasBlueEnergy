@@ -165,6 +165,168 @@ canvas{display:block}
 
 /* Spinner */
 @keyframes spin{to{transform:rotate(360deg)}}
+
+/* ── RESPONSIVE ──────────────────────────────────────────── */
+/* Tighter padding on mobile */
+@media(max-width:639px){
+  .max-grid{padding:0 14px}
+  .section-band{padding:48px 0}
+  .section-band-sm{padding:32px 0}
+  .c-tab{padding:10px 12px;font-size:13px}
+  .display-xl{font-size:clamp(30px,8vw,76px)}
+  .display-lg{font-size:clamp(22px,6vw,60px)}
+  .display-md{font-size:clamp(20px,5.5vw,42px)}
+}
+/* Tablet: intermediate padding */
+@media(min-width:640px) and (max-width:1023px){
+  .section-band{padding:72px 0}
+}
+/* About pillars: stack on mobile */
+.about-pillars{display:grid;gap:1px;background:var(--hairline);grid-template-columns:1fr}
+@media(min-width:580px){.about-pillars{grid-template-columns:1fr 1fr}}
+/* Projects grid — always 2-col, 3-col on large */
+.projects-grid{display:grid;gap:1px;background:var(--hairline);grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(min-width:1100px){.projects-grid{grid-template-columns:repeat(auto-fill,minmax(380px,1fr))}}
+/* Project card image height responsive */
+.proj-img-wrap{height:240px;overflow:hidden;position:relative}
+@media(max-width:639px){.proj-img-wrap{height:150px}}
+@media(min-width:640px) and (max-width:1099px){.proj-img-wrap{height:200px}}
+/* Project card body padding responsive */
+.proj-card-body{padding:28px 32px 32px}
+@media(max-width:639px){.proj-card-body{padding:14px 16px 18px}}
+@media(min-width:640px) and (max-width:1099px){.proj-card-body{padding:20px 24px 24px}}
+/* Hide tags in project cards on mobile to save space */
+@media(max-width:639px){.proj-card-body .proj-tags{display:none}}
+/* News grid — always 2-col */
+.news-grid{display:grid;gap:1px;background:var(--hairline);grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(min-width:1024px){.news-grid{grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}}
+/* News tile image height responsive */
+.news-img-wrap{height:200px;overflow:hidden;position:relative;flex-shrink:0;background:var(--surface-1)}
+@media(max-width:639px){.news-img-wrap{height:120px}}
+@media(min-width:640px) and (max-width:1023px){.news-img-wrap{height:160px}}
+/* News card body padding responsive */
+.news-card-body{padding:24px 28px 28px}
+@media(max-width:639px){.news-card-body{padding:12px 14px 16px}}
+@media(min-width:640px) and (max-width:1023px){.news-card-body{padding:16px 20px 20px}}
+/* Hide news summary on mobile (show title + date only) */
+@media(max-width:639px){.news-card-body .news-summary{display:none}.news-card-body .news-read{display:none}}
+/* Lab system tiles */
+.lab-tiles-grid{display:grid;gap:1px;background:var(--hairline);grid-template-columns:1fr}
+@media(min-width:640px){.lab-tiles-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1200px){.lab-tiles-grid{grid-template-columns:repeat(auto-fill,minmax(360px,1fr))}}
+/* Stats dashboard: always 2-col on mobile */
+.stats-dash{display:grid;gap:1px;background:var(--hairline);margin-bottom:48px;grid-template-columns:repeat(2,1fr)}
+@media(min-width:768px){.stats-dash{grid-template-columns:repeat(4,1fr)}}
+/* Legal docs */
+.legal-docs{display:grid;gap:1px;background:var(--hairline);margin-bottom:1px;grid-template-columns:1fr}
+@media(min-width:600px){.legal-docs{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.legal-docs{grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}}
+/* Team grids — responsive column counts */
+.team-grid{display:grid;gap:1px;background:var(--hairline)}
+.team-grid.t-1{grid-template-columns:1fr}
+.team-grid.t-2-4{grid-template-columns:repeat(2,1fr)}
+@media(min-width:640px){.team-grid.t-2-4{grid-template-columns:repeat(4,1fr)}}
+.team-grid.t-3-4{grid-template-columns:repeat(3,1fr)}
+@media(min-width:640px){.team-grid.t-3-4{grid-template-columns:repeat(4,1fr)}}
+.team-grid.t-3-6{grid-template-columns:repeat(3,1fr)}
+@media(min-width:640px){.team-grid.t-3-6{grid-template-columns:repeat(6,1fr)}}
+/* Person modal: column on mobile, row on sm+ */
+.person-modal-box{display:flex;flex-direction:column;overflow:hidden}
+@media(min-width:600px){.person-modal-box{flex-direction:row}}
+.person-modal-photo{width:100%;height:220px;flex-shrink:0;background:var(--surface-1);overflow:hidden}
+@media(min-width:600px){.person-modal-photo{width:220px;height:auto}}
+/* Hero bottom padding */
+.hero-pb{padding-bottom:60px}
+@media(min-width:768px){.hero-pb{padding-bottom:96px}}
+/* Services text cell padding */
+.svc-text{background:var(--canvas);padding:28px 20px}
+@media(min-width:768px){.svc-text{padding:48px}}
+/* Lab booking + form modal inputs grid */
+.lab-book-grid{display:grid;gap:1px;background:var(--hairline);margin-bottom:1px;grid-template-columns:1fr}
+@media(min-width:520px){.lab-book-grid{grid-template-columns:1fr 1fr}}
+/* Generic modal body padding */
+.modal-body{flex:1;overflow-y:auto;padding:20px 16px}
+@media(min-width:540px){.modal-body{padding:28px 32px}}
+/* CTA padding on mobile */
+@media(max-width:767px){#contact{padding:60px 0 !important}}
+/* Footer bottom row: wrap on small screens */
+.footer-bottom{padding:24px 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+/* Projects modal status/impact grid: 1 col on mobile */
+.proj-meta-grid{display:grid;gap:1px;background:var(--hairline);margin-bottom:32px;grid-template-columns:1fr}
+@media(min-width:480px){.proj-meta-grid{grid-template-columns:1fr 1fr}}
+/* Certifications row: stack on mobile */
+.cert-row{display:flex;gap:1px;background:var(--hairline);flex-wrap:wrap}
+.cert-row>div{flex:1;min-width:160px;background:var(--surface-1);padding:18px 28px;display:flex;align-items:center;gap:12px}
+/* Hero stats: tighter on mobile */
+@media(max-width:639px){
+  .hero-stats>div{padding:18px 0}
+  .hero-stats>div:nth-child(odd){padding-right:12px}
+  .hero-stats>div:nth-child(even){padding-left:12px}
+}
+/* Schedule viewer modal header: wrap on mobile */
+.sched-hdr{display:flex;align-items:center;gap:16px;padding:16px 24px;border-bottom:1px solid var(--hairline);flex-shrink:0;flex-wrap:wrap}
+@media(max-width:639px){
+  .sched-hdr>a,.sched-hdr>.btn-ghost{display:none}
+  .sched-hdr>.btn-primary{display:none}
+}
+/* Schedule filter wrap on mobile */
+.sched-filters{display:flex;gap:1px;background:var(--hairline);flex-shrink:0;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.sched-status-filter{display:flex;gap:1px;background:var(--hairline);margin-left:auto;flex-shrink:0}
+/* Hero stat items */
+.hero-stat-item{padding:20px 0;padding-left:24px}
+.hero-stat-item:first-child{padding-left:0}
+.hero-stat-item.has-border{border-right:1px solid rgba(255,255,255,.08)}
+@media(max-width:767px){
+  .hero-stat-row{margin-top:40px !important}
+  .hero-stat-item{padding:16px 0;padding-left:16px}
+  .hero-stat-item:first-child,.hero-stat-item:nth-child(3){padding-left:0}
+  .hero-stat-item:nth-child(2){border-right:none}
+}
+/* Lab system tile body: compact on mobile */
+.lab-tile-body{padding:32px 32px 24px}
+@media(max-width:639px){.lab-tile-body{padding:18px 16px 14px}}
+@media(min-width:640px) and (max-width:1199px){.lab-tile-body{padding:24px 24px 18px}}
+/* Hide lab tile metadata (deadline/approval/users) on mobile */
+@media(max-width:639px){.lab-tile-meta{display:none}}
+/* Lab tile footer: compact on mobile */
+.lab-tile-footer{border-top:1px solid var(--hairline);padding:14px 32px;display:flex;gap:1px}
+@media(max-width:639px){.lab-tile-footer{padding:10px 16px;flex-direction:column;gap:6px}}
+@media(min-width:640px) and (max-width:1199px){.lab-tile-footer{padding:12px 24px}}
+/* Lab tile footer buttons: full-width on mobile */
+@media(max-width:639px){.lab-tile-footer button,.lab-tile-footer a{flex:none !important;width:100%;justify-content:center}}
+/* Team group gap: less on mobile */
+.team-group{margin-bottom:64px}
+@media(max-width:639px){.team-group{margin-bottom:36px}}
+/* Stats tile: compact on mobile */
+@media(max-width:639px){
+  .stats-dash button{padding:16px 20px !important}
+  .stats-dash [style*="font-size:36"]{font-size:28px !important}
+}
+/* About section left col on mobile: reduce bottom margin */
+@media(max-width:767px){
+  .grid-2col>div:first-child{margin-bottom:0}
+}
+/* News article modal: smaller padding on mobile */
+@media(max-width:639px){
+  .news-article-pad{padding:20px 16px !important}
+}
+/* Hide margin-top on hero on mobile */
+@media(max-width:639px){
+  #hero .hero-pb{padding-bottom:48px}
+}
+/* Section "reveal" heading: smaller marginBottom on mobile */
+@media(max-width:639px){
+  .reveal[style*="marginBottom:56"]{margin-bottom:32px !important}
+  .reveal[style*="marginBottom:48"]{margin-bottom:28px !important}
+}
+/* Category tabs: reduce marginBottom on mobile */
+@media(max-width:639px){
+  [style*="marginBottom:48"][style*="borderBottom"][style*="overflowX"]{margin-bottom:24px !important}
+}
+/* Lab tiles: make 2-col on larger mobile/tablet for compactness */
+@media(min-width:480px) and (max-width:639px){
+  .lab-tiles-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
 </style>
 </head>
 <body>
@@ -239,7 +401,7 @@ const SERVICES=[
 ];
 
 /* ── WEBAPI URL ──────────────────────────────────────────────────── */
-const WEBAPI_URL='https://script.google.com/macros/s/AKfycbz41uJBQnAb0ZX7I_SK7P7kOmUlnF_XrXB6znyF-Wc1e39xPeA9Ym-En2z0dlGiq1rl/exec';
+const WEBAPI_URL='https://script.google.com/macros/s/AKfycbzcsMYJyHZLfnJ83usfH6xo1W6IOduyZPSF8R2FeU7OJQfelkWxu3u2UjP35j4TZDo/exec';
 
 /* ── NEWS DATA ──────────────────────────────────────────────────── */
 const STATIC_NEWS=[
@@ -509,13 +671,20 @@ function useOceanScene(containerRef){
 /* ── REVEAL ON SCROLL ──────────────────────────────────────────── */
 function useReveal(){
   useEffect(()=>{
-    const els=document.querySelectorAll('.reveal');
-    const io=new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
-    },{threshold:.1,rootMargin:'0px 0px -40px 0px'});
-    els.forEach(el=>io.observe(el));
-    return()=>io.disconnect();
-  });
+    let io;
+    function observe(){
+      if(io)io.disconnect();
+      io=new IntersectionObserver((entries)=>{
+        entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+      },{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+      document.querySelectorAll('.reveal:not(.in)').forEach(el=>io.observe(el));
+    }
+    observe();
+    /* Re-observe setiap kali DOM berubah (untuk tile yang muncul setelah fetch) */
+    const mo=new MutationObserver(observe);
+    mo.observe(document.body,{childList:true,subtree:true});
+    return()=>{io&&io.disconnect();mo.disconnect();};
+  },[]);
 }
 
 /* ── NAV ───────────────────────────────────────────────────────── */
@@ -609,7 +778,7 @@ function Hero(){
         background:'linear-gradient(180deg,rgba(4,8,15,.6) 0%,transparent 100%)'}}/>
 
       {/* Content */}
-      <div className="max-grid w-full" style={{position:'relative',zIndex:2,paddingBottom:96}}>
+      <div className="max-grid w-full hero-pb" style={{position:'relative',zIndex:2}}>
         <div style={{maxWidth:860}}>
           {/* Eyebrow */}
           <div style={{display:'flex',alignItems:'center',gap:16,marginBottom:32}}>
@@ -641,9 +810,9 @@ function Hero(){
         </div>
 
         {/* Data row */}
-        <div className="hero-stats" style={{gap:0,marginTop:80,borderTop:'1px solid rgba(255,255,255,.1)'}}>
+        <div className="hero-stats hero-stat-row" style={{gap:0,marginTop:64,borderTop:'1px solid rgba(255,255,255,.1)'}}>
           {[['5+','Active Projects'],['5','Research Stations'],['21','Researchers'],['3','Innovation Tracks']].map(([n,l],i)=>(
-            <div key={i} style={{padding:'24px 0',borderRight:i<3?'1px solid rgba(255,255,255,.08)':'none',paddingLeft:i>0?24:0}}>
+            <div key={i} className={`hero-stat-item${i<3?' has-border':''}`}>
               <div className="display-md" style={{color:'var(--blue)',fontWeight:300,lineHeight:1}}>{n}</div>
               <div className="caption" style={{color:'rgba(255,255,255,.4)',marginTop:6,letterSpacing:'.08em'}}>{l.toUpperCase()}</div>
             </div>
@@ -681,7 +850,7 @@ function About(){
               </a>
             </div>
           </div>
-          <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:1,background:'var(--hairline)'}}>
+          <div className="about-pillars">
             {pillars.map((p,i)=>(
               <div key={i} className="tile" style={{padding:32,background:'var(--canvas)'}}>
                 <div style={{width:32,height:2,background:'var(--blue)',marginBottom:20}}/>
@@ -718,7 +887,7 @@ function Projects(){
           <h2 className="display-lg" style={{color:'var(--ink)'}}>What we build</h2>
         </div>
 
-        <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(380px,1fr))',gap:1,background:'var(--hairline)'}}>
+        <div className="projects-grid">
           {PROJECTS.map((p,i)=>{
             const cc=catCol[p.category]||'var(--blue)';
             const cb=catBg[p.category]||'rgba(15,98,254,.06)';
@@ -726,35 +895,35 @@ function Projects(){
               <div key={p.id} className="tile project-card reveal" style={{padding:0,cursor:'pointer',animationDelay:`${i*.06}s`}}
                    onClick={()=>setSel(p)}>
                 {/* Image */}
-                <div style={{height:240,overflow:'hidden',position:'relative'}}>
+                <div className="proj-img-wrap">
                   <img src={p.images[0]} alt={p.title}
                        style={{width:'100%',height:'100%',objectFit:'cover',filter:'grayscale(40%) brightness(.85)',
                                transition:'transform .6s ease,filter .4s ease'}}
                        onMouseOver={e=>{e.currentTarget.style.transform='scale(1.04)';e.currentTarget.style.filter='grayscale(0%) brightness(.95)'}}
                        onMouseOut={e=>{e.currentTarget.style.transform='scale(1)';e.currentTarget.style.filter='grayscale(40%) brightness(.85)'}}/>
-                  <div style={{position:'absolute',top:16,left:16}}>
-                    <span className="caption mono" style={{background:cb,color:cc,padding:'4px 10px',border:`1px solid ${cc}33`,letterSpacing:'.06em',textTransform:'uppercase'}}>
+                  <div style={{position:'absolute',top:10,left:10}}>
+                    <span className="caption mono" style={{background:cb,color:cc,padding:'3px 8px',border:`1px solid ${cc}33`,letterSpacing:'.06em',textTransform:'uppercase',fontSize:10}}>
                       {p.category}
                     </span>
                   </div>
-                  <div style={{position:'absolute',top:16,right:16}}>
-                    <span className="caption" style={{background:'rgba(0,0,0,.5)',color:p.status==='Active Development'?'#42be65':'#f1c21b',padding:'3px 8px',backdropFilter:'blur(4px)'}}>
+                  <div style={{position:'absolute',top:10,right:10}}>
+                    <span className="caption" style={{background:'rgba(0,0,0,.5)',color:p.status==='Active Development'?'#42be65':'#f1c21b',padding:'2px 6px',backdropFilter:'blur(4px)',fontSize:10}}>
                       {p.status}
                     </span>
                   </div>
                 </div>
                 {/* Content */}
-                <div style={{padding:'28px 32px 32px'}}>
-                  <div style={{display:'flex',alignItems:'baseline',justifyContent:'space-between',marginBottom:8}}>
-                    <h3 className="card-title" style={{color:'var(--ink)',fontWeight:400}}>{p.title}</h3>
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style={{color:'var(--ink-subtle)',flexShrink:0}}>
+                <div className="proj-card-body">
+                  <div style={{display:'flex',alignItems:'baseline',justifyContent:'space-between',marginBottom:6}}>
+                    <h3 className="card-title" style={{color:'var(--ink)',fontWeight:400,fontSize:'clamp(14px,2vw,20px)'}}>{p.title}</h3>
+                    <svg width="14" height="14" viewBox="0 0 16 16" fill="none" style={{color:'var(--ink-subtle)',flexShrink:0,marginLeft:4}}>
                       <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5"/>
                     </svg>
                   </div>
-                  <p className="body-sm" style={{color:'var(--ink-muted)',marginBottom:20,lineHeight:1.5}}>{p.subtitle}</p>
-                  <div style={{display:'flex',flexWrap:'wrap',gap:6}}>
+                  <p className="body-sm" style={{color:'var(--ink-muted)',marginBottom:12,lineHeight:1.4,fontSize:'clamp(12px,1.6vw,14px)'}}>{p.subtitle}</p>
+                  <div className="proj-tags" style={{display:'flex',flexWrap:'wrap',gap:4}}>
                     {p.tags.map((t,j)=>(
-                      <span key={j} className="caption" style={{background:'var(--surface-1)',color:'var(--ink-muted)',padding:'4px 10px',border:'1px solid var(--hairline)',letterSpacing:'.06em'}}>
+                      <span key={j} className="caption" style={{background:'var(--surface-1)',color:'var(--ink-muted)',padding:'3px 8px',border:'1px solid var(--hairline)',letterSpacing:'.04em',fontSize:10}}>
                         {t}
                       </span>
                     ))}
@@ -784,9 +953,9 @@ function Projects(){
                 <p style={{fontSize:14,color:'rgba(255,255,255,.55)',marginTop:4}}>{sel.subtitle}</p>
               </div>
             </div>
-            <div style={{padding:40}}>
+            <div className="news-article-pad" style={{padding:40}}>
               <p className="body-lg" style={{color:'var(--ink-muted)',lineHeight:1.6,marginBottom:32}}>{sel.description}</p>
-              <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:1,background:'var(--hairline)',marginBottom:32}}>
+              <div className="proj-meta-grid">
                 <div style={{background:'var(--surface-1)',padding:'20px 24px'}}>
                   <div className="caption mono" style={{color:'var(--ink-subtle)',letterSpacing:'.08em',marginBottom:8}}>STATUS</div>
                   <div className="body-sm" style={{color:'var(--ink)',fontWeight:600}}>{sel.status}</div>
@@ -833,7 +1002,7 @@ function Services(){
 
         {/* Tab content */}
         <div className="grid-2col-tight" style={{border:'1px solid var(--hairline)'}}>
-          <div style={{background:'var(--canvas)',padding:48}}>
+          <div className="svc-text">
             <h3 className="headline" style={{color:'var(--ink)',marginBottom:16,fontWeight:400}}>{s.title}</h3>
             <p className="body-lg" style={{color:'var(--ink-muted)',lineHeight:1.6,marginBottom:32}}>{s.desc}</p>
             <div style={{display:'flex',flexWrap:'wrap',gap:6,marginBottom:40}}>
@@ -939,7 +1108,7 @@ function LabBookingModal({onClose}){
         </div>
 
         {/* Body */}
-        <div style={{flex:1,overflowY:'auto',padding:32}}>
+        <div className="modal-body">
 
           {/* Step 0 — Price list */}
           {step===0&&(
@@ -987,7 +1156,7 @@ function LabBookingModal({onClose}){
                 Back to price list
               </button>
               <form onSubmit={handleSubmit}>
-                <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:1,background:'var(--hairline)',marginBottom:1}}>
+                <div className="lab-book-grid">
                   {[
                     {k:'name',l:'Full Name *',type:'text',ph:'Your full name',req:true},
                     {k:'institution',l:'Institution / Affiliation',type:'text',ph:'University / company',req:false},
@@ -1084,6 +1253,7 @@ function Team(){
   const[active,setActive]=useState(null);
   const levels=['founder','c-level','team','intern'];
   const labels={founder:'Founder','c-level':'Leadership',team:'Research team',intern:'Research interns'};
+  const teamGridClass=lv=>lv==='founder'?'team-grid t-1':lv==='c-level'?'team-grid t-2-4':lv==='intern'?'team-grid t-3-6':'team-grid t-3-4';
 
   useEffect(()=>{
     if(!active)return;
@@ -1105,14 +1275,13 @@ function Team(){
         {levels.map(level=>{
           const group=PEOPLE.filter(p=>p.level===level);
           if(!group.length)return null;
-          const cols=level==='founder'?1:level==='c-level'?4:level==='intern'?6:4;
           return(
-            <div key={level} style={{marginBottom:64}}>
-              <div style={{display:'flex',alignItems:'center',gap:16,marginBottom:24}}>
+            <div key={level} className="team-group">
+              <div style={{display:'flex',alignItems:'center',gap:16,marginBottom:20}}>
                 <span className="caption mono" style={{color:'var(--ink-subtle)',letterSpacing:'.1em',textTransform:'uppercase'}}>{labels[level]}</span>
                 <div style={{flex:1,height:1,background:'var(--hairline)'}}/>
               </div>
-              <div style={{display:'grid',gridTemplateColumns:`repeat(${cols},1fr)`,gap:1,background:'var(--hairline)',maxWidth:level==='founder'?500:'100%'}}>
+              <div className={teamGridClass(level)} style={{maxWidth:level==='founder'?480:'100%'}}>
                 {group.map(p=>(
                   <button key={p.id} className="person-card" onClick={()=>setActive(p)} style={{cursor:'pointer'}}>
                     <img src={p.head} alt={p.name} onError={e=>{e.target.style.opacity=0}}/>
@@ -1135,13 +1304,13 @@ function Team(){
         <div style={{position:'fixed',inset:0,zIndex:999,display:'flex',alignItems:'center',justifyContent:'center',padding:16,
           background:'rgba(22,22,22,.75)',backdropFilter:'blur(12px)'}}
              onClick={()=>setActive(null)}>
-          <div style={{width:'100%',maxWidth:640,background:'var(--canvas)',border:'1px solid var(--hairline)',display:'flex',overflow:'hidden'}}
+          <div className="person-modal-box" style={{width:'100%',maxWidth:640,background:'var(--canvas)',border:'1px solid var(--hairline)'}}
                onClick={e=>e.stopPropagation()}>
-            <div style={{width:240,flexShrink:0,background:'var(--surface-1)',overflow:'hidden'}}>
+            <div className="person-modal-photo">
               <img src={active.body} alt={active.name} onError={e=>{e.target.style.opacity=0}}
                    style={{width:'100%',height:'100%',objectFit:'cover',objectPosition:'top'}}/>
             </div>
-            <div style={{flex:1,padding:40,display:'flex',flexDirection:'column',justifyContent:'space-between'}}>
+            <div style={{flex:1,padding:32,display:'flex',flexDirection:'column',justifyContent:'space-between'}}>
               <div>
                 <button onClick={()=>setActive(null)} style={{float:'right',cursor:'pointer',color:'var(--ink-subtle)'}}>
                   <svg viewBox="0 0 16 16" fill="none" width="16" height="16"><path d="M4 4l8 8M4 12L12 4" stroke="currentColor" strokeWidth="1.5"/></svg>
@@ -1244,29 +1413,33 @@ function News(){
         )}
 
         {/* Tile grid */}
-        {!loading&&<div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(300px,1fr))',gap:1,background:'var(--hairline)'}}>
+        {!loading&&<div className="news-grid">
           {filtered.map(n=>{
             const cc=getCatCol(n.category);
             return(
               <div key={n.id} className="tile reveal" style={{cursor:'pointer',padding:0,overflow:'hidden'}} onClick={()=>setSel(n)}>
-                <div style={{height:200,overflow:'hidden',position:'relative',flexShrink:0}}>
-                  <img src={n.img} alt={n.title}
+                <div className="news-img-wrap">
+                  {n.img&&<img src={n.img} alt={n.title}
                        style={{width:'100%',height:'100%',objectFit:'cover',
                                filter:'grayscale(30%) brightness(.85)',transition:'transform .6s,filter .4s'}}
                        onMouseOver={e=>{e.currentTarget.style.transform='scale(1.04)';e.currentTarget.style.filter='grayscale(0%) brightness(.9)'}}
-                       onMouseOut={e=>{e.currentTarget.style.transform='scale(1)';e.currentTarget.style.filter='grayscale(30%) brightness(.85)'}}/>
+                       onMouseOut={e=>{e.currentTarget.style.transform='scale(1)';e.currentTarget.style.filter='grayscale(30%) brightness(.85)'}}
+                       onError={e=>{
+                         e.currentTarget.style.display='none';
+                         e.currentTarget.parentNode.style.background='linear-gradient(135deg,'+cc+'22 0%,#16161688 100%)';
+                       }}/>}
                   <div style={{position:'absolute',top:0,left:0,bottom:0,width:3,background:cc}}/>
                 </div>
-                <div style={{padding:'24px 28px 28px'}}>
-                  <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',marginBottom:10}}>
-                    <span className="caption mono" style={{color:cc,letterSpacing:'.06em',textTransform:'uppercase'}}>{n.category}</span>
-                    <span className="data-label">{fmtDate(n.date)}</span>
+                <div className="news-card-body">
+                  <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',marginBottom:6}}>
+                    <span className="caption mono" style={{color:cc,letterSpacing:'.06em',textTransform:'uppercase',fontSize:'clamp(9px,1.5vw,11px)'}}>{n.category}</span>
+                    <span className="data-label" style={{fontSize:'clamp(9px,1.5vw,11px)'}}>{fmtDate(n.date)}</span>
                   </div>
-                  <h3 className="card-title" style={{color:'var(--ink)',fontWeight:400,marginBottom:12,lineHeight:1.3}}>{n.title}</h3>
-                  <p className="body-sm" style={{color:'var(--ink-muted)',lineHeight:1.5,display:'-webkit-box',WebkitLineClamp:3,WebkitBoxOrient:'vertical',overflow:'hidden'}}>{n.summary}</p>
-                  <div style={{display:'flex',alignItems:'center',gap:6,marginTop:20,color:'var(--blue)'}}>
-                    <span style={{fontSize:13,letterSpacing:'.16px'}}>Read article</span>
-                    <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5"/></svg>
+                  <h3 className="card-title news-title" style={{color:'var(--ink)',fontWeight:400,marginBottom:8,lineHeight:1.25,fontSize:'clamp(13px,2.2vw,20px)'}}>{n.title}</h3>
+                  <p className="body-sm news-summary" style={{color:'var(--ink-muted)',lineHeight:1.5,display:'-webkit-box',WebkitLineClamp:2,WebkitBoxOrient:'vertical',overflow:'hidden',fontSize:'clamp(11px,1.8vw,14px)'}}>{n.summary}</p>
+                  <div className="news-read" style={{display:'flex',alignItems:'center',gap:4,marginTop:12,color:'var(--blue)'}}>
+                    <span style={{fontSize:'clamp(11px,1.8vw,13px)',letterSpacing:'.16px'}}>Read</span>
+                    <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5"/></svg>
                   </div>
                 </div>
               </div>
@@ -1298,7 +1471,7 @@ function News(){
                 <h3 style={{fontSize:26,fontWeight:300,color:'#fff',lineHeight:1.25}}>{sel.title}</h3>
               </div>
             </div>
-            <div style={{padding:40}}>
+            <div className="news-article-pad" style={{padding:40}}>
               <div className="data-label" style={{marginBottom:20}}>Published {fmtDate(sel.date)} — {sel.author}</div>
               {(sel.content||sel.summary).split('\n\n').map((para,i)=>(
                 <p key={i} className="body" style={{color:'var(--ink-muted)',lineHeight:1.75,marginBottom:18}}>{para}</p>
@@ -1379,7 +1552,7 @@ function FormModal({sys,onClose}){
           </button>
         </div>
         {/* Body */}
-        <div style={{flex:1,overflowY:'auto',padding:28}}>
+        <div className="modal-body">
           {done?(
             <div style={{textAlign:'center',padding:'48px 24px'}}>
               <div style={{width:48,height:48,background:'rgba(25,128,56,.1)',border:'1px solid rgba(25,128,56,.3)',display:'flex',alignItems:'center',justifyContent:'center',margin:'0 auto 20px'}}>
@@ -1539,7 +1712,7 @@ function LabSystem(){
         </div>
 
         {/* Stats dashboard */}
-        <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(240px,1fr))',gap:1,background:'var(--hairline)',marginBottom:48}}>
+        <div className="stats-dash">
           {DASH.map(d=>(
             <button key={d.key} onClick={()=>openSched(d.filter,d.label)}
               style={{background:'var(--canvas)',padding:'24px 28px',cursor:'pointer',textAlign:'left',border:'none',transition:'background .1s'}}
@@ -1555,35 +1728,35 @@ function LabSystem(){
         </div>
 
         {/* System tiles */}
-        <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(360px,1fr))',gap:1,background:'var(--hairline)'}}>
+        <div className="lab-tiles-grid">
           {LAB_SYSTEMS.map(sys=>(
             <div key={sys.id} className="tile reveal" style={{padding:0}}>
-              <div style={{padding:'32px 32px 24px'}}>
-                <div style={{display:'flex',alignItems:'flex-start',justifyContent:'space-between',marginBottom:24}}>
-                  <div style={{width:40,height:40,background:'var(--canvas)',border:'1px solid var(--hairline)',display:'flex',alignItems:'center',justifyContent:'center',color:sys.accent}}>
+              <div className="lab-tile-body">
+                <div style={{display:'flex',alignItems:'flex-start',justifyContent:'space-between',marginBottom:16}}>
+                  <div style={{width:36,height:36,background:'var(--canvas)',border:'1px solid var(--hairline)',display:'flex',alignItems:'center',justifyContent:'center',color:sys.accent}}>
                     {LAB_ICONS[sys.icon]||LAB_ICONS.file}
                   </div>
-                  <span className="caption mono" style={{background:'var(--surface-1)',color:'var(--ink-subtle)',padding:'4px 10px',border:'1px solid var(--hairline)',letterSpacing:'.06em',textTransform:'uppercase'}}>{sys.badge}</span>
+                  <span className="caption mono" style={{background:'var(--surface-1)',color:'var(--ink-subtle)',padding:'3px 8px',border:'1px solid var(--hairline)',letterSpacing:'.06em',textTransform:'uppercase',fontSize:10}}>{sys.badge}</span>
                 </div>
-                <div style={{width:24,height:2,background:sys.accent,marginBottom:16}}/>
-                <h3 className="card-title" style={{color:'var(--ink)',fontWeight:400,marginBottom:10}}>{sys.title}</h3>
-                <p className="body-sm" style={{color:'var(--ink-muted)',lineHeight:1.55,marginBottom:20}}>{sys.desc}</p>
-                <div style={{display:'grid',gridTemplateColumns:'76px 1fr',gap:'6px 12px',alignItems:'start'}}>
+                <div style={{width:20,height:2,background:sys.accent,marginBottom:12}}/>
+                <h3 className="card-title" style={{color:'var(--ink)',fontWeight:400,marginBottom:8,fontSize:'clamp(14px,2vw,20px)'}}>{sys.title}</h3>
+                <p className="body-sm" style={{color:'var(--ink-muted)',lineHeight:1.5,marginBottom:16,fontSize:'clamp(12px,1.6vw,14px)'}}>{sys.desc}</p>
+                <div className="lab-tile-meta" style={{display:'grid',gridTemplateColumns:'76px 1fr',gap:'5px 10px',alignItems:'start'}}>
                   {[['Deadline',sys.deadline],['Approval',sys.approval],['Users',sys.users]].map(([k,v])=>(
                     <React.Fragment key={k}>
-                      <span className="caption" style={{color:'var(--ink-subtle)',letterSpacing:'.06em',textTransform:'uppercase',paddingTop:2}}>{k}</span>
-                      <span className="body-sm" style={{color:'var(--ink-muted)'}}>{v}</span>
+                      <span className="caption" style={{color:'var(--ink-subtle)',letterSpacing:'.06em',textTransform:'uppercase',paddingTop:2,fontSize:10}}>{k}</span>
+                      <span className="body-sm" style={{color:'var(--ink-muted)',fontSize:12}}>{v}</span>
                     </React.Fragment>
                   ))}
                 </div>
               </div>
-              <div style={{borderTop:'1px solid var(--hairline)',padding:'14px 32px',display:'flex',gap:1}}>
-                <button onClick={()=>setForm(sys)} className="btn-primary" style={{fontSize:13,padding:'10px 20px',flex:1,justifyContent:'center'}}>
+              <div className="lab-tile-footer">
+                <button onClick={()=>setForm(sys)} className="btn-primary" style={{fontSize:13,padding:'9px 16px',flex:1,justifyContent:'center'}}>
                   Submit form
-                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5"/></svg>
+                  <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5"/></svg>
                 </button>
                 <button onClick={()=>openSched(sys.id==='booking'?'Booking Lab':sys.id==='progress'?'Progress Report':sys.id==='bimbingan'?'Bimbingan':sys.id==='rab'?'Procurement Request':sys.id==='maintenance'?'Maintenance':'Join Application',sys.title)}
-                  className="btn-ghost" style={{fontSize:13,padding:'10px 20px',marginLeft:1}}>
+                  className="btn-ghost" style={{fontSize:13,padding:'9px 16px',marginLeft:1}}>
                   View data
                 </button>
               </div>
@@ -1616,7 +1789,7 @@ function LabSystem(){
           <div style={{width:'100%',maxWidth:1312,maxHeight:'88vh',background:'var(--canvas)',border:'1px solid var(--hairline)',borderBottom:'none',display:'flex',flexDirection:'column'}}
                onClick={e=>e.stopPropagation()}>
             {/* Modal header */}
-            <div style={{display:'flex',alignItems:'center',gap:16,padding:'16px 24px',borderBottom:'1px solid var(--hairline)',flexShrink:0}}>
+            <div className="sched-hdr">
               <div style={{flex:1}}>
                 <div style={{fontSize:16,fontWeight:400,color:'var(--ink)'}}>{sched.title||'Lab Schedule'}</div>
                 <div className="caption" style={{color:'var(--ink-muted)',marginTop:2}}>{sched.filter==='all'?'All activities':sched.filter} · Lab Calendar</div>
@@ -1650,14 +1823,14 @@ function LabSystem(){
             )}
 
             {/* Filters */}
-            <div style={{display:'flex',gap:1,background:'var(--hairline)',flexShrink:0,overflowX:'auto'}}>
+            <div className="sched-filters">
               {[['all','All'],['Booking Lab','Booking'],['Bimbingan','Mentoring'],['Progress Report','Progress'],['Maintenance','Maint.'],['Join Application','Join'],['Procurement Request','RAB']].map(([v,l])=>(
                 <button key={v} onClick={()=>setSched(s=>({...s,filter:v}))}
                         className="c-tab" style={{padding:'12px 16px',borderBottom:sched.filter===v?'2px solid var(--blue)':'2px solid transparent',color:sched.filter===v?'var(--ink)':'var(--ink-muted)',fontWeight:sched.filter===v?600:400,whiteSpace:'nowrap'}}>
                   {l}
                 </button>
               ))}
-              <div style={{display:'flex',gap:1,background:'var(--hairline)',marginLeft:'auto'}}>
+              <div className="sched-status-filter">
                 {[['all','All'],['Pending','Pending'],['Approved','Approved'],['Rejected','Rejected']].map(([v,l])=>(
                   <button key={v} onClick={()=>setFilterStatus(v)}
                           style={{padding:'12px 14px',background:filterStatus===v?'var(--blue)':'var(--canvas)',color:filterStatus===v?'#fff':'var(--ink-muted)',fontSize:12,border:'none',cursor:'pointer',fontFamily:'inherit'}}>
@@ -1822,7 +1995,7 @@ function Legal(){
         </div>
 
         {/* Docs grid */}
-        <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(300px,1fr))',gap:1,background:'var(--hairline)',marginBottom:1}}>
+        <div className="legal-docs">
           {docs.map((d,i)=>(
             <div key={i} className="tile reveal" style={{padding:'36px 32px'}}>
               <div style={{width:40,height:40,background:'var(--surface-1)',border:'1px solid var(--hairline)',display:'flex',alignItems:'center',justifyContent:'center',color:'var(--blue)',marginBottom:20}}>
@@ -1836,9 +2009,9 @@ function Legal(){
         </div>
 
         {/* Certifications */}
-        <div style={{display:'flex',gap:1,background:'var(--hairline)'}}>
+        <div className="cert-row">
           {['GLP (OECD)','ISO/IEC 17025:2017'].map((cert,i)=>(
-            <div key={i} style={{flex:1,background:'var(--surface-1)',padding:'18px 28px',display:'flex',alignItems:'center',gap:12}}>
+            <div key={i}>
               <svg viewBox="0 0 24 24" fill="none" stroke="var(--blue)" strokeWidth="1.5" width="20" height="20"><path d="M12 2l8 4v6c0 5.25-3.5 9.74-8 11-4.5-1.26-8-5.75-8-11V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg>
               <span className="body-sm" style={{color:'var(--ink)',fontWeight:600}}>{cert}</span>
             </div>
@@ -1928,7 +2101,7 @@ function Footer(){
             </div>
           ))}
         </div>
-        <div style={{padding:'24px 0',display:'flex',justifyContent:'space-between',alignItems:'center'}}>
+        <div className="footer-bottom">
           <span className="caption" style={{color:'var(--inv-muted)'}}>PT Torgas Blue Energy — All rights reserved.</span>
           <span className="caption mono" style={{color:'var(--inv-muted)',letterSpacing:'.06em'}}>EST. 2024</span>
         </div>
