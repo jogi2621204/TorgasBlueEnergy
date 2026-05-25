@@ -341,7 +341,7 @@ const{useState,useEffect,useRef,useCallback}=React;
 /* ── DATA ──────────────────────────────────────────────────────── */
 const PROJECTS=[
   {id:"biosentor",title:"Biosentor",subtitle:"Autonomous Ocean Monitoring Vessel",category:"Ocean Systems",
-   description:"An unmanned surface vessel equipped with integrated biosensors for real-time marine ecosystem monitoring. Designed from hull lines to sensor array, Biosentor navigates coastal waters autonomously — collecting water quality, temperature, pH, and biological data without human risk.",
+   description:"An unmanned surface vessel equipped with integrated biosensors for real-time marine ecosystem monitoring. Designed from hull lines to sensor array, Biosentor navigates coastal waters autonomously, collecting water quality, temperature, pH, and biological data without human risk.",
    impact:"Continuous 24/7 ocean health monitoring across Indonesian coastal waters.",
    images:["images/projects/biosentor-xray.jpg","images/projects/biosentor-prototype-1.jpg","images/projects/biosentor-linesplan.jpg"],
    tags:["Marine Robotics","Biosensors","Autonomous Navigation","IoT"],status:"Active Development"},
@@ -351,7 +351,7 @@ const PROJECTS=[
    images:["images/projects/carbon-storage-1.jpg","images/projects/carbon-storage-2.jpg","images/projects/carbon-storage-3.jpg"],
    tags:["Blue Carbon","Mangrove Ecology","Climate Science","GIS Mapping"],status:"Active Research"},
   {id:"torgas-biogas",title:"Portable Torgas",subtitle:"Seaweed-to-Biogas Energy System",category:"Energy Innovation",
-   description:"A portable, autonomous biogas production system that converts seaweed — one of Indonesia's most abundant marine resources — into clean methane energy. Combining anaerobic digestion reactors with intelligent pressure and temperature monitoring.",
+   description:"A portable, autonomous biogas production system that converts seaweed, one of Indonesia's most abundant marine resources, into clean methane energy. Combining anaerobic digestion reactors with intelligent pressure and temperature monitoring.",
    impact:"Energy independence for remote coastal villages via locally abundant seaweed biomass.",
    images:["images/projects/torgas-device-1.jpg","images/projects/torgas-device-2.jpg","images/projects/torgas-device-3.jpg"],
    tags:["Biogas","Renewable Energy","Seaweed","Anaerobic Digestion"],status:"Active Development"},
@@ -395,8 +395,8 @@ const SERVICES=[
   {id:'survey',title:'Field Survey Services',desc:'Professional field survey covering coastal water quality measurement, mangrove ecosystem assessment, sediment sampling, and hydrological profiling.',tags:['Water Quality','Mangrove Survey','Sediment Sampling','GPS Mapping'],contact:true},
   {id:'labtest',title:'Laboratory Analysis',desc:'Full-spectrum lab analysis using centrifuge, microscope, spectrometer, and water quality kits. Testing covers chemical, biological, and physical parameters.',tags:['Chemical Analysis','Microscopy','Spectroscopy','Water Testing'],book:true},
   {id:'carbon',title:'Carbon Sequestration Assessment',desc:'Quantifying mangrove carbon capacity through standardised biomass measurement, soil carbon sampling, and predictive modelling for carbon credit documentation.',tags:['Biomass Measurement','Soil Carbon','Carbon Credits','Climate Science'],contact:true},
-  {id:'biogas',title:'Portable Torgas Biogas System',desc:'Portable autonomous biogas converting locally abundant seaweed biomass into clean methane energy — designed for off-grid coastal communities.',tags:['Clean Energy','Seaweed Biogas','Off-grid','Anaerobic Digestion'],contact:true},
-  {id:'monitoring',title:'Marine Monitoring Systems',desc:'Deployment of Biosentor — autonomous surface vessel with integrated biosensors for continuous real-time coastal monitoring of pH, temperature, salinity, and biological indicators.',tags:['Autonomous Vessel','IoT Sensors','Real-time Data','Marine Robotics'],contact:true},
+  {id:'biogas',title:'Portable Torgas Biogas System',desc:'Portable autonomous biogas converting locally abundant seaweed biomass into clean methane energy, designed for off-grid coastal communities.',tags:['Clean Energy','Seaweed Biogas','Off-grid','Anaerobic Digestion'],contact:true},
+  {id:'monitoring',title:'Marine Monitoring Systems',desc:'Deployment of Biosentor, an autonomous surface vessel with integrated biosensors for continuous real-time coastal monitoring of pH, temperature, salinity, and biological indicators.',tags:['Autonomous Vessel','IoT Sensors','Real-time Data','Marine Robotics'],contact:true},
   {id:'consultation',title:'Research Consultation',desc:'Expert guidance on marine research methodology, laboratory protocol development, environmental impact assessment, and scientific report preparation.',tags:['Research Design','Lab Protocol','EIA','Scientific Writing'],contact:true},
 ];
 
@@ -408,7 +408,7 @@ const STATIC_NEWS=[
   {id:'n1',date:'2025-03-15',category:'Technology',
    title:'Portable Torgas Biogas System Demonstrated Before Government Officials',
    summary:'PT Torgas Blue Energy presented its flagship portable biogas device to senior officials from the Ministry of Maritime Affairs, showcasing a fully operational prototype capable of converting seaweed into clean methane energy.',
-   content:'The demonstration marked a significant milestone in the commercialization pathway for Portable Torgas — a compact, autonomous system designed to bring clean energy to off-grid coastal communities. Officials were shown a live biogas generation cycle, with the device processing locally-sourced seaweed biomass.\n\nThe event drew significant interest from regional government representatives who expressed willingness to pilot the technology in remote island communities across Eastern Indonesia.',
+   content:'The demonstration marked a significant milestone in the commercialization pathway for Portable Torgas, a compact and autonomous system designed to bring clean energy to off-grid coastal communities. Officials were shown a live biogas generation cycle, with the device processing locally-sourced seaweed biomass.\n\nThe event drew significant interest from regional government representatives who expressed willingness to pilot the technology in remote island communities across Eastern Indonesia.',
    img:'images/activities/activity-1.jpeg',author:'Torgas Communications'},
   {id:'n2',date:'2025-02-08',category:'Research',
    title:'Biosentor Completes First Autonomous Coastal Survey Mission in Pangandaran',
@@ -418,7 +418,7 @@ const STATIC_NEWS=[
   {id:'n3',date:'2025-01-20',category:'Field Work',
    title:'Carbon Storage Research Station Established in Pasuruan Mangrove Ecosystem',
    summary:'Torgas Blue Energy has established a permanent research station within the Pasuruan mangrove belt, East Java, expanding our carbon sequestration monitoring network to a total of five active stations across Indonesia.',
-   content:'The new station adds critical data coverage for the eastern Java mangrove corridor — one of the most ecologically significant blue carbon sinks in the archipelago. Researchers will conduct quarterly biomass measurements, soil carbon sampling, and hydrological monitoring.\n\nThis expansion supports Indonesia\'s national blue carbon accounting framework and contributes data to international climate modeling efforts under the Paris Agreement.',
+   content:'The new station adds critical data coverage for the eastern Java mangrove corridor, one of the most ecologically significant blue carbon sinks in the archipelago. Researchers will conduct quarterly biomass measurements, soil carbon sampling, and hydrological monitoring.\n\nThis expansion supports Indonesia\'s national blue carbon accounting framework and contributes data to international climate modeling efforts under the Paris Agreement.',
    img:'images/activities/activity-6.jpg',author:'Field Research Division'},
   {id:'n4',date:'2024-12-05',category:'Events',
    title:'Torgas Blue Energy Featured at National Marine Technology Conference',
@@ -434,7 +434,7 @@ const LAB_PRICES=[
   {id:'water_quality',label:'Water Quality Analysis',price:200000},
   {id:'sediment',label:'Sediment Analysis',price:250000},
   {id:'biomass',label:'Biomass Measurement',price:300000},
-  {id:'carbon_soil',label:'Carbon Content — Soil',price:350000},
+  {id:'carbon_soil',label:'Carbon Content (Soil)',price:350000},
   {id:'microscopy',label:'Microscopy & Identification',price:150000},
   {id:'spectroscopy',label:'Spectrophotometry',price:250000},
   {id:'ph_do',label:'pH & Dissolved Oxygen',price:150000},
@@ -505,12 +505,12 @@ const FORM_CONFIGS={
     {name:'email',label:'Email Address',type:'email',required:true,placeholder:'email@example.com'},
     {name:'equipment',label:'Equipment Name / ID',type:'text',required:true,placeholder:'e.g. Centrifuge CX-200, Microscope ML-3'},
     {name:'location',label:'Location / Lab Room',type:'text',required:true,placeholder:'Where is the equipment located?'},
-    {name:'priority',label:'Priority Level',type:'select',required:true,options:['Routine — Scheduled maintenance','Urgent — Affecting research but usable','Critical — Equipment non-functional']},
+    {name:'priority',label:'Priority Level',type:'select',required:true,options:['Routine: Scheduled maintenance','Urgent: Affecting research but usable','Critical: Equipment non-functional']},
     {name:'details',label:'Issue / Work Description',type:'textarea',required:true,placeholder:'Describe the issue or maintenance needed...'},
     {name:'notes',label:'Additional Notes',type:'textarea',required:false,placeholder:'Any other relevant information...'},
   ]},
   join_application:{title:'Intern & Thesis Student Registration',activity:'Join Application',fields:[
-    {name:'role',label:'Registration Type',type:'select',required:true,options:['Internship / KP (Practical Training)','Internship (Magang)','Thesis Student (S1 — Undergraduate)','Thesis Student (S2 — Master)','Dissertation Student (S3 — PhD)']},
+    {name:'role',label:'Registration Type',type:'select',required:true,options:['Internship / KP (Practical Training)','Internship (Magang)','Thesis Student S1 (Undergraduate)','Thesis Student S2 (Master)','Dissertation Student S3 (PhD)']},
     {name:'name',label:'Full Name',type:'text',required:true,placeholder:'Full name as on student ID'},
     {name:'email',label:'Email Address',type:'email',required:true,placeholder:'email@example.com'},
     {name:'phone',label:'Phone / WhatsApp',type:'tel',required:true,placeholder:'+62 8xx-xxxx-xxxx'},
@@ -524,7 +524,7 @@ const FORM_CONFIGS={
     {name:'motivation',label:'Motivation & Background',type:'textarea',required:true,placeholder:'Tell us your motivation for joining and how it relates to Torgas Blue Energy research...'},
     {name:'gpa',label:'Latest GPA (Optional)',type:'text',required:false,placeholder:'e.g. 3.75 / 4.00'},
   ]},
-  rab:{title:'Procurement Request — Materials & Supplies',activity:'Procurement Request',fields:[
+  rab:{title:'Procurement Request: Materials & Supplies',activity:'Procurement Request',fields:[
     {name:'name',label:'Requester Name',type:'text',required:true,placeholder:'Your full name'},
     {name:'email',label:'Email Address',type:'email',required:true,placeholder:'email@example.com'},
     {name:'departemen',label:'Department / Unit',type:'select',required:true,options:['Pangandaran Dept','Jatinangor Dept','Tech Dept','Secretariat']},
@@ -696,7 +696,7 @@ function Nav(){
       {/* Utility bar */}
       <div className="utility-bar hidden md:flex items-center">
         <div className="max-grid w-full flex items-center justify-between">
-          <span className="caption" style={{color:'var(--ink-muted)'}}>PT Torgas Blue Energy — Pangandaran, West Java</span>
+          <span className="caption" style={{color:'var(--ink-muted)'}}>PT Torgas Blue Energy · Pangandaran, West Java</span>
           <div className="flex items-center gap-6">
             <a href="mailto:torgasblueenergy@gmail.com" className="caption" style={{color:'var(--ink-muted)'}}>torgasblueenergy@gmail.com</a>
             <a href="tel:+628116182612" className="caption" style={{color:'var(--ink-muted)'}}>+62 811-618-2612</a>
@@ -784,7 +784,7 @@ function Hero(){
           <div style={{display:'flex',alignItems:'center',gap:16,marginBottom:32}}>
             <div style={{width:32,height:1,background:'var(--blue)'}}/>
             <span className="mono caption" style={{color:'var(--blue)',letterSpacing:'.12em',textTransform:'uppercase'}}>
-              Marine Science — Energy — Technology
+              Marine Science · Energy · Technology
             </span>
           </div>
 
@@ -795,7 +795,7 @@ function Hero(){
           </h1>
 
           <p className="body-lg" style={{color:'rgba(255,255,255,.55)',maxWidth:520,marginBottom:48,lineHeight:1.6}}>
-            PT Torgas Blue Energy translates marine science into deployable technology — from autonomous monitoring vessels to portable seaweed-to-energy systems.
+            PT Torgas Blue Energy translates marine science into deployable technology, from autonomous monitoring vessels to portable seaweed-to-energy systems.
           </p>
 
           <div style={{display:'flex',gap:0,flexWrap:'wrap'}}>
@@ -841,7 +841,7 @@ function About(){
               Science built at sea.<br/>Solutions built to scale.
             </h2>
             <p className="body-lg" style={{color:'var(--ink-muted)',maxWidth:460,lineHeight:1.6}}>
-              Founded by marine scientists and engineers, Torgas Blue Energy conducts active field research while developing deployable hardware — bridging the gap between academic discovery and commercial impact.
+              Founded by marine scientists and engineers, Torgas Blue Energy conducts active field research while developing deployable hardware, bridging the gap between academic discovery and commercial impact.
             </p>
             <div style={{marginTop:40,display:'flex',gap:0}}>
               <a href="mailto:torgasblueenergy@gmail.com" className="btn-primary" style={{fontSize:14}}>
@@ -1136,7 +1136,7 @@ function LabBookingModal({onClose}){
               </div>
               {tests.length>0&&(
                 <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',padding:'16px 20px',background:'var(--surface-1)',border:'1px solid var(--hairline)',marginBottom:24}}>
-                  <span className="body-sm" style={{color:'var(--ink-muted)'}}>{tests.length} test type{tests.length>1?'s':''} selected — estimated total</span>
+                  <span className="body-sm" style={{color:'var(--ink-muted)'}}>{tests.length} test type{tests.length>1?'s':''} selected, estimated total</span>
                   <span style={{fontSize:20,fontWeight:300,color:'var(--blue)'}}>{fmtIDR(total)}</span>
                 </div>
               )}
@@ -1203,7 +1203,7 @@ function LabBookingModal({onClose}){
                 </div>
                 {/* Payment info */}
                 <div style={{padding:'20px',background:'var(--surface-1)',border:'1px solid var(--hairline)',marginBottom:24}}>
-                  <div className="data-label" style={{marginBottom:12}}>Payment — Bank Transfer</div>
+                  <div className="data-label" style={{marginBottom:12}}>Payment via Bank Transfer</div>
                   <div style={{fontSize:13,color:'var(--ink-muted)',marginBottom:4}}>Bank Mandiri</div>
                   <div style={{fontSize:22,fontWeight:600,color:'var(--blue)',letterSpacing:'.08em',fontFamily:'IBM Plex Mono,monospace',marginBottom:4}}>1050019634322</div>
                   <div className="body-sm" style={{color:'var(--ink-muted)',marginBottom:12}}>JOGI RUBEN NATANAEL</div>
@@ -1269,7 +1269,7 @@ function Team(){
         <div className="reveal" style={{marginBottom:56}}>
           <span className="eyebrow" style={{display:'block',marginBottom:12}}>The people</span>
           <h2 className="display-lg" style={{color:'var(--ink)'}}>Built by experts</h2>
-          <p className="body-lg" style={{color:'var(--ink-muted)',maxWidth:480,marginTop:16}}>A multidisciplinary team of marine scientists, engineers, and analysts — all active in the field.</p>
+          <p className="body-lg" style={{color:'var(--ink-muted)',maxWidth:480,marginTop:16}}>A multidisciplinary team of marine scientists, engineers, and analysts. All active in the field.</p>
         </div>
 
         {levels.map(level=>{
@@ -1472,7 +1472,7 @@ function News(){
               </div>
             </div>
             <div className="news-article-pad" style={{padding:40}}>
-              <div className="data-label" style={{marginBottom:20}}>Published {fmtDate(sel.date)} — {sel.author}</div>
+              <div className="data-label" style={{marginBottom:20}}>{fmtDate(sel.date)} · {sel.author}</div>
               {(sel.content||sel.summary).split('\n\n').map((para,i)=>(
                 <p key={i} className="body" style={{color:'var(--ink-muted)',lineHeight:1.75,marginBottom:18}}>{para}</p>
               ))}
@@ -1708,7 +1708,7 @@ function LabSystem(){
         <div className="reveal" style={{marginBottom:56}}>
           <span className="eyebrow" style={{display:'block',marginBottom:12}}>Lab operations</span>
           <h2 className="display-lg" style={{color:'var(--ink)'}}>Integrated lab system</h2>
-          <p className="body-lg" style={{color:'var(--ink-muted)',maxWidth:540,marginTop:16}}>One system for all lab operations — bookings, mentoring, reports, procurement, and maintenance.</p>
+          <p className="body-lg" style={{color:'var(--ink-muted)',maxWidth:540,marginTop:16}}>One system for all lab operations: bookings, mentoring, reports, procurement, and maintenance.</p>
         </div>
 
         {/* Stats dashboard */}
@@ -1772,7 +1772,7 @@ function LabSystem(){
            onMouseLeave={e=>e.currentTarget.style.background='var(--canvas)'}>
           <svg viewBox="0 0 24 24" fill="none" stroke="var(--blue)" strokeWidth="1.5" width="20" height="20"><rect x="3" y="3" width="18" height="18"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg>
           <div style={{flex:1}}>
-            <div className="body-sm" style={{color:'var(--ink)',fontWeight:600}}>Lab Calendar — Single Source of Truth</div>
+            <div className="body-sm" style={{color:'var(--ink)',fontWeight:600}}>Lab Calendar: Source of Truth</div>
             <div className="caption" style={{color:'var(--ink-muted)',marginTop:2}}>All web form submissions auto-sync to the central Lab Calendar spreadsheet</div>
           </div>
           <svg viewBox="0 0 24 24" fill="none" stroke="var(--ink-subtle)" strokeWidth="2" width="16" height="16"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
@@ -1961,7 +1961,7 @@ function LabSystem(){
             {!schedLoading&&schedData.length>0&&(
               <div style={{padding:'12px 24px',borderTop:'1px solid var(--hairline)',display:'flex',justifyContent:'space-between',alignItems:'center',flexShrink:0,background:'var(--surface-1)'}}>
                 <span className="caption" style={{color:'var(--ink-muted)'}}>{schedData.length} entr{schedData.length===1?'y':'ies'} found</span>
-                {isAdmin&&<button onClick={()=>setIsAdmin(false)} className="btn-ghost" style={{fontSize:12,padding:'6px 14px',color:'#198038',borderColor:'#198038'}}>Admin mode ON — click to exit</button>}
+                {isAdmin&&<button onClick={()=>setIsAdmin(false)} className="btn-ghost" style={{fontSize:12,padding:'6px 14px',color:'#198038',borderColor:'#198038'}}>Admin mode ON (click to exit)</button>}
               </div>
             )}
           </div>
@@ -1976,7 +1976,7 @@ function Legal(){
   const docs=[
     {title:'Deed of Establishment',desc:'Corporate charter establishing PT Torgas Blue Energy as a legal entity under Indonesian law.',icon:'shield'},
     {title:'Ministry of Law & Human Rights Decree',desc:'Official decree recognizing the company\'s legal status from the Ministry of Law and Human Rights.',icon:'stamp'},
-    {title:'NIB — Business Registration Number',desc:'National business identification number under the risk-based licensing system (OSS-RBA).',icon:'id'},
+    {title:'NIB: Business Registration Number',desc:'National business identification number under the risk-based licensing system (OSS-RBA).',icon:'id'},
     {title:'Risk-Based Business Operating Permit',desc:'Comprehensive risk-based business operating permit from the Indonesian government.',icon:'file'},
   ];
   const docIcons={
@@ -2044,12 +2044,12 @@ function CTA(){
             </a>
             <a href="https://wa.me/628116182612" target="_blank" rel="noopener" className="btn-inv"
                style={{fontSize:14,padding:'14px 24px',width:'100%',justifyContent:'space-between'}}>
-              WhatsApp — +62 811-618-2612
+              WhatsApp +62 811-618-2612
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5"/></svg>
             </a>
             <a href="https://instagram.com/torgasblueenergy" target="_blank" rel="noopener" className="btn-inv"
                style={{fontSize:14,padding:'14px 24px',width:'100%',justifyContent:'space-between'}}>
-              Instagram — @torgasblueenergy
+              Instagram @torgasblueenergy
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5"/></svg>
             </a>
           </div>
@@ -2102,7 +2102,7 @@ function Footer(){
           ))}
         </div>
         <div className="footer-bottom">
-          <span className="caption" style={{color:'var(--inv-muted)'}}>PT Torgas Blue Energy — All rights reserved.</span>
+          <span className="caption" style={{color:'var(--inv-muted)'}}>PT Torgas Blue Energy. All rights reserved.</span>
           <span className="caption mono" style={{color:'var(--inv-muted)',letterSpacing:'.06em'}}>EST. 2024</span>
         </div>
       </div>
